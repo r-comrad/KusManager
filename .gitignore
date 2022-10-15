@@ -1,0 +1,16 @@
+/build
+
+/bin/media
+**.pdb
+**.obj
+**.sqlite3
+**.log
+**.err
+**.exe
+
+/libraries/*/*.h
+/libraries/*/*.c
+/libraries/*/*.hpp
+/libraries/*/*.cpp
+
+!/libraries/CPUTime/getCPUTime.hpp
