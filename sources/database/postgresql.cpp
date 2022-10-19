@@ -113,47 +113,6 @@ Posdtgres::getTextFromRow(int aColumNumber, int aStatementID) noexcept
 
 //--------------------------------------------------------------------------------
 
-void to_lower(std::wstring& s)
-{
-    for(auto& i : s)
-    {
-        if (i == L'А') i = L'а';
-        if (i == L'Б') i = L'б';
-        if (i == L'В') i = L'в';
-        if (i == L'Г') i = L'г';
-        if (i == L'Д') i = L'д';
-        if (i == L'Е') i = L'е';
-        if (i == L'Ё') i = L'е';
-        if (i == L'Ж') i = L'ж';
-        if (i == L'З') i = L'з';
-        if (i == L'И') i = L'и';
-        if (i == L'Й') i = L'й';
-        if (i == L'К') i = L'к';
-        if (i == L'Л') i = L'л';
-        if (i == L'М') i = L'м';
-        if (i == L'Н') i = L'н';
-        if (i == L'О') i = L'о';
-        if (i == L'П') i = L'п';
-        if (i == L'Р') i = L'р';
-        if (i == L'С') i = L'с';
-        if (i == L'Т') i = L'т';
-        if (i == L'У') i = L'у';
-        if (i == L'Ф') i = L'ф';
-        if (i == L'Х') i = L'х';
-        if (i == L'Ц') i = L'ц';
-        if (i == L'Ч') i = L'ч';
-        if (i == L'Ш') i = L'ш';
-        if (i == L'Щ') i = L'щ';
-        if (i == L'Ъ') i = L'ъ';
-        if (i == L'Ы') i = L'ы';
-        if (i == L'Ь') i = L'ь';
-        if (i == L'Э') i = L'э';
-        if (i == L'Ю') i = L'ю';
-        if (i == L'Я') i = L'я';
-        if (i == L'ё') i = L'е';
-        if (i == L'й') i = L'и';
-    }
-}
 void destroy(std::wstring& s)
 {
     std::vector<std::wstring> data = 
@@ -197,21 +156,7 @@ Posdtgres::getText16FromRow(int aColumNumber, int aStatementID) noexcept
         // }
 
         // exit(0);
-        auto str2 = const_cast<char*>(str);
-        u_char* s = (u_char*)str2;
-        std::wstring ss;
-        for(u_char* c(s); *c !='\000'; ++c)
-        {
-            if (*c == 208 || *c == 209)
-            {
-                ss.push_back((*c==208 ? 896 : 960) + *++c);
-            }
-            else
-            {
-                ss.push_back(static_cast<wchar_t>(*c));
-            }
-        }
-        to_lower(ss);
+
         destroy(ss);
         result = ss;
     }

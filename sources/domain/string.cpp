@@ -7,6 +7,14 @@
 
 //--------------------------------------------------------------------------------
 
+std::string toLowerCyrillic(
+    const std::string& let
+)
+{
+    return std::string(
+        toLowerCyrillic(let.c_str()), 2);
+}
+
 dom::CharArray::CharArray() noexcept :
     mSize       (0),
     mCapacity   (0),

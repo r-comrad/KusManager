@@ -525,29 +525,30 @@ data::DatabaseQuery::getUserAnswers(const std::vector<int>& aUserIDs,
 
     std::map<int, std::map<int, std::wstring>> result;
 
-for(auto question : aQuestionNumbers)
-    for(auto user : aUserIDs)
+    for(auto question : aQuestionNumbers)
     {
-        mDatabase.select("core_questionans", "ans", "question_id = " +
-            std::to_string(question) + " AND user_id = " +
-            std::to_string(user) );
-        
-        while(true)
+        for(auto user : aUserIDs)
         {
-
-            mDatabase.step();
-            auto ans = mDatabase.getText16FromRow(0);
-
-            if (!ans.has_value())
+            mDatabase.select("core_questionans", "ans", "question_id = " +
+                std::to_string(question) + " AND user_id = " +
+                std::to_string(user) );
+            
+            while(true)
             {
-                mDatabase.closeStatment();
-                break;
-            }
-            result[user][question] = ans.value();
-        }
-        mDatabase.closeStatment();
-    }
 
+                mDatabase.step();
+                auto ans = mDatabase.getText16FromRow(0);
+
+                if (!ans.has_value())
+                {
+                    mDatabase.closeStatment();
+                    break;
+                }
+                result[user][question] = ans.value();
+            }
+            mDatabase.closeStatment();
+        }
+    }
     // std::cout << "core_questionans:" << "\n";
     // for(auto i : result) 
     // {
@@ -568,6 +569,38 @@ for(auto question : aQuestionNumbers)
  //   END_LOG_BLOCK("I'm_ready");
   //  return result;
 }
+
+void 
+data::DatabaseQuery::addUserAnswers
+(
+    std::map<int, std::wstring>& aAnswers, 
+    int aUserId
+) noexcept
+{
+    for(auto question : aAnswers)
+    {
+
+        mDatabase.select("core_questionans", "ans", "question_id = " +
+            std::to_string(question.first) + " AND user_id = " +
+            std::to_string(aUserId));
+        
+        while(true)
+        {
+
+            mDatabase.step();
+            auto ans = mDatabase.getText16FromRow(0);
+
+            if (!ans.has_value())
+            {
+                mDatabase.closeStatment();
+                break;
+            }
+            result[question.first][question] = ans.value();
+        }
+        mDatabase.closeStatment();
+    }
+}
+
 std::map<int, std::wstring>
 data::DatabaseQuery::getUserNames(const std::vector<int>& aUserIDs) noexcept
 {

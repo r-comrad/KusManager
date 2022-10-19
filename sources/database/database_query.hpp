@@ -105,6 +105,9 @@ namespace data
             getUserAnswers(const std::vector<int>& aUserIDs,
             const std::vector<int>& aQuestionNumbers) noexcept;
 
+        void addUserAnswers(std::map<int, std::wstring>& aAnswers, 
+            int aUserId) noexcept;
+
         void rename(
             const std::map<int, std::string>& aOldNames, 
             std::vector<std::string>&& aNewNames,

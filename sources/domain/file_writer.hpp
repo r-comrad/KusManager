@@ -1,5 +1,5 @@
-#ifndef FILES_MANAGER_HPP
-#define FILES_MANAGER_HPP
+#ifndef FILES_WRITER_HPP
+#define FILES_WRITER_HPP
 
 //--------------------------------------------------------------------------------
 
@@ -10,20 +10,17 @@
 
 namespace dom
 {
-    void copyFile(const std::string& aFromFileName, 
-        const std::string& aToFileName) noexcept;
-
-    class File
+    class FileWrite
     {
     public:
-        File(const std::string& aFileName) noexcept;
-        ~File();
+        FileWrite(const std::string& aFileName) noexcept;
+        ~FileWrite();
 
-        File(const File& other) = delete;
-        File& operator=(const File& other) = delete;
+        FileWrite(const FileWrite& other) = delete;
+        FileWrite& operator=(const FileWrite& other) = delete;
 
-        File(File&& other)  noexcept= default;
-        File& operator=(File&& other) noexcept = default;
+        FileWrite(FileWrite&& other)  noexcept= default;
+        FileWrite& operator=(FileWrite&& other) noexcept = default;
 
         template<typename... Args>
         void write(Args... args) noexcept
@@ -40,6 +37,9 @@ namespace dom
 
         void close() noexcept;
 
+        static void copyFile(const std::string& aFromFileName, 
+            const std::string& aToFileName) noexcept;
+
     private:
         std::ofstream mOut;
         std::string mDelimiter;
@@ -48,4 +48,4 @@ namespace dom
 
 //--------------------------------------------------------------------------------
 
-#endif // !FILES_MANAGER_HPP
+#endif // !FILES_WRITER_HPP

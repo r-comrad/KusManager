@@ -6,6 +6,7 @@
 #include "domain/string.hpp"
 #include "database/database_query.hpp"
 
+
 //--------------------------------------------------------------------------------
 
 namespace eval

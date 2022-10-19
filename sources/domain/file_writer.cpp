@@ -1,4 +1,4 @@
-#include "file_manager.hpp"
+#include "file_writer.hpp"
 
 //--------------------------------------------------------------------------------
 
@@ -6,8 +6,45 @@
 
 //--------------------------------------------------------------------------------
 
+dom::FileWrite::FileWrite(const std::string& aFileName) noexcept :
+    mOut    (aFileName)
+{}
+
+//--------------------------------------------------------------------------------
+
+dom::FileWrite::~FileWrite()
+{
+    this->close();
+}
+
+//--------------------------------------------------------------------------------
+
 void
-dom::copyFile
+dom::FileWrite::setDelimiter(const std::string& aDelimiter) noexcept
+{
+    mDelimiter = aDelimiter;
+}
+
+//--------------------------------------------------------------------------------
+
+void
+dom::FileWrite::writeEndl() noexcept
+{
+    mOut << '\n';
+}
+
+//--------------------------------------------------------------------------------
+
+void
+dom::FileWrite::close() noexcept
+{
+    mOut.close();
+}
+
+//--------------------------------------------------------------------------------
+
+void
+dom::FileWrite::copyFile
 (
     const std::string& aFromFileName,
     const std::string& aToFileName
@@ -37,43 +74,6 @@ dom::copyFile
 
     END_LOG_BLOCK();
     WRITE_LOG_ENDL();
-}
-
-//--------------------------------------------------------------------------------
-
-dom::File::File(const std::string& aFileName) noexcept :
-    mOut    (aFileName)
-{}
-
-//--------------------------------------------------------------------------------
-
-dom::File::~File()
-{
-    mOut.close();
-}
-
-//--------------------------------------------------------------------------------
-
-void
-dom::File::setDelimiter(const std::string& aDelimiter) noexcept
-{
-    mDelimiter = aDelimiter;
-}
-
-//--------------------------------------------------------------------------------
-
-void
-dom::File::writeEndl() noexcept
-{
-    mOut << '\n';
-}
-
-//--------------------------------------------------------------------------------
-
-void
-dom::File::close() noexcept
-{
-    mOut.close();
 }
 
 //--------------------------------------------------------------------------------

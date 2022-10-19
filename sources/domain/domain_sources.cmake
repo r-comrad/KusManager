@@ -1,11 +1,17 @@
 set(
     DOMAIN_SOURCES
 
+    cyrillic.cpp
+    cyrillic.hpp
+
     error_message.cpp
     error_message.hpp 
 
-    file_manager.cpp
-    file_manager.hpp
+    file_reader.cpp
+    file_reader.hpp
+
+    file_writer.cpp
+    file_writer.hpp
 
     math.cpp
     math.hpp
