@@ -96,13 +96,61 @@ Cyrilic::destroyBadCharacters(std::wstring& aStr) noexcept
 //--------------------------------------------------------------------------------
 
 void 
+Cyrilic::destroyWhiteSpaces(std::wstring& aStr) noexcept
+{
+    int l = 0, r = 0;
+    char last = '\0';
+    while(r < aStr.size())
+    {
+        aStr[l] = aStr[r];
+        if (! (last == ' ' && aStr[r] == ' '))
+        {
+            ++l;
+        }
+        last = aStr[r];
+        ++r;
+    }
+}
+
+//--------------------------------------------------------------------------------
+
+void 
 Cyrilic::cutOffEnding(std::wstring& aStr) noexcept
 {
     if (aStr.size() < 5) return;
 
-    std::vector<std::wstring> = {L"}
+    std::vector<std::wstring> endings = {L"oi", L"aya", L"oye"};
 
-    if (aStr.back() == )
+    for(auto& i : endings)
+    {
+        if(aStr.back() == endings.back() &&
+            aSte[aStr.size() - 2] == endings[0])
+        {
+            aStr.resize(aStr.size() - 2);
+            break;
+        }
+    }
+}
+
+//--------------------------------------------------------------------------------
+
+void 
+Cyrilic::destroyWords(std::wstring& aStr,
+            const std::vector<std::string>& aWords)noexcept
+{
+    if (aStr.size() < 5) return;
+
+    std::vector<std::wstring> endings = {L"oi", L"aya", L"oye"};
+
+    for(auto& i : endings)
+    {
+        if(aStr.back() == endings.back() &&
+            aSte[aStr.size() - 2] == endings[0])
+        {
+            aStr.resize(aStr.size() - 2);
+            break;
+        }
+    }
 }
 
 //--------------------------------------------------------------------------------

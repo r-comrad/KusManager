@@ -23,8 +23,9 @@ namespace dom
         std::wstring toWString(const char* aStr) noexcept;
 
         void destroyBadCharacters(std::wstring& aStr) noexcept;
-        void destroyBadCharacters(std::wstring& aStr) noexcept;
-
+        void destroyWhiteSpaces(std::wstring& aStr) noexcept;
+        void destroyWords(std::wstring& aStr,
+            const std::vector<std::string>& aWords) noexcept;
         void cutOffEnding(std::wstring& aStr) noexcept;
 
     private:
