@@ -95,6 +95,18 @@ Cyrilic::destroyBadCharacters(std::wstring& aStr) noexcept
 
 //--------------------------------------------------------------------------------
 
+void 
+Cyrilic::cutOffEnding(std::wstring& aStr) noexcept
+{
+    if (aStr.size() < 5) return;
+
+    std::vector<std::wstring> = {L"}
+
+    if (aStr.back() == )
+}
+
+//--------------------------------------------------------------------------------
+
 char* 
 Cyrilic::toLowerCyrillic(const char* aCharacter)
 {

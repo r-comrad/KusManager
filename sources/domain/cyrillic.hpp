@@ -25,6 +25,8 @@ namespace dom
         void destroyBadCharacters(std::wstring& aStr) noexcept;
         void destroyBadCharacters(std::wstring& aStr) noexcept;
 
+        void cutOffEnding(std::wstring& aStr) noexcept;
+
     private:
         Cyrilic() noexcept;
         ~Cyrilic();
