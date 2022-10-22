@@ -51,6 +51,10 @@ eval::Core::run(int argc, char* argv[]) noexcept
     {
         generateRoboNames();
     }
+    else if (mCommand == Command::EVALUATE)
+    {
+        getResults();
+    }
 }
 
 // void
@@ -182,6 +186,10 @@ eval::Core::parseCommandLine(int argc, char* argv[]) noexcept
     else if(strcmp(argv[1], "generateRoboNames") == 0 || strcmp(argv[1], "generateRobo") == 0)
     {
         mCommand = Command::GENERATE_ROBO_NAMES;
+    }
+    else if(strcmp(argv[1], "getResults") == 0 || strcmp(argv[1], "evaluate") == 0)
+    {
+        mCommand = Command::EVALUATE;
     }
 
     int last = 0;
@@ -381,9 +389,25 @@ eval::Core::generateRoboNames() noexcept
     }
 }
 
+#include "domain/cyrillic.hpp"
 void
-eval::Core::getResults(const std::string& aCompetitionName) noexcept
+eval::Core::getResults() noexcept
 {
+    if (mArgs.count(0) == 0)
+    {
+        printf("ERROR: must specify the competition info file!\n");
+        exit(0);
+    }
+
+    std::ifstream compInfoFile(mArgs[0][0]);
+    std::string aCompetitionName;
+    {
+        std::string temp;
+        getline(compInfoFile, aCompetitionName);
+        //aCompetitionName = temp;
+    }
+    std::wcout << dom::Cyrilic::global.toWString(aCompetitionName) << L"\n";
+
     auto compInfo = mDBQ.getCompetitionInfo(aCompetitionName);
     auto questionsIDs = mDBQ.getQuestionNumbers(compInfo.id);
     auto questions = mDBQ.getQuestions(questionsIDs);
@@ -392,8 +416,55 @@ eval::Core::getResults(const std::string& aCompetitionName) noexcept
     auto userIDs = mDBQ.getUserIDs(groupsIDs);
     auto userNames = mDBQ.getUserNames(userIDs);
 
-    // std::wofstream out;
-    // out.open("aaa.txt");
+    // {
+    //     auto questionNames = mDBQ.getQuestionNames(questionsIDs);
+    //     decltype(questionNames) questionNameNumbers;
+    //     std::wstring temp;
+    //     for(auto& i : questionNames)
+    //     {
+    //         std::wstring name;
+    //         name.push_back(i.first[i.first.size() - 2]);
+    //         name.push_back(i.first.back());
+    //         questionNameNumbers[name] = i.second;
+    //     }
+        
+    //     while(compInfoFile >> temp)
+    //     {
+    //         std::wstring name = temp;
+    //         compInfoFile >> temp;
+    //         dom::Cyrilic::global.standardProcedure(temp);
+    //         questions[questionNameNumbers[name]] = temp;
+    //     }
+
+    //     if (int(mFlags) | int(CommandFlag::PRINT_LOG)) 
+    //     {
+    //         for(auto& i : questions)
+    //         {
+    //             std::wcout << i.first << L" " << i.second << L"\n";
+    //         }
+    //     }
+    // }
+    {
+        std::string temp;
+        while(compInfoFile >> temp)
+        {
+            std::string id = temp;
+            std::getline(compInfoFile, temp);
+            std::wstring ans = dom::Cyrilic::global.toWString(temp);;
+            dom::Cyrilic::global.standardProcedure(ans);
+            questions[std::stoi(id)] = ans;
+        }
+    }
+
+    if (int(mFlags) | int(CommandFlag::PRINT_LOG)) 
+    {
+        std::wcout << L"\n";
+        for(auto& i : questions)
+        {
+            std::wcout << i.first << L" " << i.second << L"\n";
+        }
+        std::wcout << L"\n";
+    }
 
     for(auto& uID : userIDs)
     {
@@ -401,20 +472,32 @@ eval::Core::getResults(const std::string& aCompetitionName) noexcept
         std::wcout << userNames[uID] << L" ";
         double s = 0;
         for(auto q : questions)
-        {
-            std::wcout << q.second << L" === " <<  userAns[q.first]; 
+        {  
+            if (int(mFlags) | int(CommandFlag::PRINT_LOG)) 
+            {
+                std::wcout << L"\n" << q.second << L" === " <<  userAns[q.first]; 
+            }
             if (q.second == userAns[q.first])
             {
                 ++s;
-                std::wcout << L"+ ";
+                if (int(mFlags) | int(CommandFlag::PRINT_LOG)) 
+                {
+                    std::wcout << L" +";
+                }
+
             }
             else
             {
-                std::wcout << L"- ";
+                if (int(mFlags) | int(CommandFlag::PRINT_LOG)) 
+                {
+                    std::wcout << L" -";
+                }
             }
-            std::wcout << L"\n"; 
         }
         std::wcout << s << L"\n"; 
-        break;
+        if (int(mFlags) | int(CommandFlag::PRINT_LOG)) 
+        {
+            std::wcout << L"\n"; 
+        }
     }
 }

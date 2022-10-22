@@ -97,6 +97,7 @@ namespace data
         CompetitionData getCompetitionInfo(const std::string& aCompetitionName) noexcept;
         //void getQuestionInfo(int aCompetitionID) noexcept;
         std::vector<int> getQuestionNumbers(int aCompetitionID) noexcept;
+        std::map<std::wstring, int> getQuestionNames(const std::vector<int>& aIDs) noexcept;
         std::map<int, std::wstring> getQuestions(const std::vector<int>& aQuestionNumbers) noexcept;
         std::vector<int> getGroupIDs(int aCompetitionID) noexcept;
         std::vector<int> getUserIDs(const std::vector<int>& aGroups) noexcept;

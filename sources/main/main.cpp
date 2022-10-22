@@ -36,28 +36,28 @@ int main(int argc, char* argv[])
 //  return 0;
 
 //setlocale( LC_ALL,"Russian" ); 
-freopen("aaa", "w", stdout);
+//freopen("aaa", "w", stdout);
     WRITE_LOG("Start_main");
     eval::Core core("");
 
-    // if (argc < 2) 
-    // {
-    //     freopen("a.out", "w", stdout);
-    //     //int sz = 5;
-    //     //char* gg[sz] = {"", "rename", "-p", "-m", "KD-5", "-i"};
-    //     // int sz = 3;
-    //     // char* gg[sz] = {"", "generate", "200"};
-    //     int sz = 5;
-    //     //char* gg[sz] = {"", "getUsers", "-i"};
-    //     char* gg[sz] = {"", "generateRobo", "20", "-m", "robox8"};
-    //     core.run(sz, gg);
-    // }
-    // else
-    // {
-    //     core.run(argc, argv);
-    // }
+    if (argc < 2)
+    {
+        freopen("a.out", "w", stdout);
+        //int sz = 5;
+        //char* gg[sz] = {"", "rename", "-p", "-m", "KD-5", "-i"};
+        // int sz = 3;
+        // char* gg[sz] = {"", "generate", "200"};
+        int sz = 5;
+        //char* gg[sz] = {"", "getUsers", "-i"};
+        char* gg[sz] = {"", "getResults", "comp.txt", "-p", "robox8"};
+        core.run(sz, gg);
+    }
+    else
+    {
+        core.run(argc, argv);
+    }
     
-    core.getResults("Гиды-переводчики 2022 Французский");
+    //core.getResults("Гиды-переводчики 2022 Французский");
 
     return 0;
 }

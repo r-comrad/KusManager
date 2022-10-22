@@ -464,6 +464,29 @@ data::DatabaseQuery::getGroupIDs(int aCompetitionID) noexcept
   //  return result;
 }
 
+std::map<std::wstring, int> 
+data::DatabaseQuery::getQuestionNames(const std::vector<int>& aIDs) noexcept
+{
+    std::map<std::wstring, int> result;
+    
+    for(auto& id : aIDs)
+    {
+        mDatabase.select("core_question", "name", 
+            "id = " + std::to_string(id));
+        mDatabase.step();
+        result[mDatabase.getText16FromRow(0).value()] = id;
+        mDatabase.closeStatment();
+    }
+
+    return result;
+
+
+    //core_questionans
+
+ //   END_LOG_BLOCK("I'm_ready");
+  //  return result;
+}
+
 //--------------------------------------------------------------------------------
 
 std::vector<int>

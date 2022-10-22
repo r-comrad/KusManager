@@ -136,6 +136,14 @@ dom::Cyrilic::destroyBadCharacters(std::wstring& aStr) noexcept
         {
             i = L'в';
         }
+        else if (i == L',')
+        {
+            i = L' ';
+        }
+        else if (i == L'-')
+        {
+            i = L' ';
+        }
     }
 }
 
@@ -145,7 +153,7 @@ void
 dom::Cyrilic::destroyWhiteSpaces(std::wstring& aStr) noexcept
 {
     int l = 0, r = 0;
-    char last = '\0';
+    char last = ' ';
     while(r < aStr.size())
     {
         aStr[l] = aStr[r];
@@ -156,6 +164,7 @@ dom::Cyrilic::destroyWhiteSpaces(std::wstring& aStr) noexcept
         last = aStr[r];
         ++r;
     }
+    aStr.resize(l);
     if (std::iswspace(aStr.back()))
     {
         aStr.pop_back();

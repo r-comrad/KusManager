@@ -25,7 +25,7 @@ namespace eval
         
         void run(int argc, char* argv[]) noexcept;
         void makeNames() noexcept;
-        void getResults(const std::string& aCompetitionName) noexcept;
+        void getResults() noexcept;
     private:
         enum class Command
         {
@@ -37,7 +37,8 @@ namespace eval
             RESURRECT_USERS = 5,
             RENAME_USERS = 6,
             GENERATE_NAMES = 7,
-            GENERATE_ROBO_NAMES = 8
+            GENERATE_ROBO_NAMES = 8,
+            EVALUATE = 9
         };
 
         enum class CommandFlag
