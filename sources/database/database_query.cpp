@@ -341,7 +341,7 @@ data::DatabaseQuery::getQuestionNumbers(int aCompetitionID) noexcept
 #include <sstream>
 #include <cwctype>
 
-
+#include "domain/cyrillic.hpp"
 
 std::map<int, std::wstring> 
 data::DatabaseQuery::getQuestions(const std::vector<int>& aQuestionNumbers) noexcept
@@ -365,29 +365,24 @@ data::DatabaseQuery::getQuestions(const std::vector<int>& aQuestionNumbers) noex
                 break;
             }
             std::wstring s = ans.value();
-            // for(wchar_t& i : s)
-            // {
-            //     wchar_t g =  std::towlower(i);
-            //     i = g;
-            // }
 
             s.resize(s.size() - 4);
             std::wstring ss;
             std::reverse(s.begin(), s.end());
             s.resize(s.size() - 23);
-            if (s.back() == '\"')
+            if (s.back() == L'\"')
             {
                 for(auto& i : s)
                 {
-                    if (i == ' ')
-                        i = '_';
+                    if (i == L' ')
+                        i = L'_';
                 }
                 for(auto& i : s)
                 {
-                    if (i == '\"' || i == '\\' ||
-                        i == '[' || i == ']' ||
-                        i == ':' || i == ',')
-                        i = ' ';
+                    if (i == L'\"' || i == L'\\' ||
+                        i == L'[' || i == L']' ||
+                        i == L':' || i == L',')
+                        i = L' ';
                 }
                 std::reverse(s.begin(), s.end());
 
@@ -405,10 +400,10 @@ data::DatabaseQuery::getQuestions(const std::vector<int>& aQuestionNumbers) noex
             else
             {
                 std::reverse(s.begin(), s.end());
-//                for (auto& i : s) i = tolower(i);
                 ss = s;
             }
             result[questionNum] = ss;
+            dom::Cyrilic::global.standardProcedure(result[questionNum]);
         }
         mDatabase.closeStatment();
     }
@@ -545,6 +540,7 @@ data::DatabaseQuery::getUserAnswers(const std::vector<int>& aUserIDs,
                     break;
                 }
                 result[user][question] = ans.value();
+                dom::Cyrilic::global.standardProcedure(result[user][question]);
             }
             mDatabase.closeStatment();
         }
@@ -570,18 +566,19 @@ data::DatabaseQuery::getUserAnswers(const std::vector<int>& aUserIDs,
   //  return result;
 }
 
-void 
-data::DatabaseQuery::addUserAnswers
+std::map<int, std::wstring>
+data::DatabaseQuery::getUserAnswers
 (
-    std::map<int, std::wstring>& aAnswers, 
+    const std::vector<int>& aQuaestionIDs,
     int aUserId
 ) noexcept
 {
-    for(auto question : aAnswers)
+    std::map<int, std::wstring> result;
+    for(auto question : aQuaestionIDs)
     {
 
         mDatabase.select("core_questionans", "ans", "question_id = " +
-            std::to_string(question.first) + " AND user_id = " +
+            std::to_string(question) + " AND user_id = " +
             std::to_string(aUserId));
         
         while(true)
@@ -595,10 +592,12 @@ data::DatabaseQuery::addUserAnswers
                 mDatabase.closeStatment();
                 break;
             }
-            result[question.first][question] = ans.value();
+            result[question] = ans.value();
+            dom::Cyrilic::global.standardProcedure(result[question]);
         }
         mDatabase.closeStatment();
     }
+    return result;
 }
 
 std::map<int, std::wstring>

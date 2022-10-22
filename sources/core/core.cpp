@@ -381,113 +381,40 @@ eval::Core::generateRoboNames() noexcept
     }
 }
 
-// #define _CRT_SECURE_NO_WARNINGS
+void
+eval::Core::getResults(const std::string& aCompetitionName) noexcept
+{
+    auto compInfo = mDBQ.getCompetitionInfo(aCompetitionName);
+    auto questionsIDs = mDBQ.getQuestionNumbers(compInfo.id);
+    auto questions = mDBQ.getQuestions(questionsIDs);
 
-// #include <set>
-// #include <iostream>
-// #include <string>
-// #include <algorithm>
-// #include <vector>
-// #include <sstream>
-// using namespace std;
+    auto groupsIDs = mDBQ.getGroupIDs(compInfo.id);
+    auto userIDs = mDBQ.getUserIDs(groupsIDs);
+    auto userNames = mDBQ.getUserNames(userIDs);
 
-// int partition(vector<int>& arr, int l, int r)
-// {
-//     //int sum = arr[(l + r) / 2];
-//     long long sum = 0;
-//     for (int i = l; i <= r; ++i)
-//     {
-//         sum += arr[i];
-//     }
-//     sum /= r - l + 1;
+    // std::wofstream out;
+    // out.open("aaa.txt");
 
-//     int i = l;
-//     int j = r;
-//     while (i <= j)
-//     {
-//         while (i < arr.size() && arr[i] < sum)
-//         {
-//             i++;
-//         }
-//         while (j >= 0 && arr[j] > sum)
-//         {
-//             j--;
-//         }
-//         if (i >= j || j < 0 || i >= arr.size())
-//         {
-//             break;
-//         }
-//         swap(arr[i++], arr[j--]);
-//     }
-//     if (l == j)
-//     {
-//         int mn = l;
-//         for (int i = l; i < r; ++i) if (arr[mn] < arr[i]) mn = i;
-//         j++;
-//         swap(arr[mn], arr[j + 1]);
-//     }
-//     return j;
-// }
-
-// int findOrderStatistic(vector<int>& arr, int k)
-// {
-//     int left = 0, right = arr.size() - 1;
-//     int res;
-//     while (true)
-//     {
-//         int mid = partition(arr, left, right);
-
-//         if (right - left == 1)
-//         {
-//             return arr[k];
-//         }
-//         else if (k <= mid) 
-//         {
-//             right = mid;
-//         }
-//         else 
-//         {
-//             left = mid;
-//         }
-//     }
-// }
-
-// int main()
-// {
-//     freopen("a.in", "r", stdin);
-//     freopen("a.out", "w", stdout);
-
-//     vector<string> ans;
-//     string s;
-//     getline(cin, s);
-//     std::stringstream ss;
-//     ss << s;
-//     while (ss >> s)
-//     {
-//         for(auto& i : s) i = std::tolower(i);
-//         ans.emplace_back(std::move(s));
-//     }
-
-//     while (getline(cin, s))
-//     {
-//         std::stringstream ss;
-//         ss << s;
-//         ss >> s;
-//         cout << s << "\t";
-
-//         int cnt = 0;
-//         for(int num = 0; ss >> s; ++num)
-//         {
-//             if (s == "NO_ANS" || s == "NO_ANS;") continue;
-//             for (auto& i : s) i = std::tolower(i);
-//             for (size_t i = 0; i < s.size() &&
-//                 num < ans.size() && i < ans[num].size(); ++i)
-//             {
-//                 if (s[i] == ans[num][i]) ++cnt;
-//             }
-//         }
-//         cout << cnt << "" << endl;
-//     }
-
-//   return 0;
-// }
+    for(auto& uID : userIDs)
+    {
+        auto userAns = mDBQ.getUserAnswers(questionsIDs, uID);
+        std::wcout << userNames[uID] << L" ";
+        double s = 0;
+        for(auto q : questions)
+        {
+            std::wcout << q.second << L" === " <<  userAns[q.first]; 
+            if (q.second == userAns[q.first])
+            {
+                ++s;
+                std::wcout << L"+ ";
+            }
+            else
+            {
+                std::wcout << L"- ";
+            }
+            std::wcout << L"\n"; 
+        }
+        std::wcout << s << L"\n"; 
+        break;
+    }
+}

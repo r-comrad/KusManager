@@ -29,7 +29,7 @@ Posdtgres::Posdtgres() noexcept
         {"                          \
             dbname = test_sys       \
             user = sys_user         \
-            password = 1209root     \
+            password = 123321     \
             hostaddr = 127.0.0.1    \
             port = 5432             \
         "};
@@ -137,6 +137,8 @@ void destroy(std::wstring& s)
         }
     }
 }
+
+#include "domain/cyrillic.hpp"
 std::optional<std::wstring>
 Posdtgres::getText16FromRow(int aColumNumber, int aStatementID) noexcept
 {
@@ -157,7 +159,10 @@ Posdtgres::getText16FromRow(int aColumNumber, int aStatementID) noexcept
 
         // exit(0);
 
-        destroy(ss);
+        // destroy(ss);
+
+        std::wstring ss = dom::Cyrilic::global.toWString(str);
+
         result = ss;
     }
 

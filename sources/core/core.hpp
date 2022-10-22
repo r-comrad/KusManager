@@ -25,7 +25,7 @@ namespace eval
         
         void run(int argc, char* argv[]) noexcept;
         void makeNames() noexcept;
-
+        void getResults(const std::string& aCompetitionName) noexcept;
     private:
         enum class Command
         {
@@ -63,6 +63,7 @@ namespace eval
         void generateNames() noexcept;
         void generateRoboNames() noexcept;
         void turn() noexcept;
+
     };
 }
 

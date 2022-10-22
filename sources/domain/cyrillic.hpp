@@ -3,9 +3,8 @@
 
 //--------------------------------------------------------------------------------
 
-#include <fstream>
 #include <string>
-#include <wstring>
+#include <fstream>
 
 //--------------------------------------------------------------------------------
 
@@ -24,18 +23,19 @@ namespace dom
 
         void destroyBadCharacters(std::wstring& aStr) noexcept;
         void destroyWhiteSpaces(std::wstring& aStr) noexcept;
-        void destroyWords(std::wstring& aStr,
-            const std::vector<std::string>& aWords) noexcept;
+        void destroyWord(std::wstring& aStr,
+            const std::wstring& aWord) noexcept;
         void cutOffEnding(std::wstring& aStr) noexcept;
+        void standardProcedure(std::wstring& aStr) noexcept;
 
     private:
-        Cyrilic() noexcept;
-        ~Cyrilic();
+        Cyrilic() = default;
+        ~Cyrilic() = default;
 
         Cyrilic(const Cyrilic& other) = delete;
         Cyrilic& operator=(const Cyrilic& other) = delete;
 
-        Cyrilic(Cyrilic&& other)  noexcept= default;
+        Cyrilic(Cyrilic&& other)  noexcept = default;
         Cyrilic& operator=(Cyrilic&& other) noexcept = default;
 
         char* toLowerCyrillic(const char* aCharacter) noexcept;
