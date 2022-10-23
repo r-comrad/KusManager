@@ -410,7 +410,7 @@ eval::Core::getResults() noexcept
 
     auto compInfo = mDBQ.getCompetitionInfo(aCompetitionName);
     auto questionsIDs = mDBQ.getQuestionNumbers(compInfo.id);
-    auto questions = mDBQ.getQuestions(questionsIDs);
+
 
     auto groupsIDs = mDBQ.getGroupIDs(compInfo.id);
     auto userIDs = mDBQ.getUserIDs(groupsIDs);
@@ -444,22 +444,95 @@ eval::Core::getResults() noexcept
     //         }
     //     }
     // }
+
+    std::map<int, std::vector<std::wstring>> questions;
+    std::map<int, char> questionTypes;
+    std::map<int, double> questionWeight;
+    {
+        auto questionsTemp = mDBQ.getQuestions(questionsIDs);
+        for(auto& i : questionsTemp)
+        {
+            questions[i.first].push_back(i.second);
+        }
+    }
+    for(auto& i : questions)
+    {
+        questionTypes[i.first] = 0;
+        questionWeight[i.first] = 1;
+    }
+
     {
         std::string temp;
+        int id = 0;
         while(compInfoFile >> temp)
         {
-            std::string id = temp;
-            std::getline(compInfoFile, temp);
-            std::wstring ans = dom::Cyrilic::global.toWString(temp);;
-            dom::Cyrilic::global.standardProcedure(ans);
-            questions[std::stoi(id)] = ans;
+            if (temp == "ANS:")
+            {
+                std::getline(compInfoFile, temp);
+                std::wstring ans = dom::Cyrilic::global.toWString(temp);
+                dom::Cyrilic::global.standardProcedure(ans);
+                questions[id].clear();
+                questions[id].push_back(ans);
+            }    
+            else if (temp == "ADD_ANS:")
+            {
+                std::getline(compInfoFile, temp);
+                std::wstring ans = dom::Cyrilic::global.toWString(temp);
+                dom::Cyrilic::global.standardProcedure(ans);
+                questions[id].push_back(ans);
+            }     
+            else if (temp == "TYPE:")
+            {
+                std::getline(compInfoFile, temp);
+                if(temp == " Standart")
+                {
+                    questionTypes[id] = 0;
+                }
+                else if(temp == " Multiple")
+                {
+                    questionTypes[id] = 1;
+                    for(auto& k : questions[id])
+                    {
+                        dom::Cyrilic::global.destroyWhiteSpaces(k, true);
+                    }
+                }
+            }  
+            else if (temp == "WEIGHT:")
+            {
+                std::getline(compInfoFile, temp);
+                questionWeight[id] = std::stod(temp);
+            } 
+            else
+            {
+                id = std::stoi(temp);
+            }
         }
     }
 
-    if (int(mFlags) | int(CommandFlag::PRINT_LOG)) 
+    if (int(mFlags) & int(CommandFlag::PRINT_LOG)) 
     {
-        std::wcout << L"\n";
+        std::wcout << L"\nAnswers:\n";
         for(auto& i : questions)
+        {
+            std::wcout << i.first << L" ";      
+            for(int j = 0; j < i.second.size(); ++j)
+            {
+                if (j > 0) std::wcout << L" || ";
+                std::wcout << i.second[j];
+            }
+            std::wcout << L"\n";
+        }
+        std::wcout << L"\n";
+
+        std::wcout << L"Type:\n";
+        for(auto& i : questionTypes)
+        {
+            std::wcout << i.first << L" " << int(i.second) << L"\n";
+        }
+        std::wcout << L"\n";
+
+        std::wcout << L"Weight:\n";
+        for(auto& i : questionWeight)
         {
             std::wcout << i.first << L" " << i.second << L"\n";
         }
@@ -473,29 +546,63 @@ eval::Core::getResults() noexcept
         double s = 0;
         for(auto q : questions)
         {  
-            if (int(mFlags) | int(CommandFlag::PRINT_LOG)) 
+            if (int(mFlags) & int(CommandFlag::PRINT_LOG)) 
             {
-                std::wcout << L"\n" << q.second << L" === " <<  userAns[q.first]; 
+                std::wcout << L"\n" << q.second[0] << L" === " <<  userAns[q.first]; 
             }
-            if (q.second == userAns[q.first])
+            int correctCount = 0;
+            if (questionTypes[q.first] == 0)
             {
-                ++s;
-                if (int(mFlags) | int(CommandFlag::PRINT_LOG)) 
+                for(auto& ans : q.second)
+                {
+                    if (ans == userAns[q.first]) 
+                    {
+                        correctCount = 1;
+                        break;
+                    }
+                }
+            }
+            else if (questionTypes[q.first] == 1)
+            {
+                dom::Cyrilic::global.destroyWhiteSpaces(userAns[q.first], true);
+                for(auto& ans : q.second)
+                {
+                    int cnt = 0;
+                    for(int k = 0; k < ans.size(); ++k)
+                    {
+                        if (userAns[q.first].size() <= k) break;
+                        if (ans[k] == userAns[q.first][k] && ans[k] != L' ') 
+                        {
+                            ++cnt;
+                        }
+                    }
+                    correctCount = std::max(correctCount, cnt);
+                }
+            }
+
+
+            if (int(mFlags) & int(CommandFlag::PRINT_LOG)) 
+            {
+                if (correctCount) 
                 {
                     std::wcout << L" +";
                 }
-
-            }
-            else
-            {
-                if (int(mFlags) | int(CommandFlag::PRINT_LOG)) 
+                else
                 {
                     std::wcout << L" -";
                 }
             }
+            else
+            {
+                std::wcout << L"\t" << questionWeight[q.first] * correctCount;
+            }
+
+            if (correctCount) s+= questionWeight[q.first] * correctCount;
         }
+        if (int(mFlags) & int(CommandFlag::PRINT_LOG)) std::wcout << L"\n";
+        else std::wcout << L"\t=\t"; 
         std::wcout << s << L"\n"; 
-        if (int(mFlags) | int(CommandFlag::PRINT_LOG)) 
+        if (int(mFlags) & int(CommandFlag::PRINT_LOG)) 
         {
             std::wcout << L"\n"; 
         }

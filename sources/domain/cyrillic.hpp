@@ -22,7 +22,7 @@ namespace dom
         std::wstring toWString(const char* aStr) noexcept;
 
         void destroyBadCharacters(std::wstring& aStr) noexcept;
-        void destroyWhiteSpaces(std::wstring& aStr) noexcept;
+        void destroyWhiteSpaces(std::wstring& aStr, bool flag = false) noexcept;
         void destroyWord(std::wstring& aStr,
             const std::wstring& aWord) noexcept;
         void cutOffEnding(std::wstring& aStr) noexcept;

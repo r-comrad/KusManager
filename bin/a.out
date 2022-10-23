@@ -1,9 +1,10 @@
 Robototexnika 7 klass
 
+Answers:
 409 TEXNOLOGIYA
 410 GBVA
 411 KONUS
-412 3 6
+412 1 2 || 3 6
 413 0
 537 5
 538 135
@@ -22,11 +23,57 @@ Robototexnika 7 klass
 556 11010110
 557 214
 
+Type:
+409 0
+410 1
+411 0
+412 0
+413 0
+537 0
+538 0
+539 0
+540 0
+541 0
+542 0
+548 0
+549 0
+550 0
+551 0
+552 0
+553 0
+554 0
+555 0
+556 0
+557 0
+
+Weight:
+409 1
+410 0.5
+411 1
+412 1
+413 1
+537 1
+538 1
+539 1
+540 1
+541 1
+542 1
+548 1
+549 1
+550 1
+551 1
+552 1
+553 1
+554 1
+555 1
+556 1
+557 1
+
 robo7krkugofdsbna 
 TEXNOLOGIYA === PRIBOR -
-GBVA === GVBA -
+GBVA === GVBA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 100 -
 135 === 1000 -
@@ -43,13 +90,14 @@ A AND NOT C OR NOT A AND C === DCORVANDOC -
 75 === 65 -
 2.5 === 100 -
 11010110 === 1212524 -
-214 === 125546 -1
+214 === 125546 -
+3
 
 robo7vvmegnphtwxx 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -66,13 +114,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7wyyragxftsua 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -89,13 +138,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7lmforvevchyw 
 TEXNOLOGIYA === RABOTNIK -
 GBVA === GBVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 ===  -
 135 ===  -
@@ -112,13 +162,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -2
+214 ===  -
+4
 
 robo7dpunbqfgxmuvg 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -135,13 +186,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7rxgepnsatfob 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -158,13 +210,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7euagqjlnnddl 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -181,13 +234,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ivgcytjdtori 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -204,13 +258,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7wjspdcspfqlb 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -227,13 +282,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ygkxoryyxfbf 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === KONUS +
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 5 +
 135 === 225 -
@@ -250,13 +306,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 === 75 +
 2.5 === 1.14 -
 11010110 ===  -
-214 ===  -8
+214 ===  -
+10
 
 robo7xdgkybymvkxb 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -273,13 +330,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ypivvkymsiun 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === VPISANNY`I TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 0.2 -
 135 === 135 +
@@ -296,13 +354,14 @@ A AND NOT C OR NOT A AND C === SENSOR1>GREY1ANDSENSOR2>GREY2 -
 75 === 75 +
 2.5 === 2.5 +
 11010110 === 10011110 -
-214 === 158 -8
+214 === 158 -
+10
 
 robo7yggpbuhixcbw 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -319,13 +378,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7yjxtrxllnbdx 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === KONUS +
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 5:1 -
 135 === 135:1 -
@@ -342,13 +402,14 @@ A AND NOT C OR NOT A AND C === 1 -
 75 === 75 +
 2.5 === 2 5 -
 11010110 === 11010011 -
-214 === 211 -8
+214 === 211 -
+10
 
 robo7dpjnbpbwllsre 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -365,13 +426,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ytwkivyowdii 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -388,13 +450,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dxixmoihdhove 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -411,13 +474,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ykwgqljjjugu 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 5 +
 135 === 135 +
@@ -434,13 +498,14 @@ A AND NOT C OR NOT A AND C === A OR C -
 75 === 75 +
 2.5 === 2.5 +
 11010110 === 110101100 -
-214 === 428 -14
+214 === 428 -
+16
 
 robo7dwdysvspwlkfb 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -457,13 +522,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dwdlpgitydvhe 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -480,13 +546,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7wwlvsejrdeen 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -503,13 +570,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7rgwlytnpmphm 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 64 -
 135 === 64 -
@@ -526,13 +594,14 @@ A AND NOT C OR NOT A AND C === DWARF.EXE -
 75 === 72 -
 2.5 === 6 -
 11010110 === DWARF.EXE -
-214 === DWARF.EXE -4
+214 === DWARF.EXE -
+6
 
 robo7dpjbrlhugesmm 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -549,13 +618,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7doyfquimnnquj 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -572,13 +642,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7xtsthfaoccrf 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -595,13 +666,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7duealmptklod 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -618,13 +690,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7pcqusmupsmpd 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -641,13 +714,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dsvxggfitknyg 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -664,13 +738,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7syvjxnspubqjp 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -687,13 +762,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sysuipywatpfo 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -710,13 +786,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7syhosfimlavbt 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -733,13 +810,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sxwjjlkrmgbnw 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -756,13 +834,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sxpypjgtlhfte 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -779,13 +858,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sxlgjpavrcjpb 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -802,13 +882,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7uoklfhfwxcyl 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -825,13 +906,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7idrjcqduouop 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -848,13 +930,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sxixmoihdhove 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -871,13 +954,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ijwpvrltidbg 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -894,13 +978,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7swdysvspwlkfb 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -917,13 +1002,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7swdlpgitydvhe 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -940,13 +1026,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7cpfnlufojtix 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -963,13 +1050,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ciwanxluflrs 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -986,13 +1074,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7pbtsajispqdg 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1009,13 +1098,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7svrenlebjtccg 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1032,13 +1122,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7svftyveolprfd 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1055,13 +1146,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ylwyljqshhjj 
 TEXNOLOGIYA === MASHINA -
 GBVA === GBVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 15:4 -
 135 === 3:4 -
@@ -1078,13 +1170,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 === 50 -
 2.5 === 1.5 -
 11010110 === 10011011 -
-214 === 155 -5
+214 === 155 -
+7
 
 robo7svbvfenodqasa 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1101,13 +1194,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ssvxggfitknyg 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1124,13 +1218,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7yguiihcjkvsm 
 TEXNOLOGIYA === TEXNOLOGIYA +
-GBVA === GBAV -
+GBVA === GBAV +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 1:5 -
 135 === 1:3 -
@@ -1147,13 +1242,14 @@ A AND NOT C OR NOT A AND C === A OR C AND V OR D -
 75 === 75 +
 2.5 === 2 -
 11010110 === 10110101 -
-214 === 181 -6
+214 === 181 -
+8
 
 robo7ssglrexvtjmxy 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1170,13 +1266,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7srwwaakwyprxn 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1193,13 +1290,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7srrcgbflqpott 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1216,13 +1314,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sqcdevpwubfgs 
 TEXNOLOGIYA === ROBOT -
 GBVA === GBVA +
 KONUS === KONUS +
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 1/5 -
 135 ===  -
@@ -1239,13 +1338,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -3
+214 ===  -
+5
 
 robo7spunbqfgxmuvg 
 TEXNOLOGIYA === TEXNOLOGIYA +
-GBVA === GVBA -
+GBVA === GVBA +
 KONUS === KONUS +
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 5 +
 135 === 135 +
@@ -1262,13 +1362,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 === 75 +
 2.5 === 1 -
 11010110 ===  -
-214 ===  -10
+214 ===  -
+12
 
 robo7spjnbpbwllsre 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1285,13 +1386,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7spjbrlhugesmm 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1308,13 +1410,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7spegrwvgajcrg 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1331,13 +1434,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7soyfquimnnquj 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1354,13 +1458,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sorpceeyokesk 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1377,13 +1482,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7socddagwnjbkj 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1400,13 +1506,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7snngpesdntrrv 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1423,13 +1530,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7snjdbeyhkbsom 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1446,13 +1554,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7hwccbexwdfsj 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1469,13 +1578,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7slfdfultbwpiq 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1492,13 +1602,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7slacvanhelkov 
 TEXNOLOGIYA === MASHINA -
 GBVA === GBVA +
 KONUS === KONUS +
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 ===  -
 135 ===  -
@@ -1515,13 +1626,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -3
+214 ===  -
+5
 
 robo7skssdsldebesn 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1538,13 +1650,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7irlvenfvqyps 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1561,13 +1674,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sjvrsdowiixli 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1584,13 +1698,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sjoyomgsqcpjl 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1607,13 +1722,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7hgfcftiamctf 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1630,13 +1746,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7shuorjosamibd 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1653,13 +1770,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7mavsvyiplhvq 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1676,13 +1794,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7shfmxrkecwitr 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1699,13 +1818,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7shcmlofmpmekt 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1722,13 +1842,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7shbmdahyviuem 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1745,13 +1866,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sgrgkymfjrsui 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1768,13 +1890,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7vxqtoxpjwxeo 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1791,13 +1914,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7setxbafkrejsf 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1814,13 +1938,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sephpqtbhlrkr 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1837,13 +1962,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7selthrowhfexl 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1860,13 +1986,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sdxdiixpervse 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1883,13 +2010,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sdtusippyvxsu 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1906,13 +2034,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7scanvyornrust 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1929,13 +2058,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7scajiuywtvgfj 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1952,13 +2082,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dklfkyqctgos 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1975,13 +2106,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7savnwypdinwdr 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -1998,13 +2130,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sajsnanyihgsi 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2021,13 +2154,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7docddagwnjbkj 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2044,13 +2178,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7hlyhddgobtsx 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2067,13 +2202,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7fhkhqjehvwqr 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2090,13 +2226,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7skedcaxgctwys 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2113,13 +2250,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dnngpesdntrrv 
 TEXNOLOGIYA === ROBOT -
-GBVA === GBAV -
+GBVA === GBAV +
 KONUS === TREUGOL`NIK -
-3 6 === 2 -
+1 2 === 2 -
 0 ===  -
 5 === 74 -
 135 === 3.3 -
@@ -2136,13 +2274,14 @@ A AND NOT C OR NOT A AND C === V -
 75 === 65 -
 2.5 === 3.2 -
 11010110 === 11 -
-214 === 15 -1
+214 === 15 -
+2
 
 robo7dnjdbeyhkbsom 
 TEXNOLOGIYA === ROBOT -
 GBVA === GBVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 3 -
 135 === 3.3 -
@@ -2159,13 +2298,14 @@ A AND NOT C OR NOT A AND C === V -
 75 === 65 -
 2.5 === 3.2 -
 11010110 === 11 -
-214 === 11 -3
+214 === 11 -
+5
 
 robo7diihtwvcgtes 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2182,13 +2322,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dorpceeyokesk 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2205,13 +2346,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dlfdfultbwpiq 
 TEXNOLOGIYA === ROBOT -
-GBVA === GBAV -
+GBVA === GBAV +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 3 -
 135 === 3.3 -
@@ -2228,13 +2370,14 @@ A AND NOT C OR NOT A AND C === V -
 75 === 65 -
 2.5 === 3.2 -
 11010110 === 11 -
-214 === 15 -2
+214 === 15 -
+4
 
 robo7lahwyclhtkvi 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2251,13 +2394,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dlacvanhelkov 
 TEXNOLOGIYA ===  -
 GBVA === GBVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 ===  -
 135 ===  -
@@ -2274,13 +2418,14 @@ A AND NOT C OR NOT A AND C === A AND C OR A AND D OR V AND C OR V AND D -
 75 === 75 +
 2.5 === 3 -
 11010110 ===  -
-214 ===  -4
+214 ===  -
+6
 
 robo7silcpsklryvmc 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2297,13 +2442,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7rvqedougygnu 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2320,13 +2466,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ptfxgxnxxsrr 
 TEXNOLOGIYA ===  -
 GBVA === GBVA +
 KONUS === KONUS +
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 53 -
 135 ===  -
@@ -2343,13 +2490,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 === 5625 -4
+214 === 5625 -
+6
 
 robo7shiymmyalcyea 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2366,13 +2514,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7djvrsdowiixli 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2389,13 +2538,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7djoyomgsqcpjl 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2412,13 +2562,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7aumwupcubaqs 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2435,13 +2586,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7irxmokscoots 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2458,13 +2610,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7fyqbohganmbh 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2481,13 +2634,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dhiymmyalcyea 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2504,13 +2658,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sfajclfvenhyu 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2527,13 +2682,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7xanuhenrhibj 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2550,13 +2706,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ypbyyyvhluah 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2573,13 +2730,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7loxwnryyalve 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2596,13 +2754,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7rjcplrehtlfj 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 1 -
 5 === 40 -
 135 === 24 -
@@ -2619,13 +2778,14 @@ A AND NOT C OR NOT A AND C === AND NOT NOT -
 75 === 86 -
 2.5 === 60 -
 11010110 === 23 -
-214 === 43 -2
+214 === 43 -
+4
 
 robo7dfajclfvenhyu 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === KONUS +
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 0.03 -
 135 === 0 0016 -
@@ -2642,13 +2802,14 @@ A AND NOT C OR NOT A AND C === C AND D OR A AND V -
 75 === 75 +
 2.5 === 100 -
 11010110 === 22 -
-214 === 3 3 -5
+214 === 3 3 -
+7
 
 robo7xhtjydynrgcl 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2665,13 +2826,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7kebplbvomill 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2688,13 +2850,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7sbltouujdrbwc 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2711,13 +2874,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7byejcrdqbdop 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2734,13 +2898,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ddxdiixpervse 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2757,13 +2922,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7cifwudhrusda 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2780,13 +2946,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7csfpjachaauo 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2803,13 +2970,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7cfhegounrkel 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2826,13 +2994,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7oydtdmhhrdne 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2849,13 +3018,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7fyxogfrsetfb 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2872,13 +3042,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7doornxifvpll 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2895,13 +3066,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7qgfllpvflvnp 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2918,13 +3090,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7jkecbafulhnx 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2941,13 +3114,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7hvxvaukjimqn 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2964,13 +3138,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7lsaevlnuwuut 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -2987,13 +3162,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7gvttpmdtjmyo 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3010,13 +3186,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7miaxmxmnwnbj 
 TEXNOLOGIYA === BOT -
 GBVA === GBVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 12 -
 135 === 36 -
@@ -3033,13 +3210,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 === 55 -
 2.5 ===  -
 11010110 ===  -
-214 ===  -2
+214 ===  -
+4
 
 robo7mndvtgepexju 
 TEXNOLOGIYA === TEXNOLOGIYA +
-GBVA === GBAV -
+GBVA === GBAV +
 KONUS === RAVNOSTORONNII TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 9 3 -
 135 === 14 -
@@ -3056,13 +3234,14 @@ A AND NOT C OR NOT A AND C === A OR C -
 75 === 76 -
 2.5 === 1 5 -
 11010110 ===  -
-214 ===  -4
+214 ===  -
+6
 
 robo7rtnmoqnscmsp 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3079,13 +3258,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7msyfcwslushu 
 TEXNOLOGIYA === DREVESINA -
-GBVA === BGVA -
+GBVA === BGVA +
 KONUS === RAVNOSTORONNII TREUGOL`NIK -
-3 6 === 0 1 2 -
+1 2 === 0 1 2 -
 0 === 0 +
 5 === 9 3 -
 135 === 14 -
@@ -3102,13 +3282,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -2
+214 ===  -
+3
 
 robo7mujlfyuwfgqd 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === PIRAMIDA -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 ===  -
 135 === 696 -
@@ -3125,13 +3306,14 @@ A AND NOT C OR NOT A AND C === ORORAND -
 75 === 75 +
 2.5 === 2 -
 11010110 === 12105611 -
-214 === 260 122084 -4
+214 === 260 122084 -
+6
 
 robo7mxkxsmhibmgu 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3148,13 +3330,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7rfgsjjpawqrm 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 === 0 +
 5 ===  -
 135 ===  -
@@ -3171,13 +3354,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -1
+214 ===  -
+1
 
 robo7pryrjbgwkkwn 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3194,13 +3378,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7nhewdmwxidrr 
 TEXNOLOGIYA === E`NERGIYA -
 GBVA === GBVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 10/3 -
 135 ===  -
@@ -3217,13 +3402,14 @@ A AND NOT C OR NOT A AND C === NOT A AND C OR NOT C AND A -
 75 === 75 +
 2.5 === 2.5 +
 11010110 === 110101100 -
-214 === 172 -10
+214 === 172 -
+12
 
 robo7ogwfqonglrqi 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3240,13 +3426,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7stxiefxvnwjo 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3263,13 +3450,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ojpitmmpxnss 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3286,13 +3474,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7hwqnatnugdnt 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3309,13 +3498,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ihjykwadqpva 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3332,13 +3522,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7yjfuwtnkhdye 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3355,13 +3546,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7irfowxayguie 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3378,13 +3570,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7pwdiuhfychet 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3401,13 +3594,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7pxestwrsocrk 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3424,13 +3618,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7scdqwwlpiyyx 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3447,13 +3642,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7svltkrqgedhn 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3470,13 +3666,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7hjoectbwevew 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3493,13 +3690,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7qbwbltqnqhyr 
 TEXNOLOGIYA === TEXNOLOGIYA +
-GBVA === BGVA -
+GBVA === BGVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === OTVET 4.99 -
 135 === OTVET 14.85 -
@@ -3516,13 +3714,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -2
+214 ===  -
+4
 
 robo7sishrihtaong 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3539,13 +3738,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7qgfjqecggseb 
 TEXNOLOGIYA === TEXNOLOGIYA +
-GBVA === BGVA -
+GBVA === BGVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === OTVET 4 99 -
 135 === OTVET 14 85 -
@@ -3562,13 +3762,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -2
+214 ===  -
+4
 
 robo7qghguxxjocwo 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3585,13 +3786,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7hgxulvqwwavx 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3608,13 +3810,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7qmkvrcdawiqt 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3631,13 +3834,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7jqxxbqsnewia 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3654,13 +3858,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7qowanehmlcvv 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3677,13 +3882,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7jwbhbmtldodn 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3700,13 +3906,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7reawmwovgxrm 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3723,13 +3930,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7kohpekgepmop 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === KONUS +
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 2 -
 135 === 3 -
@@ -3746,13 +3954,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -4
+214 ===  -
+6
 
 robo7rfjoyqrcvmmq 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === KONUS +
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 3 -
 135 === 5 -
@@ -3769,13 +3978,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -6
+214 ===  -
+8
 
 robo7rfjrvdexweik 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 36 -
 135 === 24 -
@@ -3792,13 +4002,14 @@ A AND NOT C OR NOT A AND C === 4 -
 75 === 145 -
 2.5 === 67 -
 11010110 === 14 -
-214 === 9 -3
+214 === 9 -
+5
 
 robo7kfubrrqpojmv 
 TEXNOLOGIYA === TEXNOLOGIYA +
-GBVA === GBAV -
+GBVA === GBAV +
 KONUS === RAVNOBEDRENNY`I TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 5 +
 135 ===  -
@@ -3815,13 +4026,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 === 75 +
 2.5 === 2.5 +
 11010110 ===  -
-214 ===  -7
+214 ===  -
+9
 
 robo7rmnslisgldvm 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 3 -
 135 === 12 -
@@ -3838,13 +4050,14 @@ A AND NOT C OR NOT A AND C === 10 -
 75 === 145 -
 2.5 === 56 -
 11010110 === 1101110101110 -
-214 ===  -3
+214 ===  -
+5
 
 robo7okfpahsmhemb 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3861,13 +4074,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7rnnrkinjioei 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 ===  -
 135 ===  -
@@ -3884,13 +4098,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -3
+214 ===  -
+5
 
 robo7rsnqhcmaxamm 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3907,13 +4122,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7tkwgfvkrblmm 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3930,13 +4146,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7rlnhnftcavje 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 3 -
 135 === 3 -
@@ -3953,13 +4170,14 @@ A AND NOT C OR NOT A AND C === 7 -
 75 === 15 -
 2.5 === 84 -
 11010110 === 11 -
-214 === 20 -4
+214 === 20 -
+6
 
 robo7opekacokxpby 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3976,13 +4194,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7tyesfupjgmsm 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -3999,13 +4218,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ugrakvnanntx 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4022,13 +4242,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7uimfnnjnpihp 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4045,13 +4266,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7qnypmibllpgs 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4068,13 +4290,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7djwjfbecnxrs 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4091,13 +4314,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7qunkwbmyyyvt 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4114,13 +4338,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7qxqtahmcmsrs 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4137,13 +4362,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7etcfpwqmwlmy 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4160,13 +4386,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7bbrhalvlcujf 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4183,13 +4410,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7nctrccreiwff 
 TEXNOLOGIYA === CHPU -
-GBVA === GVBA -
+GBVA === GVBA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 16 -
 135 === 40 -
@@ -4206,13 +4434,14 @@ A AND NOT C OR NOT A AND C === OR SENSOR2 -
 75 === 52 50 -
 2.5 === 50 -
 11010110 === 11 -
-214 === 31 -1
+214 === 31 -
+3
 
 robo7dbbrjtuqqobd 
 TEXNOLOGIYA === MASHINA -
 GBVA === BGAV -
 KONUS === TREUGOL`NIK -
-3 6 === 0 3 -
+1 2 === 0 3 -
 0 === 0 +
 5 ===  -
 135 ===  -
@@ -4229,13 +4458,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -1
+214 ===  -
+1
 
 robo7jfhhsccsjwel 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4252,13 +4482,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7jsvxfitvxftr 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4275,13 +4506,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7jxuswygbffwr 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4298,13 +4530,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7eedbreksrjtd 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4321,13 +4554,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7wavlmhmxtsdw 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4344,13 +4578,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7jhjtdixloipr 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4367,13 +4602,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ccsnxvdcvrhb 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4390,13 +4626,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7jxkbwfwjwead 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4413,13 +4650,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7elqhbgpfyuul 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4436,13 +4674,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7vyhrgikluuci 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4459,13 +4698,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7wdcnsdqxawbl 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4482,13 +4722,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7jxrigldpcbho 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4505,13 +4746,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7wyuwapnjyfnd 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4528,13 +4770,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7jsbqyrulrxus 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4551,13 +4794,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7lgmsteleodlb 
 TEXNOLOGIYA ===  -
-GBVA === GVBA -
+GBVA === GVBA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 ===  -
 135 ===  -
@@ -4574,13 +4818,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -1
+214 ===  -
+3
 
 robo7yrhtgndvkqum 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4597,13 +4842,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7aiuivpuopmup 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4620,13 +4866,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dyvjxnspubqjp 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4643,13 +4890,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dysuipywatpfo 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4666,13 +4914,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7bjjwxbfmsdjg 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4689,13 +4938,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7bljpppdukftw 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4712,13 +4962,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7cdyvkbjrktyc 
 TEXNOLOGIYA === OBORUDOVANIE -
 GBVA === GBVA +
 KONUS === KONUS +
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 5 +
 135 === 45 -
@@ -4735,13 +4986,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -6
+214 ===  -
+8
 
 robo7aecbwcyohbmt 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4758,13 +5010,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dyhosfimlavbt 
 TEXNOLOGIYA ===  -
 GBVA === BVAG -
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 ===  -
 135 ===  -
@@ -4781,13 +5034,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -2
+214 ===  -
+3
 
 robo7dxwjjlkrmgbnw 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4804,13 +5058,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7kxcmudxivifb 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === BVAG -
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 3:2 -
 135 === 10:9 3:1 -
@@ -4827,13 +5082,14 @@ A AND NOT C OR NOT A AND C === A OR V = SENSOR1 = 100 -
 75 === 13 -
 2.5 === 63 -
 11010110 ===  -
-214 ===  -2
+214 ===  -
+3
 
 robo7bjfnmcvtdvik 
 TEXNOLOGIYA === ISKUSTVENNY`I INTELEKT -
 GBVA === GBVA +
 KONUS === TRIUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 3 -
 135 === 12 -
@@ -4850,13 +5106,14 @@ A AND NOT C OR NOT A AND C === 3 -
 75 === 25 -
 2.5 === 54 -
 11010110 === 0000000000 -
-214 === 98 -2
+214 === 98 -
+4
 
 robo7edtqvolcywjj 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4873,13 +5130,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dxpypjgtlhfte 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4896,13 +5154,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dxlgjpavrcjpb 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4919,13 +5178,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7uprtsddrghfb 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4942,13 +5202,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7scipbualmlht 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4965,13 +5226,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7vcfscjjbbmcb 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -4988,13 +5250,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7bvhfdoykoipa 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5011,13 +5274,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7kdmnhjpctdjk 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5034,13 +5298,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dvrenlebjtccg 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5057,13 +5322,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dvftyveolprfd 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5080,13 +5346,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dvbvfenodqasa 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5103,13 +5370,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7kdyukutjtbdc 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === KONUS +
-3 6 === 0 3 -
+1 2 === 0 3 -
 0 === 0 +
 5 === 1/5 -
 135 === 3/25 -
@@ -5126,13 +5394,14 @@ A AND NOT C OR NOT A AND C === C -
 75 === 60 -
 2.5 === 1 -
 11010110 === 11010110 +
-214 === 107 -8
+214 === 107 -
+9
 
 robo7dsglrexvtjmxy 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5149,13 +5418,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7drwwaakwyprxn 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5172,13 +5442,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7cmjhfwkxsdcv 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5195,13 +5466,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dqcdevpwubfgs 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5218,13 +5490,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7iiphkofmymlt 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5241,13 +5514,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dscymqdhsgbs 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5264,13 +5538,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7acepekpqcani 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5287,13 +5562,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7fcscbqauyini 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5310,13 +5586,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dciejyhlqkrg 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5333,13 +5610,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7atoiygdxfotx 
 TEXNOLOGIYA === TEXNOLOGIYA +
-GBVA === GVBA -
+GBVA === GVBA +
 KONUS === TREUGOL`NIK -
-3 6 === 0 3 -
+1 2 === 0 3 -
 0 === 1 -
 5 ===  -
 135 ===  -
@@ -5356,13 +5634,14 @@ A AND NOT C OR NOT A AND C === A OR V AND C OR D -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -1
+214 ===  -
+2
 
 robo7ywrkhlklbrbm 
 TEXNOLOGIYA === TEXNOLOGIYA +
-GBVA === GVBA -
+GBVA === GVBA +
 KONUS === RAVNOSTORONNII TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 1:0.2 -
 135 === 1:9 -
@@ -5379,13 +5658,14 @@ A AND NOT C OR NOT A AND C === A OR C -
 75 === 75 +
 2.5 === 10 -
 11010110 === 10101110 -
-214 === 174 -5
+214 === 174 -
+7
 
 robo7epaigaghmsye 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5402,13 +5682,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7vcvievhkuxde 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5425,13 +5706,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dminljnrepxv 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5448,13 +5730,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7bdujtwyvcgdk 
 TEXNOLOGIYA === ISKUSTVENNY`I INTILEKT -
-GBVA === BVGA -
+GBVA === BVGA +
 KONUS === RAVNOBEDRENNY`I TREUGOL`NIK -
-3 6 === 1 3 -
+1 2 === 1 3 -
 0 === 0 +
 5 === 9 -
 135 === 26 -
@@ -5471,13 +5754,14 @@ A AND NOT C OR NOT A AND C === 3 -
 75 === 25 -
 2.5 === 31 -
 11010110 === 98 -
-214 === 68 -1
+214 === 68 -
+1.5
 
 robo7dkssdsldebesn 
 TEXNOLOGIYA ===  -
-GBVA === VBGA -
+GBVA === VBGA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 5 +
 135 === 75 -
@@ -5494,13 +5778,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 === 70 -
 2.5 === 2 -
 11010110 ===  -
-214 ===  -4
+214 ===  -
+6
 
 robo7dkedcaxgctwys 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5517,13 +5802,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -1
+214 ===  -
+1
 
 robo7ffobmdcelkrx 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5540,13 +5826,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7kquoigaqktsn 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5563,13 +5850,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dilcpsklryvmc 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5586,13 +5874,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dhuorjosamibd 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5609,13 +5898,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7utfqjrfqytsl 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5632,13 +5922,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dhfmxrkecwitr 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5655,13 +5946,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dhcmlofmpmekt 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5678,13 +5970,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dhbmdahyviuem 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === KONUS +
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 ===  -
 135 ===  -
@@ -5701,13 +5994,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -4
+214 ===  -
+6
 
 robo7dgrgkymfjrsui 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5724,13 +6018,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7boptpfmagbby 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5747,13 +6042,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7detxbafkrejsf 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5770,13 +6066,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dephpqtbhlrkr 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5793,13 +6090,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7delthrowhfexl 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5816,13 +6114,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7nukxygdjnmky 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5839,13 +6138,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ddtusippyvxsu 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === KONUS +
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 ===  -
 135 ===  -
@@ -5862,13 +6162,14 @@ A AND NOT C OR NOT A AND C === SENSOR1 OR SENSOR2 > C OR A -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -4
+214 ===  -
+6
 
 robo7dcanvyornrust 
 TEXNOLOGIYA === TEXNOLOGIYA +
-GBVA === GBAV -
+GBVA === GBAV +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 1 5 -
 135 === 5 -
@@ -5885,13 +6186,14 @@ A AND NOT C OR NOT A AND C === V OR C -
 75 === 75 +
 2.5 === 3 -
 11010110 === 01010101 -
-214 === 85 10 -4
+214 === 85 10 -
+6
 
 robo7dcajiuywtvgfj 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5908,13 +6210,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dbltouujdrbwc 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5931,13 +6234,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7davnwypdinwdr 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5954,13 +6258,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dajsnanyihgsi 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -5977,13 +6282,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7lqivdyyeuvod 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6000,13 +6306,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7knessaucyqxx 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6023,13 +6330,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ytxklgfhcrll 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6046,13 +6354,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7dpegrwvgajcrg 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6069,13 +6378,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7yragpfduqvet 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 0.2 -
 135 === 6 -
@@ -6092,13 +6402,14 @@ A AND NOT C OR NOT A AND C === V AND D OR A AND C -
 75 === 75 +
 2.5 === 2.5 +
 11010110 === 110101100 -
-214 === 428 -9
+214 === 428 -
+11
 
 robo7dynshbestgap 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6115,13 +6426,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7cftekxjyioqi 
 TEXNOLOGIYA === TEXNOLOGIYA +
-GBVA === GVBA -
+GBVA === GVBA +
 KONUS === KONUS +
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 5 +
 135 === 3 -
@@ -6138,13 +6450,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 === 75 +
 2.5 ===  -
 11010110 === 10 -
-214 ===  -5
+214 ===  -
+7
 
 robo7lpoikqqqgsbm 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6161,13 +6474,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7fbnqspufktdp 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6184,13 +6498,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7kglubrrqtumw 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6207,13 +6522,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7gqvpletyjrae 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6230,13 +6546,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7tahxpcpbicte 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6253,13 +6570,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7drrcgbflqpott 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6276,13 +6594,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7exidluepanvj 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6299,13 +6618,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7orbrxstydbuc 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6322,13 +6642,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7qaogxjycvkme 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6345,13 +6666,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7exoefivqgqap 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6368,13 +6690,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7gixambdxqtjd 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6391,13 +6714,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7fwrhmotbwqin 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6414,13 +6738,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7yxbnmihnaakp 
 TEXNOLOGIYA === TEXNOLOGIYA +
 GBVA === GBVA +
 KONUS === TREUGOL`NIK -
-3 6 === 1 2 -
+1 2 === 1 2 +
 0 === 0 +
 5 === 1:0.2 -
 135 ===  -
@@ -6437,13 +6762,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 === 10101110 -
-214 === 174 -3
+214 === 174 -
+5
 
 robo7bwfmowwnjwta 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6460,13 +6786,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7legytaykbwnp 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6483,13 +6810,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ialaqqjoxysa 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6506,13 +6834,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7lnonutarsxhe 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6529,13 +6858,14 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
 robo7ucppxymnttoc 
 TEXNOLOGIYA ===  -
 GBVA ===  -
 KONUS ===  -
-3 6 ===  -
+1 2 ===  -
 0 ===  -
 5 ===  -
 135 ===  -
@@ -6552,5 +6882,6 @@ A AND NOT C OR NOT A AND C ===  -
 75 ===  -
 2.5 ===  -
 11010110 ===  -
-214 ===  -0
+214 ===  -
+0
 
