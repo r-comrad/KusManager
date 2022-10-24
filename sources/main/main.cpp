@@ -37,6 +37,10 @@ int main(int argc, char* argv[])
 
 //setlocale( LC_ALL,"Russian" ); 
 //freopen("aaa", "w", stdout);
+
+int yy = 0;
+++yy;
+
     WRITE_LOG("Start_main");
     eval::Core core("");
 
@@ -49,7 +53,7 @@ int main(int argc, char* argv[])
         // char* gg[sz] = {"", "generate", "200"};
         int sz = 5;
         //char* gg[sz] = {"", "getUsers", "-i"};
-        char* gg[sz] = {"", "getResults", "comp.txt", "", "robox8"};
+        char* gg[sz] = {"", "getResults", "comp.txt", " ", "robox8"};
         core.run(sz, gg);
     }
     else

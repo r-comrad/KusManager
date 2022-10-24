@@ -1,3 +1,17 @@
+Информационная безопасность 10 класс
+END 	
+Информационная безопасность 11 класс
+END 	
+Информационная безопасность 7 класс
+END 	
+Информационная безопасность 8 класс
+END 	
+Информационная безопасность 9 класс
+END
+Техника, технологии и техническое творчество 5 классы
+END 	
+Техника, технологии и техническое творчество 6 классы
+END
 Техника, технологии и техническое творчество 7 класс
 412
 TYPE: Multiple
@@ -169,6 +183,10 @@ WEIGHT: 2
 588
 WEIGHT: 2
 END
+Культура дома, дизайн и технологии 5 классы
+END 	
+Культура дома, дизайн и технологии 6 классы
+END
 Культура дома, дизайн и технологии 7 классы
 412
 TYPE: Multiple
@@ -177,7 +195,7 @@ WEIGHT: 0.5
 TYPE: Multiple
 WEIGHT: 0.5
 429
-TYPE: Multiple
+TYPE: MultipleStrong
 WEIGHT: 0.5
 430
 TYPE: Multiple
@@ -187,7 +205,7 @@ TYPE: Multiple
 TYPE: Multiple
 WEIGHT: 0.5
 435
-TYPE: Multiple
+TYPE: MultipleStrong
 WEIGHT: 0.5
 END
 Культура дома, дизайн и технологии 8 классы
@@ -198,7 +216,7 @@ WEIGHT: 0.5
 TYPE: Multiple
 WEIGHT: 0.5
 429
-TYPE: Multiple
+TYPE: MultipleStrong
 WEIGHT: 0.5
 430
 TYPE: Multiple
@@ -208,7 +226,7 @@ TYPE: Multiple
 TYPE: Multiple
 WEIGHT: 0.5
 435
-TYPE: Multiple
+TYPE: MultipleStrong
 WEIGHT: 0.5
 END
 Культура дома, дизайн и технологии 9 классы
@@ -218,7 +236,7 @@ TYPE: Multiple
 TYPE: Multiple
 WEIGHT: 0.5
 444
-TYPE: Multiple
+TYPE: MultipleStrong
 WEIGHT: 0.5
 445
 TYPE: Multiple
@@ -230,7 +248,7 @@ WEIGHT: 0.5
 TYPE: Multiple
 WEIGHT: 0.5
 449
-TYPE: Multiple
+TYPE: MultipleStrong
 WEIGHT: 0.5
 448
 TYPE: Multiple
@@ -256,7 +274,7 @@ WEIGHT: 0.5
 TYPE: Multiple
 WEIGHT: 0.5
 472
-TYPE: Multiple
+TYPE: MultipleStrong
 WEIGHT: 0.5
 473
 TYPE: Multiple
@@ -286,7 +304,7 @@ WEIGHT: 0.5
 TYPE: Multiple
 WEIGHT: 0.5
 472
-TYPE: Multiple
+TYPE: MultipleStrong
 WEIGHT: 0.5
 473
 TYPE: Multiple

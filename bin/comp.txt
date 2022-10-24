@@ -1,3 +1,247 @@
+Информационная безопасность 7 класс
+408
+WEIGHT: 2
+438
+WEIGHT: 2
+439
+WEIGHT: 2
+439
+WEIGHT: 2
+435
+WEIGHT: 2
+418
+WEIGHT: 2
+419
+WEIGHT: 2
+420
+WEIGHT: 2
+421
+WEIGHT: 2
+422
+WEIGHT: 2
+423
+WEIGHT: 2
+424
+WEIGHT: 2
+425
+WEIGHT: 3
+426
+WEIGHT: 6
+427
+WEIGHT: 10
+428
+WEIGHT: 12
+422
+ANS: 0
+425
+ANS: 0
+END
+Информационная безопасность 8 класс
+408
+WEIGHT: 2
+438
+WEIGHT: 2
+439
+WEIGHT: 2
+439
+WEIGHT: 2
+435
+WEIGHT: 2
+418
+WEIGHT: 2
+419
+WEIGHT: 2
+420
+WEIGHT: 2
+421
+WEIGHT: 2
+422
+WEIGHT: 2
+423
+WEIGHT: 2
+424
+WEIGHT: 2
+425
+WEIGHT: 3
+426
+WEIGHT: 6
+427
+WEIGHT: 10
+428
+WEIGHT: 12
+422
+ANS: 0
+425
+ANS: 0
+END
+Информационная безопасность 9 класс
+429
+WEIGHT: 2
+430
+WEIGHT: 2
+431
+WEIGHT: 2
+432
+WEIGHT: 2
+433
+WEIGHT: 2
+465
+WEIGHT: 2
+466
+WEIGHT: 2
+467
+WEIGHT: 2
+468
+WEIGHT: 2
+469
+WEIGHT: 2
+470
+WEIGHT: 2
+471
+WEIGHT: 2
+472
+WEIGHT: 3
+473
+WEIGHT: 6
+474
+WEIGHT: 10
+496
+WEIGHT: 12
+END
+Информационная безопасность 10 класс
+475
+WEIGHT: 2
+476
+WEIGHT: 2
+477
+WEIGHT: 2
+478
+WEIGHT: 2
+480
+WEIGHT: 2
+485
+WEIGHT: 2
+486
+WEIGHT: 2
+487
+WEIGHT: 2
+488
+WEIGHT: 2
+489
+WEIGHT: 2
+490
+WEIGHT: 2
+491
+WEIGHT: 2
+492
+WEIGHT: 3
+493
+WEIGHT: 6
+495
+WEIGHT: 10
+494
+WEIGHT: 12
+492
+ANS: 1
+END
+Информационная безопасность 11 класс
+475
+WEIGHT: 2
+476
+WEIGHT: 2
+477
+WEIGHT: 2
+478
+WEIGHT: 2
+480
+WEIGHT: 2
+485
+WEIGHT: 2
+486
+WEIGHT: 2
+487
+WEIGHT: 2
+488
+WEIGHT: 2
+489
+WEIGHT: 2
+490
+WEIGHT: 2
+491
+WEIGHT: 2
+492
+WEIGHT: 3
+493
+WEIGHT: 6
+495
+WEIGHT: 10
+494
+WEIGHT: 12
+492
+ANS: 1
+END
+Техника, технологии и техническое творчество 5 классы
+440
+WEIGHT: 0.5
+TYPE: Multiple
+451
+WEIGHT: 2
+452
+WEIGHT: 2
+453
+WEIGHT: 0.5
+TYPE: Multiple
+454
+WEIGHT: 2
+455
+WEIGHT: 1
+TYPE: Multiple
+456
+WEIGHT: 1
+TYPE: Multiple
+457
+WEIGHT: 2
+ADD_ANS: Первичный двигатель
+ADD_ANS: Электродвигатель
+ADD_ANS: ДВС
+458
+WEIGHT: 2
+459
+ADD_ANS: пропильная
+ADD_ANS: прорезная резьба
+ADD_ANS: пропильная резьба
+END
+Техника, технологии и техническое творчество 6 классы
+440
+WEIGHT: 0.5
+TYPE: Multiple
+451
+WEIGHT: 2
+452
+WEIGHT: 2
+453
+WEIGHT: 0.5
+TYPE: Multiple
+454
+WEIGHT: 2
+455
+WEIGHT: 1
+TYPE: Multiple
+456
+WEIGHT: 1
+TYPE: Multiple
+457
+WEIGHT: 2
+ADD_ANS: Первичный двигатель
+ADD_ANS: Электродвигатель
+ADD_ANS: ДВС
+458
+WEIGHT: 2
+459
+ADD_ANS: пропильная
+ADD_ANS: прорезная резьба
+ADD_ANS: пропильная резьба
+END
 Техника, технологии и техническое творчество 7 класс
 412
 TYPE: Multiple
@@ -168,6 +412,60 @@ WEIGHT: 2
 WEIGHT: 2
 588
 WEIGHT: 2
+END
+Культура дома, дизайн и технологии 5 классы
+440
+WEIGHT: 0.5
+436
+WEIGHT: 2
+441
+WEIGHT: 2
+443
+WEIGHT: 2
+444
+WEIGHT: 2
+442
+WEIGHT: 0.5
+TYPE: Multiple
+446
+WEIGHT: 0.5
+TYPE: Multiple
+447
+WEIGHT: 1
+TYPE: Multiple
+449
+WEIGHT: 0.5
+TYPE: Multiple
+450
+WEIGHT: 1
+TYPE: MultipleStrong
+END
+Культура дома, дизайн и технологии 6 классы
+440
+WEIGHT: 0.5
+436
+WEIGHT: 2
+441
+WEIGHT: 2
+443
+WEIGHT: 2
+444
+WEIGHT: 2
+442
+WEIGHT: 0.5
+TYPE: Multiple
+446
+WEIGHT: 0.5
+TYPE: Multiple
+447
+WEIGHT: 1
+TYPE: Multiple
+449
+WEIGHT: 0.5
+TYPE: Multiple
+450
+WEIGHT: 1
+TYPE: MultipleStrong
 END
 Культура дома, дизайн и технологии 7 классы
 412

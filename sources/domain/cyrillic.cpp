@@ -148,6 +148,14 @@ dom::Cyrilic::destroyBadCharacters(std::wstring& aStr) noexcept
         {
             i = L' ';
         }
+        else if (i == L':')
+        {
+            i = L' ';
+        }
+        else if (i == L';')
+        {
+            i = L' ';
+        }
     }
 }
 
