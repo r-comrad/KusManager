@@ -1,7 +1,299 @@
-Робототехника 7 класс
+Техника, технологии и техническое творчество 7 класс
 412
-ADD_ANS: 3 6
-410
 TYPE: Multiple
-410
-WEIGHT: 0.7
+WEIGHT: 0.5
+475
+WEIGHT: 2
+477
+ANS: 1
+481
+WEIGHT: 2
+483
+WEIGHT: 2
+484
+WEIGHT: 2
+487
+WEIGHT: 2
+TYPE: Multiple
+488
+WEIGHT: 0.5
+TYPE: Multiple
+END
+Техника, технологии и техническое творчество 8 класс
+412
+TYPE: Multiple
+WEIGHT: 0.5
+475
+WEIGHT: 2
+477
+ANS: 1
+481
+WEIGHT: 2
+483
+WEIGHT: 2
+484
+WEIGHT: 2
+487
+WEIGHT: 2
+TYPE: Multiple
+488
+WEIGHT: 0.5
+TYPE: Multiple
+END
+Техника, технологии и техническое творчество 9 класс
+491
+WEIGHT: 2
+492
+WEIGHT: 2
+497
+TYPE: Multiple
+499
+WEIGHT: 2
+501
+TYPE: Multiple
+ANS: BV
+504
+ANS: 1
+END
+Техника, технологии и техническое творчество 10 класс
+508
+WEIGHT: 2
+512
+WEIGHT: 2
+513
+WEIGHT: 2
+517
+WEIGHT: 2
+520
+WEIGHT: 2
+END
+Техника, технологии и техническое творчество 11 класс
+508
+WEIGHT: 2
+512
+WEIGHT: 2
+513
+WEIGHT: 2
+517
+WEIGHT: 2
+520
+WEIGHT: 2
+END
+Робототехника 5 класс
+525
+ADD_ANS: 2484082424
+WEIGHT: 2
+527
+WEIGHT: 2
+528
+WEIGHT: 2
+534
+WEIGHT: 2
+535
+WEIGHT: 2
+END
+Робототехника 6 класс
+525
+ADD_ANS: 2484082424
+WEIGHT: 2
+527
+WEIGHT: 2
+528
+WEIGHT: 2
+534
+WEIGHT: 2
+535
+WEIGHT: 2
+END
+Робототехника 7 класс
+539
+WEIGHT: 2
+ADD_ANS: 8248241236840
+541
+WEIGHT: 2
+542
+WEIGHT: 2
+556
+WEIGHT: 2
+END
+Робототехника 8 класс
+539
+WEIGHT: 2
+ADD_ANS: 8248241236840
+541
+WEIGHT: 2
+542
+WEIGHT: 2
+556
+WEIGHT: 2
+END
+Робототехника 9 класс
+561
+WEIGHT: 2
+562
+WEIGHT: 2
+565
+WEIGHT: 2
+566
+WEIGHT: 2
+571
+WEIGHT: 2
+574
+WEIGHT: 2
+END
+Робототехника 10 класс
+579
+WEIGHT: 2
+580
+WEIGHT: 3
+581
+WEIGHT: 2
+585
+WEIGHT: 2
+587
+WEIGHT: 2
+588
+WEIGHT: 2
+END
+Робототехника 11 класс
+579
+WEIGHT: 2
+580
+WEIGHT: 3
+581
+WEIGHT: 2
+585
+WEIGHT: 2
+587
+WEIGHT: 2
+588
+WEIGHT: 2
+END
+Культура дома, дизайн и технологии 7 классы
+412
+TYPE: Multiple
+WEIGHT: 0.5
+428
+TYPE: Multiple
+WEIGHT: 0.5
+429
+TYPE: MultipleStrong
+WEIGHT: 0.5
+430
+TYPE: Multiple
+432
+TYPE: Multiple
+434
+TYPE: Multiple
+WEIGHT: 0.5
+435
+TYPE: MultipleStrong
+WEIGHT: 0.5
+END
+Культура дома, дизайн и технологии 8 классы
+412
+TYPE: Multiple
+WEIGHT: 0.5
+428
+TYPE: Multiple
+WEIGHT: 0.5
+429
+TYPE: MultipleStrong
+WEIGHT: 0.5
+430
+TYPE: Multiple
+432
+TYPE: Multiple
+434
+TYPE: Multiple
+WEIGHT: 0.5
+435
+TYPE: MultipleStrong
+WEIGHT: 0.5
+END
+Культура дома, дизайн и технологии 9 классы
+439
+TYPE: Multiple
+443
+TYPE: Multiple
+WEIGHT: 0.5
+444
+TYPE: MultipleStrong
+WEIGHT: 0.5
+445
+TYPE: Multiple
+WEIGHT: 0.5
+446
+TYPE: Multiple
+WEIGHT: 0.5
+450
+TYPE: Multiple
+WEIGHT: 0.5
+449
+TYPE: MultipleStrong
+WEIGHT: 0.5
+448
+TYPE: Multiple
+WEIGHT: 0.5
+ANS: 1345
+END
+Культура дома, дизайн и технологии 10 классы
+456
+ADD_ANS: ЕСКД
+ADD_ANS: единой системой конструкторской документации
+463
+ANS: 123459
+TYPE: Complex
+468
+TYPE: Complex
+469
+TYPE: Multiple
+WEIGHT: 0.5
+470
+TYPE: Multiple
+WEIGHT: 0.5
+471
+TYPE: Multiple
+WEIGHT: 0.5
+472
+TYPE: MultipleStrong
+WEIGHT: 0.5
+473
+TYPE: Multiple
+WEIGHT: 0.5
+474
+TYPE: Multiple
+WEIGHT: 0.5
+473
+TYPE: Complex
+END
+Культура дома, дизайн и технологии 11 классы
+456
+ADD_ANS: ЕСКД
+ADD_ANS: единой системой конструкторской документации
+463
+ANS: 123459
+TYPE: Complex
+468
+TYPE: Complex
+469
+TYPE: Multiple
+WEIGHT: 0.5
+470
+TYPE: Multiple
+WEIGHT: 0.5
+471
+TYPE: Multiple
+WEIGHT: 0.5
+472
+TYPE: MultipleStrong
+WEIGHT: 0.5
+473
+TYPE: Multiple
+WEIGHT: 0.5
+474
+TYPE: Multiple
+WEIGHT: 0.5
+473
+TYPE: Complex
+END

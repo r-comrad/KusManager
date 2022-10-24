@@ -12,7 +12,7 @@ dom::Cyrilic::standardProcedure(std::wstring& aStr) noexcept
     dom::Cyrilic::global.cutOffEnding(aStr);
     dom::Cyrilic::global.destroyBadCharacters(aStr);
     dom::Cyrilic::global.toUpper(aStr);
-    dom::Cyrilic::global.destroyWhiteSpaces(aStr);
+    dom::Cyrilic::global.destroyWhiteSpaces(aStr, true);
 }
 
 void 
@@ -140,6 +140,10 @@ dom::Cyrilic::destroyBadCharacters(std::wstring& aStr) noexcept
         {
             i = L' ';
         }
+        else if (i == L'.')
+        {
+            i = L' ';
+        }
         else if (i == L'-')
         {
             i = L' ';
@@ -188,12 +192,19 @@ dom::Cyrilic::cutOffEnding(std::wstring& aStr) noexcept
 {
     if (aStr.size() < 5) return;
 
-    std::vector<std::wstring> endings = {L"ой", L"ая", L"ое", L"ые"};
+    if (aStr == L"геометрическая")
+    {
+        int yy=0;
+        ++yy;
+    }
 
+    std::vector<std::wstring> endings = {L"ой", L"ая", L"ое", L"ые"};
+    aStr.push_back(L' ');
     for(auto& i : endings)
     {
-        destroyWord(aStr, L" " + i);
+        destroyWord(aStr, i + L" ");
     }
+    if (aStr.back() == L' ') aStr.pop_back();
 }
 
 //--------------------------------------------------------------------------------

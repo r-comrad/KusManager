@@ -338,6 +338,8 @@ data::DatabaseQuery::getQuestionNumbers(int aCompetitionID) noexcept
 
 //--------------------------------------------------------------------------------
 #include <map>
+
+
 #include <sstream>
 #include <cwctype>
 

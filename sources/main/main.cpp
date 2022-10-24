@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
         // char* gg[sz] = {"", "generate", "200"};
         int sz = 5;
         //char* gg[sz] = {"", "getUsers", "-i"};
-        char* gg[sz] = {"", "getResults", "comp.txt", "-p", "robox8"};
+        char* gg[sz] = {"", "getResults", "comp.txt", "", "robox8"};
         core.run(sz, gg);
     }
     else
