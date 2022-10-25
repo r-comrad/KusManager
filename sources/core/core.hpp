@@ -27,6 +27,18 @@ namespace eval
         void makeNames() noexcept;
         void getResults() noexcept;
     private:
+        enum class QuestionType 
+        {Standart, Multiple, MultipleStrong, Complex};
+        struct Question
+        {
+            int id = 0;
+            std::wstring name;
+            std::vector<std::wstring> ans;
+            QuestionType type = QuestionType::Standart;
+            double weight = 1; 
+        };
+
+
         enum class Command
         {
             NUN = 0, 

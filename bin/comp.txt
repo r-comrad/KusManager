@@ -1,11 +1,13 @@
 Информационная безопасность 7 класс
 408
+DELETE
+437
 WEIGHT: 2
 438
 WEIGHT: 2
 439
 WEIGHT: 2
-439
+440
 WEIGHT: 2
 435
 WEIGHT: 2
@@ -39,13 +41,13 @@ END
 Информационная безопасность 8 класс
 408
 WEIGHT: 2
-438
+410
 WEIGHT: 2
-439
+409
 WEIGHT: 2
-439
+411
 WEIGHT: 2
-435
+412
 WEIGHT: 2
 418
 WEIGHT: 2
@@ -67,8 +69,6 @@ WEIGHT: 3
 WEIGHT: 6
 427
 WEIGHT: 10
-428
-WEIGHT: 12
 422
 ANS: 0
 425
@@ -202,6 +202,7 @@ TYPE: Multiple
 457
 WEIGHT: 2
 ADD_ANS: Первичный двигатель
+ADD_ANS: Первый двигатель
 ADD_ANS: Электродвигатель
 ADD_ANS: ДВС
 458
@@ -416,6 +417,7 @@ END
 Культура дома, дизайн и технологии 5 классы
 440
 WEIGHT: 0.5
+TYPE: Multiple
 436
 WEIGHT: 2
 441
@@ -428,7 +430,7 @@ WEIGHT: 2
 WEIGHT: 0.5
 TYPE: Multiple
 446
-WEIGHT: 0.5
+WEIGHT: 1
 TYPE: Multiple
 447
 WEIGHT: 1
@@ -443,6 +445,7 @@ END
 Культура дома, дизайн и технологии 6 классы
 440
 WEIGHT: 0.5
+TYPE: Multiple
 436
 WEIGHT: 2
 441
@@ -455,7 +458,7 @@ WEIGHT: 2
 WEIGHT: 0.5
 TYPE: Multiple
 446
-WEIGHT: 0.5
+WEIGHT: 1
 TYPE: Multiple
 447
 WEIGHT: 1

@@ -409,54 +409,22 @@ eval::Core::getResults() noexcept
         auto compInfo = mDBQ.getCompetitionInfo(aCompetitionName);
         auto questionsIDs = mDBQ.getQuestionNumbers(compInfo.id);
 
-
         auto groupsIDs = mDBQ.getGroupIDs(compInfo.id);
         auto userIDs = mDBQ.getUserIDs(groupsIDs);
         auto userNames = mDBQ.getUserNames(userIDs);
 
-        // {
-        //     auto questionNames = mDBQ.getQuestionNames(questionsIDs);
-        //     decltype(questionNames) questionNameNumbers;
-        //     std::wstring temp;
-        //     for(auto& i : questionNames)
-        //     {
-        //         std::wstring name;
-        //         name.push_back(i.first[i.first.size() - 2]);
-        //         name.push_back(i.first.back());
-        //         questionNameNumbers[name] = i.second;
-        //     }
-            
-        //     while(compInfoFile >> temp)
-        //     {
-        //         std::wstring name = temp;
-        //         compInfoFile >> temp;
-        //         dom::Cyrilic::global.standardProcedure(temp);
-        //         questions[questionNameNumbers[name]] = temp;
-        //     }
-
-        //     if (int(mFlags) | int(CommandFlag::PRINT_LOG)) 
-        //     {
-        //         for(auto& i : questions)
-        //         {
-        //             std::wcout << i.first << L" " << i.second << L"\n";
-        //         }
-        //     }
-        // }
-
-        std::map<int, std::vector<std::wstring>> questions;
-        std::map<int, char> questionTypes;
-        std::map<int, double> questionWeight;
+        std::map<int, Question> questions;
+        auto questionsTemp = mDBQ.getQuestions(questionsIDs);
+        for(auto& i : questionsTemp)
         {
-            auto questionsTemp = mDBQ.getQuestions(questionsIDs);
-            for(auto& i : questionsTemp)
-            {
-                questions[i.first].push_back(i.second);
-            }
+            questions[i.first].ans.push_back(i.second);
+            //questions[i.first].id = i.first;
         }
-        for(auto& i : questions)
+
+        auto questionNames = mDBQ.getQuestionNames(questionsIDs);
+        for(auto& i : questionNames)
         {
-            questionTypes[i.first] = 0;
-            questionWeight[i.first] = 1;
+            questions[i.second].name = i.first;
         }
 
         {
@@ -469,48 +437,44 @@ eval::Core::getResults() noexcept
                     std::getline(compInfoFile, temp);
                     std::wstring ans = dom::Cyrilic::global.toWString(temp);
                     dom::Cyrilic::global.standardProcedure(ans);
-                    questions[id].clear();
-                    questions[id].push_back(ans);
+                    questions[id].ans.clear();
+                    questions[id].ans.push_back(ans);
                 }    
                 else if (temp == "ADD_ANS:")
                 {
                     std::getline(compInfoFile, temp);
                     std::wstring ans = dom::Cyrilic::global.toWString(temp);
                     dom::Cyrilic::global.standardProcedure(ans);
-                    questions[id].push_back(ans);
+                    questions[id].ans.push_back(ans);
                 }     
                 else if (temp == "TYPE:")
                 {
                     std::getline(compInfoFile, temp);
                     if(temp == " Standart")
                     {
-                        questionTypes[id] = 0;
+                        questions[id].type = QuestionType::Standart;
                     }
                     else if(temp == " Multiple")
                     {
-                        questionTypes[id] = 1;
-                        // for(auto& k : questions[id])
-                        // {
-                        //     dom::Cyrilic::global.destroyWhiteSpaces(k, true);
-                        // }
-                    }
-                    else if(temp == " Complex")
-                    {
-                        questionTypes[id] = 2;
+                        questions[id].type = QuestionType::Multiple;
                     }
                     else if(temp == " MultipleStrong")
                     {
-                        questionTypes[id] = 3;
-                        // for(auto& k : questions[id])
-                        // {
-                        //     dom::Cyrilic::global.destroyWhiteSpaces(k, true);
-                        // }
+                        questions[id].type = QuestionType::MultipleStrong;
+                    }
+                    else if(temp == " Complex")
+                    {
+                        questions[id].type = QuestionType::Complex;
                     }
                 }  
                 else if (temp == "WEIGHT:")
                 {
                     std::getline(compInfoFile, temp);
-                    questionWeight[id] = std::stod(temp);
+                    questions[id].weight = std::stod(temp);
+                } 
+                else if (temp == "DELETE")
+                {
+                    questions.erase(id);
                 } 
                 else if (temp == "END")
                 {
@@ -523,34 +487,90 @@ eval::Core::getResults() noexcept
             }
         }
 
+        // {
+        //     std::vector<int> nums;
+        //     for(auto& q : questions)
+        //     {
+        //         nums.emplace_back(q.second.id);
+        //     }
+        //     auto questionNames = mDBQ.getQuestionNames(nums);
+        //     for(auto& i : questionNames)
+        //     {
+        //         questions[i.second].name = i.first;
+        //     }
+        // }
+        // auto questionNames = mDBQ.getQuestionNames(questionsIDs);
+        // for(auto& i : questionNames)
+        // {
+        //     if (questions.contains(i.second)) questions[i.second].name = i.first;
+        // }
+
+
+        std::map<std::wstring, int> questionMap;
+        for(auto& s : questions)
+        {
+            questionMap[s.second.name] = s.first;
+        }
+
+
         if (int(mFlags) & int(CommandFlag::PRINT_LOG)) 
         {
-            std::wcout << L"\nAnswers:\n";
-            for(auto& i : questions)
+            int cnt = 0;
+            for(auto& i : questionMap)
             {
-                std::wcout << i.first << L" ";      
-                for(int j = 0; j < i.second.size(); ++j)
+                auto it = questions.find(i.second);
+                std::wprintf(L"%2d%4d%s %4.1f %d = ", ++cnt, it->first, L": ",
+                    it->second.weight, int(it->second.type));
+
+                std::wstring res;
+                for(int j = 0; j < it->second.ans.size(); ++j)
                 {
-                    if (j > 0) std::wcout << L" || ";
-                    std::wcout << i.second[j];
+                    if (j > 0) res += L" || ";
+                    res += it->second.ans[j];
                 }
-                std::wcout << L"\n";
-            }
-            std::wcout << L"\n";
 
-            std::wcout << L"Type:\n";
-            for(auto& i : questionTypes)
-            {
-                std::wcout << i.first << L" " << int(i.second) << L"\n";
-            }
-            std::wcout << L"\n";
+                //std::wprintf(L"%hs (%ls)\n", it->second.name, res);
+                //std::wcout << res << L" (" + it->second.name + L")\n";
+                std::wcout << L"(" + it->second.name + L") = " << res << L'\n';
 
-            std::wcout << L"Weight:\n";
-            for(auto& i : questionWeight)
-            {
-                std::wcout << i.first << L" " << i.second << L"\n";
+                // auto it = questions.find(i.second);
+                // std::wcout << std::to_wstring(it->first) << L": " <<
+                //     std::to_wstring(it->second.weight) << L" = ";
+
+                // for(int j = 0; j < it->second.ans.size(); ++j)
+                // {
+                //     if (j > 0) std::wcout << L" || ";
+                //     std::wcout << it->second.ans[j];
+                // }
+                // std::wcout <<  L" (" << it->second.name << L")\n";
             }
-            std::wcout << L"\n";
+
+            // std::wcout << L"\nAnswers:\n";
+            // for(auto& i : questions)
+            // {
+            //     std::wcout << i.first << L" ";      
+            //     for(int j = 0; j < i.second.size(); ++j)
+            //     {
+            //         if (j > 0) std::wcout << L" || ";
+            //         std::wcout << i.second[j];
+            //     }
+            //     std::wcout << L"\n";
+            // }
+            // std::wcout << L"\n";
+
+            // std::wcout << L"Type:\n";
+            // for(auto& i : questionTypes)
+            // {
+            //     std::wcout << i.first << L" " << int(i.second) << L"\n";
+            // }
+            // std::wcout << L"\n";
+
+            // std::wcout << L"Weight:\n";
+            // for(auto& i : questionWeight)
+            // {
+            //     std::wcout << i.first << L" " << i.second << L"\n";
+            // }
+            // std::wcout << L"\n";
         }
         //continue;
         for(auto& uID : userIDs)
@@ -558,8 +578,9 @@ eval::Core::getResults() noexcept
             auto userAns = mDBQ.getUserAnswers(questionsIDs, uID);
             std::wcout << userNames[uID] << L" ";
             double s = 0;
-            for(auto q : questions)
+            for(auto qID : questionMap)
             {  
+                auto& q = *questions.find(qID.second);
                 if (q.first == 473)
                 {
                     int yy = 0;
@@ -569,12 +590,12 @@ eval::Core::getResults() noexcept
 
                 if (int(mFlags) & int(CommandFlag::PRINT_LOG)) 
                 {
-                    std::wcout << L"\n" << q.second[0] << L" === " <<  userAns[q.first]; 
+                    std::wcout << L"\n" << q.second.ans[0] << L" === " <<  userAns[q.first]; 
                 }
                 int correctCount = 0;
-                if (questionTypes[q.first] == 0)
+                if (q.second.type == QuestionType::Standart)
                 {
-                    for(auto& ans : q.second)
+                    for(auto& ans : q.second.ans)
                     {
                         if (ans == userAns[q.first]) 
                         {
@@ -583,10 +604,10 @@ eval::Core::getResults() noexcept
                         }
                     }
                 }
-                else if (questionTypes[q.first] == 1 || questionTypes[q.first] == 2)
+                else if (q.second.type == QuestionType::Multiple || q.second.type == QuestionType::Complex)
                 {
                     dom::Cyrilic::global.destroyWhiteSpaces(userAns[q.first], true);
-                    for(auto& ans : q.second)
+                    for(auto& ans : q.second.ans)
                     {
                         int cnt = 0;
                         for(int k = 0; k < ans.size(); ++k)
@@ -597,16 +618,25 @@ eval::Core::getResults() noexcept
                                 ++cnt;
                             }
                         }
+                        if (cnt > 1 && ans.size() != userAns[q.first].size()) 
+                        {
+                            --cnt;
+                        }
                         correctCount = std::max(correctCount, cnt);
                         cnt = 0;
                     }
                 }
-                else if (questionTypes[q.first] == 3)
+                else if (q.second.type == QuestionType::MultipleStrong)
                 {
                     dom::Cyrilic::global.destroyWhiteSpaces(userAns[q.first], true);
-                    for(auto& ans : q.second)
+                    for(auto& ans : q.second.ans)
                     {
                         int cnt = 0;
+                        if (ans.size() != userAns[q.first].size()) 
+                        {
+                            correctCount = 0;
+                            break;
+                        }
                         for(int k = 0; k < ans.size(); ++k)
                         {
                             if (userAns[q.first].size() <= k) break;
@@ -619,13 +649,13 @@ eval::Core::getResults() noexcept
                         cnt = 0;
                     }
                 }
-                double old_s = s;
 
+                double old_s = s;
                 if (correctCount)
                 {
-                    if (questionTypes[q.first] != 2) 
+                    if (q.second.type != QuestionType::Complex) 
                     {
-                        s+= questionWeight[q.first] * correctCount;
+                        s+= q.second.weight * correctCount;
                     }
                     else
                     {
