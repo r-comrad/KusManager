@@ -53,8 +53,9 @@ Posdtgres::Posdtgres() noexcept
 
 //--------------------------------------------------------------------------------
 
-void Posdtgres::select(std::string aTableName, std::string aColum,
-                       std::string aConditon, int aStatementID) noexcept
+void
+Posdtgres::select(std::string aTableName, std::string aColum,
+                  std::string aConditon, int aStatementID) noexcept
 {
     if (aColum == "")
         aColum = "*";
@@ -68,8 +69,9 @@ void Posdtgres::select(std::string aTableName, std::string aColum,
 
 //--------------------------------------------------------------------------------
 
-void Posdtgres::update(std::string aTableName, std::string aValue,
-                       std::string aConditon, int aStatementID) noexcept
+void
+Posdtgres::update(std::string aTableName, std::string aValue,
+                  std::string aConditon, int aStatementID) noexcept
 {
     std::string statement =
         "UPDATE " + aTableName + " SET " + aValue + " WHERE " + aConditon;
@@ -78,7 +80,8 @@ void Posdtgres::update(std::string aTableName, std::string aValue,
 
 //--------------------------------------------------------------------------------
 
-bool Posdtgres::hasData(int aStatementID) noexcept
+bool
+Posdtgres::hasData(int aStatementID) noexcept
 {
     // return !mResultIterator[aStatementID].empty();
     return !mResultIterator[aStatementID][0].is_null();
@@ -86,8 +89,8 @@ bool Posdtgres::hasData(int aStatementID) noexcept
 
 //--------------------------------------------------------------------------------
 
-std::optional<dom::CharArray> Posdtgres::getTextFromRow(
-    int aColumNumber, int aStatementID) noexcept
+std::optional<dom::CharArray>
+Posdtgres::getTextFromRow(int aColumNumber, int aStatementID) noexcept
 {
     std::optional<dom::CharArray> result = {};
     auto ptr = mResultIterator[aStatementID][aColumNumber].as<const char*>();
@@ -101,7 +104,8 @@ std::optional<dom::CharArray> Posdtgres::getTextFromRow(
 
 //--------------------------------------------------------------------------------
 
-void destroy(std::wstring& s)
+void
+destroy(std::wstring& s)
 {
     std::vector<std::wstring> data = {L"павильон", L"царское", L"село", L"(",
                                       L")"};
@@ -121,9 +125,9 @@ void destroy(std::wstring& s)
     }
 }
 
-#include "domain/cyrillic.hpp"
-std::optional<std::wstring> Posdtgres::getText16FromRow(
-    int aColumNumber, int aStatementID) noexcept
+#    include "domain/cyrillic.hpp"
+std::optional<std::wstring>
+Posdtgres::getText16FromRow(int aColumNumber, int aStatementID) noexcept
 {
     std::optional<std::wstring> result = {};
 
@@ -155,7 +159,8 @@ std::optional<std::wstring> Posdtgres::getText16FromRow(
 
 //--------------------------------------------------------------------------------
 
-int Posdtgres::getIntFromRow(int aColumNumber, int aStatementID) noexcept
+int
+Posdtgres::getIntFromRow(int aColumNumber, int aStatementID) noexcept
 {
     if (mResultIterator[aStatementID][aColumNumber].is_null())
         return -1;
@@ -164,7 +169,8 @@ int Posdtgres::getIntFromRow(int aColumNumber, int aStatementID) noexcept
 
 //--------------------------------------------------------------------------------
 
-int64_t Posdtgres::getInt64FromRow(int aColumNumber, int aStatementID) noexcept
+int64_t
+Posdtgres::getInt64FromRow(int aColumNumber, int aStatementID) noexcept
 {
     // TODO: optional
     if (mResultIterator[aStatementID][aColumNumber].is_null())
@@ -172,7 +178,8 @@ int64_t Posdtgres::getInt64FromRow(int aColumNumber, int aStatementID) noexcept
     return mResultIterator[aStatementID][aColumNumber].as<int64_t>();
 }
 
-bool Posdtgres::getBool(int aColumNumber, int aStatementID) noexcept
+bool
+Posdtgres::getBool(int aColumNumber, int aStatementID) noexcept
 {
     // TODO: optional
 
@@ -181,7 +188,8 @@ bool Posdtgres::getBool(int aColumNumber, int aStatementID) noexcept
 
 //--------------------------------------------------------------------------------
 
-void Posdtgres::closeStatment(int aStatementID) noexcept
+void
+Posdtgres::closeStatment(int aStatementID) noexcept
 {
     if (mStatement.size() <= aStatementID)
         return;
@@ -197,7 +205,8 @@ void Posdtgres::closeStatment(int aStatementID) noexcept
 
 //--------------------------------------------------------------------------------
 
-int Posdtgres::step(int aStatementID) noexcept
+int
+Posdtgres::step(int aStatementID) noexcept
 {
     mResultIterator[aStatementID]++;
     return 0;
@@ -205,13 +214,14 @@ int Posdtgres::step(int aStatementID) noexcept
 
 //--------------------------------------------------------------------------------
 
-char* Posdtgres::toAscii(const unsigned char* s) noexcept
+char*
+Posdtgres::toAscii(const unsigned char* s) noexcept
 {
     // TODO: use my defines
     int cnt = 0;
     while (s[cnt++])
         ;
-    char* result = (char*)malloc(sizeof(char) * (cnt));
+    char* result    = (char*)malloc(sizeof(char) * (cnt));
     result[cnt - 1] = 0;
     for (int i = 0; s[i];)
         result[i] = s[i++];
@@ -221,7 +231,8 @@ char* Posdtgres::toAscii(const unsigned char* s) noexcept
 
 //--------------------------------------------------------------------------------
 
-void Posdtgres::prepare(std::string aStatment, int aStatementID) noexcept
+void
+Posdtgres::prepare(std::string aStatment, int aStatementID) noexcept
 {
     if (mStatement.size() < aStatementID + 1)
     {

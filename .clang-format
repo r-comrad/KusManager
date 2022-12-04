@@ -8,6 +8,7 @@ PointerAlignment: Left
 IndentCaseLabels: true
 ColumnLimit: 80
 AccessModifierOffset: -4
+AlwaysBreakAfterReturnType: TopLevel 
 EmptyLineBeforeAccessModifier: LogicalBlock
 MaxEmptyLinesToKeep: 1
 
@@ -17,6 +18,7 @@ AlignConsecutiveMacros: Consecutive
 IndentPPDirectives: AfterHash
 AlignEscapedNewlines: Left
 AlignTrailingComments: true
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
 
 SortIncludes: CaseSensitive
 IncludeBlocks: Regroup

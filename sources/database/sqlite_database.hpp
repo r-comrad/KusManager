@@ -4,17 +4,17 @@
 #ifdef DB_SQLITE
 
 //--------------------------------------------------------------------------------
-#include <iostream>
-#include <optional>
-#include <vector>
+#    include <iostream>
+#    include <optional>
+#    include <vector>
 
-#include "domain/string.hpp"
+#    include "domain/string.hpp"
 
-#include "database/string.hpp"
+#    include "database/string.hpp"
 
-#include "SQLite/sqlite3.h"
+#    include "SQLite/sqlite3.h"
 
-#include "base_database.hpp"
+#    include "base_database.hpp"
 
 //--------------------------------------------------------------------------------
 
@@ -22,17 +22,17 @@ namespace data
 {
 class SQLiteDatabase : public BaseDatabase
 {
-    using Base = sqlite3;
+    using Base      = sqlite3;
     using Statement = sqlite3_stmt;
 
 public:
     SQLiteDatabase(const std::string& aPath) noexcept;
     ~SQLiteDatabase() = default;
 
-    SQLiteDatabase(const SQLiteDatabase& other) = delete;
+    SQLiteDatabase(const SQLiteDatabase& other)            = delete;
     SQLiteDatabase& operator=(const SQLiteDatabase& other) = delete;
 
-    SQLiteDatabase(SQLiteDatabase&& other) noexcept = default;
+    SQLiteDatabase(SQLiteDatabase&& other) noexcept            = default;
     SQLiteDatabase& operator=(SQLiteDatabase&& other) noexcept = default;
 
     //--------------------------------------------------------------------------------
@@ -53,7 +53,7 @@ public:
     */
     void select(std::string&& aTableName, std::string&& aColum = "",
                 std::string&& aConditon = "",
-                int aStatementID = 0) noexcept final override;
+                int aStatementID        = 0) noexcept final override;
 
     /*
     \brief Prepare the sqlite UPDATE statement.

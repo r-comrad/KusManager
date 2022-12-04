@@ -1,6 +1,7 @@
 {
     "workbench.editor.revealIfOpen": true,
     "editor.formatOnSave": true,
+    "editor.formatOnType": true,
     "C_Cpp.clang_format_style": "file",
     "files.associations": {
         "map": "cpp",
@@ -73,6 +74,7 @@
         "xloctime": "cpp",
         "xmemory": "cpp",
         "xstddef": "cpp",
-        "xtr1common": "cpp"
+        "xtr1common": "cpp",
+        "filesystem": "cpp"
     }
 }

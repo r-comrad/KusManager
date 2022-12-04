@@ -19,9 +19,10 @@ data::DatabaseQuery::DatabaseQuery(const std::string& aDatabasePath) noexcept
 
 //--------------------------------------------------------------------------------
 
-void data::DatabaseQuery::rename(const std::map<int, std::string>& aOldNames,
-                                 std::vector<std::string>&& aNewNames,
-                                 bool aOnlyTest) noexcept
+void
+data::DatabaseQuery::rename(const std::map<int, std::string>& aOldNames,
+                            std::vector<std::string>&& aNewNames,
+                            bool aOnlyTest) noexcept
 {
     for (auto& i : aOldNames)
     {
@@ -45,8 +46,8 @@ void data::DatabaseQuery::rename(const std::map<int, std::string>& aOldNames,
     }
 }
 
-void data::DatabaseQuery::turnOff(
-    std::vector<std::string> nameTemplate) noexcept
+void
+data::DatabaseQuery::turnOff(std::vector<std::string> nameTemplate) noexcept
 {
     mDatabase.select("core_users",
                      "id, username, is_superuser, is_teacher, is_staff");
@@ -83,7 +84,7 @@ void data::DatabaseQuery::turnOff(
         }
 
         std::string nameS = name.getString();
-        flag = false;
+        flag              = false;
         for (auto& i : nameTemplate)
         {
             flag |= nameS.find(i) != -1;
@@ -118,7 +119,8 @@ void data::DatabaseQuery::turnOff(
     }
 }
 #include <algorithm>
-void data::DatabaseQuery::turnOn() noexcept
+void
+data::DatabaseQuery::turnOn() noexcept
 {
     mDatabase.select("core_users",
                      "id, username, is_superuser, is_teacher, is_staff");
@@ -155,7 +157,7 @@ void data::DatabaseQuery::turnOn() noexcept
         }
 
         std::string nameS = name.getString();
-        flag = nameS.find("----") != -1;
+        flag              = nameS.find("----") != -1;
         if (flag == false)
             continue;
 
@@ -186,7 +188,8 @@ void data::DatabaseQuery::turnOn() noexcept
         // std::cout << newUserName << std::endl;
     }
 }
-data::SubmissionInfo data::DatabaseQuery::getSubmissionInfo(int ID) noexcept
+data::SubmissionInfo
+data::DatabaseQuery::getSubmissionInfo(int ID) noexcept
 {
     SubmissionInfo result;
     result.ID = ID;
@@ -203,8 +206,9 @@ data::SubmissionInfo data::DatabaseQuery::getSubmissionInfo(int ID) noexcept
 
 //--------------------------------------------------------------------------------
 
-void data::DatabaseQuery::writeResult(int aID, const std::string& aResult,
-                                      int aTime, int aMemory) noexcept
+void
+data::DatabaseQuery::writeResult(int aID, const std::string& aResult, int aTime,
+                                 int aMemory) noexcept
 {
     mDatabase.closeStatment(0);
 
@@ -224,8 +228,8 @@ void data::DatabaseQuery::writeResult(int aID, const std::string& aResult,
 
 //--------------------------------------------------------------------------------
 
-std::optional<data::DatabaseQuery::TestData> data::DatabaseQuery::
-    getNextTest() noexcept
+std::optional<data::DatabaseQuery::TestData>
+data::DatabaseQuery::getNextTest() noexcept
 {
     std::optional<TestData> result;
 
@@ -240,8 +244,8 @@ std::optional<data::DatabaseQuery::TestData> data::DatabaseQuery::
         WRITE_LOG("Taking_next_test");
         // if (mDatabase.step() != SQLITE_OK) break; TODO: fixing that
         mDatabase.step(mReservedStatementNumber);
-        input = mDatabase.getTextFromRow(0, mReservedStatementNumber);
-        output = mDatabase.getTextFromRow(1, mReservedStatementNumber);
+        input   = mDatabase.getTextFromRow(0, mReservedStatementNumber);
+        output  = mDatabase.getTextFromRow(1, mReservedStatementNumber);
         tempNum = mTestNum++;
 
         if (!input.has_value())
@@ -253,10 +257,10 @@ std::optional<data::DatabaseQuery::TestData> data::DatabaseQuery::
 
     if (input.has_value())
     {
-        data.input = std::move(input.value());
-        data.output = std::move(output.value());
+        data.input   = std::move(input.value());
+        data.output  = std::move(output.value());
         data.testNum = tempNum;
-        result = std::make_optional<TestData>(std::move(data));
+        result       = std::make_optional<TestData>(std::move(data));
     }
 
     return result;
@@ -264,7 +268,8 @@ std::optional<data::DatabaseQuery::TestData> data::DatabaseQuery::
 
 //--------------------------------------------------------------------------------
 
-void data::DatabaseQuery::prepareTestsStatement(uint64_t aProblemID) noexcept
+void
+data::DatabaseQuery::prepareTestsStatement(uint64_t aProblemID) noexcept
 {
     START_LOG_BLOCK("Prepare_geting_test_from_database");
     mDatabase.select("core_test", "input, output",
@@ -274,7 +279,8 @@ void data::DatabaseQuery::prepareTestsStatement(uint64_t aProblemID) noexcept
 }
 //--------------------------------------------------------------------------------
 
-data::DatabaseQuery::CompetitionData data::DatabaseQuery::getCompetitionInfo(
+data::DatabaseQuery::CompetitionData
+data::DatabaseQuery::getCompetitionInfo(
     const std::string& aCompetitionName) noexcept
 {
     CompetitionData result;
@@ -294,8 +300,8 @@ data::DatabaseQuery::CompetitionData data::DatabaseQuery::getCompetitionInfo(
 
 //--------------------------------------------------------------------------------
 
-std::vector<int> data::DatabaseQuery::getQuestionNumbers(
-    int aCompetitionID) noexcept
+std::vector<int>
+data::DatabaseQuery::getQuestionNumbers(int aCompetitionID) noexcept
 {
     // CompetitionData result;
     // START_LOG_BLOCK("Prepare_geting_test_from_database");
@@ -339,7 +345,8 @@ std::vector<int> data::DatabaseQuery::getQuestionNumbers(
 
 #include "domain/cyrillic.hpp"
 
-std::map<int, std::wstring> data::DatabaseQuery::getQuestions(
+std::map<int, std::wstring>
+data::DatabaseQuery::getQuestions(
     const std::vector<int>& aQuestionNumbers) noexcept
 {
     std::map<int, std::wstring> result;
@@ -419,7 +426,8 @@ std::map<int, std::wstring> data::DatabaseQuery::getQuestions(
 
 //--------------------------------------------------------------------------------
 
-std::vector<int> data::DatabaseQuery::getGroupIDs(int aCompetitionID) noexcept
+std::vector<int>
+data::DatabaseQuery::getGroupIDs(int aCompetitionID) noexcept
 {
     // CompetitionData result;
     // START_LOG_BLOCK("Prepare_geting_test_from_database");
@@ -457,8 +465,8 @@ std::vector<int> data::DatabaseQuery::getGroupIDs(int aCompetitionID) noexcept
     //  return result;
 }
 
-std::map<std::wstring, int> data::DatabaseQuery::getQuestionNames(
-    const std::vector<int>& aIDs) noexcept
+std::map<std::wstring, int>
+data::DatabaseQuery::getQuestionNames(const std::vector<int>& aIDs) noexcept
 {
     std::map<std::wstring, int> result;
 
@@ -480,8 +488,8 @@ std::map<std::wstring, int> data::DatabaseQuery::getQuestionNames(
 
 //--------------------------------------------------------------------------------
 
-std::vector<int> data::DatabaseQuery::getUserIDs(
-    const std::vector<int>& aGroups) noexcept
+std::vector<int>
+data::DatabaseQuery::getUserIDs(const std::vector<int>& aGroups) noexcept
 {
     // CompetitionData result;
     // START_LOG_BLOCK("Prepare_geting_test_from_database");
@@ -524,7 +532,8 @@ std::vector<int> data::DatabaseQuery::getUserIDs(
     //  return result;
 }
 
-std::map<int, std::map<int, std::wstring>> data::DatabaseQuery::getUserAnswers(
+std::map<int, std::map<int, std::wstring>>
+data::DatabaseQuery::getUserAnswers(
     const std::vector<int>& aUserIDs,
     const std::vector<int>& aQuestionNumbers) noexcept
 {
@@ -578,8 +587,9 @@ std::map<int, std::map<int, std::wstring>> data::DatabaseQuery::getUserAnswers(
     //  return result;
 }
 
-std::map<int, std::wstring> data::DatabaseQuery::getUserAnswers(
-    const std::vector<int>& aQuaestionIDs, int aUserId) noexcept
+std::map<int, std::wstring>
+data::DatabaseQuery::getUserAnswers(const std::vector<int>& aQuaestionIDs,
+                                    int aUserId) noexcept
 {
     std::map<int, std::wstring> result;
     for (auto question : aQuaestionIDs)
@@ -608,8 +618,8 @@ std::map<int, std::wstring> data::DatabaseQuery::getUserAnswers(
     return result;
 }
 
-std::map<int, std::wstring> data::DatabaseQuery::getUserNames(
-    const std::vector<int>& aUserIDs) noexcept
+std::map<int, std::wstring>
+data::DatabaseQuery::getUserNames(const std::vector<int>& aUserIDs) noexcept
 {
     // CompetitionData result;
     // START_LOG_BLOCK("Prepare_geting_test_from_database");
@@ -648,7 +658,8 @@ std::map<int, std::wstring> data::DatabaseQuery::getUserNames(
 
 //--------------------------------------------------------------------------------
 
-bool data::DatabaseQuery::isUserHasBron(const std::string& aName)
+bool
+data::DatabaseQuery::isUserHasBron(const std::string& aName)
 {
     return aName == "pashs" || aName == "ITMO-Student" ||
            aName == "AlphaPrimus" || aName == "Ivan" ||
@@ -657,8 +668,9 @@ bool data::DatabaseQuery::isUserHasBron(const std::string& aName)
 
 //--------------------------------------------------------------------------------
 
-data::DatabaseQuery::UserNames data::DatabaseQuery::getUsers(
-    const std::vector<std::string>& aMask, bool aSwitchMask)
+data::DatabaseQuery::UserNames
+data::DatabaseQuery::getUsers(const std::vector<std::string>& aMask,
+                              bool aSwitchMask)
 {
     data::DatabaseQuery::UserNames result;
 
@@ -677,7 +689,7 @@ data::DatabaseQuery::UserNames data::DatabaseQuery::getUsers(
         if (mDatabase.getBool(4))
             continue;
 
-        auto id = mDatabase.getIntFromRow(0);
+        auto id   = mDatabase.getIntFromRow(0);
         auto name = mDatabase.getTextFromRow(1).value().getString();
 
         if (isUserHasBron(name))
@@ -698,8 +710,8 @@ data::DatabaseQuery::UserNames data::DatabaseQuery::getUsers(
     return result;
 }
 
-std::map<std::string, std::string> data::DatabaseQuery::getPasswords(
-    UserNames aUsers)
+std::map<std::string, std::string>
+data::DatabaseQuery::getPasswords(UserNames aUsers)
 {
     std::map<std::string, std::string> result;
 
@@ -718,23 +730,26 @@ std::map<std::string, std::string> data::DatabaseQuery::getPasswords(
 
 //--------------------------------------------------------------------------------
 
-data::DatabaseQuery::UserNames data::DatabaseQuery::getActiveUsers(
-    const std::vector<std::string>& aMask, bool aSwitchMask)
+data::DatabaseQuery::UserNames
+data::DatabaseQuery::getActiveUsers(const std::vector<std::string>& aMask,
+                                    bool aSwitchMask)
 {
     return getUsersByDeleteFlag(false, aMask, aSwitchMask);
 }
 
 //--------------------------------------------------------------------------------
 
-data::DatabaseQuery::UserNames data::DatabaseQuery::getDeletedUsers(
-    const std::vector<std::string>& aMask, bool aSwitchMask)
+data::DatabaseQuery::UserNames
+data::DatabaseQuery::getDeletedUsers(const std::vector<std::string>& aMask,
+                                     bool aSwitchMask)
 {
     return getUsersByDeleteFlag(true, aMask, aSwitchMask);
 }
 
 //--------------------------------------------------------------------------------
 
-void data::DatabaseQuery::getParticipantInfo(
+void
+data::DatabaseQuery::getParticipantInfo(
     SubmissionInfo& aSubmissionInfo) noexcept
 {
     START_LOG_BLOCK("Geting_ID_and_name_from_database");
@@ -763,8 +778,8 @@ void data::DatabaseQuery::getParticipantInfo(
 
 //--------------------------------------------------------------------------------
 
-void data::DatabaseQuery::getCheckerInfo(
-    SubmissionInfo& aSubmissionInfo) noexcept
+void
+data::DatabaseQuery::getCheckerInfo(SubmissionInfo& aSubmissionInfo) noexcept
 {
     START_LOG_BLOCK("Geting_limits_from_database");
 
@@ -793,8 +808,10 @@ void data::DatabaseQuery::getCheckerInfo(
 
 //--------------------------------------------------------------------------------
 
-data::DatabaseQuery::UserNames data::DatabaseQuery::getUsersByDeleteFlag(
-    bool aIsDeleted, const std::vector<std::string>& aMask, bool aSwitchMask)
+data::DatabaseQuery::UserNames
+data::DatabaseQuery::getUsersByDeleteFlag(bool aIsDeleted,
+                                          const std::vector<std::string>& aMask,
+                                          bool aSwitchMask)
 {
     data::DatabaseQuery::UserNames result = getUsers(aMask, aSwitchMask);
 

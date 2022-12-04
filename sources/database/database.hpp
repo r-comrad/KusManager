@@ -25,10 +25,10 @@ public:
     Database(std::string aDBName) noexcept;
     virtual ~Database() = default;
 
-    Database(const Database& other) = delete;
+    Database(const Database& other)            = delete;
     Database& operator=(const Database& other) = delete;
 
-    Database(Database&& other) noexcept = default;
+    Database(Database&& other) noexcept            = default;
     Database& operator=(Database&& other) noexcept = default;
 };
 } // namespace data

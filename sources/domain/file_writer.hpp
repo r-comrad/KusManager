@@ -16,10 +16,10 @@ public:
     FileWrite(const std::string& aFileName) noexcept;
     ~FileWrite();
 
-    FileWrite(const FileWrite& other) = delete;
+    FileWrite(const FileWrite& other)            = delete;
     FileWrite& operator=(const FileWrite& other) = delete;
 
-    FileWrite(FileWrite&& other) noexcept = default;
+    FileWrite(FileWrite&& other) noexcept            = default;
     FileWrite& operator=(FileWrite&& other) noexcept = default;
 
     template <typename... Args> void write(Args... args) noexcept

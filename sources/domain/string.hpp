@@ -39,10 +39,10 @@ public:
     CharArray() noexcept;
     ~CharArray() = default;
 
-    CharArray(const CharArray& other) = delete;
+    CharArray(const CharArray& other)            = delete;
     CharArray& operator=(const CharArray& other) = delete;
 
-    CharArray(CharArray&& other) noexcept = default;
+    CharArray(CharArray&& other) noexcept            = default;
     CharArray& operator=(CharArray&& other) noexcept = default;
 
     //--------------------------------------------------------------------------------

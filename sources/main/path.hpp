@@ -6,14 +6,14 @@
 //--------------------------------------------------------------------------------
 
 #define CHINA_RESOURCES EXECUTABLE_PATH + "resources/"
-#define COMPILERS CHINA_RESOURCES + "compilers/"
-#define EXAMPLES CHINA_RESOURCES + "examples/"
-#define MAEDIA EXECUTABLE_PATH + "media/"
+#define COMPILERS       CHINA_RESOURCES + "compilers/"
+#define EXAMPLES        CHINA_RESOURCES + "examples/"
+#define MAEDIA          EXECUTABLE_PATH + "media/"
 
-#define DB_PATH EXECUTABLE_PATH
+#define DB_PATH       EXECUTABLE_PATH
 #define DATABASE_PATH DB_PATH + "db.sqlite3"
 
-#define CHECKER_PATH CHINA_RESOURCES + "checkers/"
+#define CHECKER_PATH  CHINA_RESOURCES + "checkers/"
 #define SOLUTION_PATH CHINA_RESOURCES + "solutions/"
 
 #undef LOGS_PATH

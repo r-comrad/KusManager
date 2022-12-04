@@ -17,13 +17,14 @@ public:
     FileReader(const std::string& aFileName) noexcept;
     ~FileReader();
 
-    FileReader(const FileReader& other) = delete;
+    FileReader(const FileReader& other)            = delete;
     FileReader& operator=(const FileReader& other) = delete;
 
-    FileReader(FileReader&& other) noexcept = default;
+    FileReader(FileReader&& other) noexcept            = default;
     FileReader& operator=(FileReader&& other) noexcept = default;
 
-    std::vector<std::string> getAllStrings() noexcept;
+    static std::vector<std::string> getAllStrings(
+        const std::string& aFileName) noexcept;
 
     void close() noexcept;
 

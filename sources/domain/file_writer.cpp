@@ -20,29 +20,33 @@ dom::FileWrite::~FileWrite()
 
 //--------------------------------------------------------------------------------
 
-void dom::FileWrite::setDelimiter(const std::string& aDelimiter) noexcept
+void
+dom::FileWrite::setDelimiter(const std::string& aDelimiter) noexcept
 {
     mDelimiter = aDelimiter;
 }
 
 //--------------------------------------------------------------------------------
 
-void dom::FileWrite::writeEndl() noexcept
+void
+dom::FileWrite::writeEndl() noexcept
 {
     mOut << '\n';
 }
 
 //--------------------------------------------------------------------------------
 
-void dom::FileWrite::close() noexcept
+void
+dom::FileWrite::close() noexcept
 {
     mOut.close();
 }
 
 //--------------------------------------------------------------------------------
 
-void dom::FileWrite::copyFile(const std::string& aFromFileName,
-                              const std::string& aToFileName) noexcept
+void
+dom::FileWrite::copyFile(const std::string& aFromFileName,
+                         const std::string& aToFileName) noexcept
 {
     START_LOG_BLOCK("Copying_file");
     WRITE_LOG("From : ", aFromFileName);

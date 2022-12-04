@@ -18,10 +18,10 @@ public:
     EmptyDatabase() noexcept;
     virtual ~EmptyDatabase() = default;
 
-    EmptyDatabase(const EmptyDatabase& other) = delete;
+    EmptyDatabase(const EmptyDatabase& other)            = delete;
     EmptyDatabase& operator=(const EmptyDatabase& other) = delete;
 
-    EmptyDatabase(EmptyDatabase&& other) noexcept = default;
+    EmptyDatabase(EmptyDatabase&& other) noexcept            = default;
     EmptyDatabase& operator=(EmptyDatabase&& other) noexcept = default;
 
     void select(std::string aTableName, std::string aColum = "",

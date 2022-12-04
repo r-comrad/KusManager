@@ -6,7 +6,8 @@
 
 //--------------------------------------------------------------------------------
 
-std::string dom::Path::getMainPath() noexcept
+std::string
+dom::Path::getMainPath() noexcept
 {
     static std::string globalMainPath = getMainPathOnce();
     return globalMainPath;
@@ -14,7 +15,8 @@ std::string dom::Path::getMainPath() noexcept
 
 //--------------------------------------------------------------------------------
 
-std::string dom::Path::getExecutablePath() noexcept
+std::string
+dom::Path::getExecutablePath() noexcept
 {
     static std::string globalExecutablePath = getExecutablePathOnce();
     return globalExecutablePath;
@@ -22,7 +24,8 @@ std::string dom::Path::getExecutablePath() noexcept
 
 //--------------------------------------------------------------------------------
 
-std::string dom::Path::getMainPathOnce() noexcept
+std::string
+dom::Path::getMainPathOnce() noexcept
 {
     std::string path = getExecutablePath();
     do
@@ -34,19 +37,20 @@ std::string dom::Path::getMainPathOnce() noexcept
 //--------------------------------------------------------------------------------
 
 #if defined(BILL_WINDOWS)
-#include <windows.h>
+#    include <windows.h>
 #elif defined(LINUS_LINUX)
-#include <limits.h>
-#include <unistd.h>
+#    include <limits.h>
+#    include <unistd.h>
 #endif
 
 //--------------------------------------------------------------------------------
 
-std::string dom::Path::getExecutablePathOnce() noexcept
+std::string
+dom::Path::getExecutablePathOnce() noexcept
 {
 #if defined(BILL_WINDOWS)
     CHAR buffer[MAX_PATH] = {0};
-    uint8_t size = GetModuleFileNameA(NULL, buffer, MAX_PATH);
+    uint8_t size          = GetModuleFileNameA(NULL, buffer, MAX_PATH);
     for (int i = 0; i < 1; ++i)
         while (buffer[--size] != L'\\')
             ;

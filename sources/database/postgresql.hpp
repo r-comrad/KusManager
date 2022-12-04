@@ -5,17 +5,16 @@
 
 //--------------------------------------------------------------------------------
 
-#include <pqxx/pqxx>
+#    include <pqxx/pqxx>
 
-#include <memory>
-#include <optional>
-#include <vector>
+#    include <memory>
+#    include <optional>
+#    include <vector>
 
-#include "domain/error_message.hpp"
-#include "domain/string.hpp"
+#    include "domain/error_message.hpp"
+#    include "domain/string.hpp"
 
-#include "base_database.hpp"
-
+#    include "base_database.hpp"
 //--------------------------------------------------------------------------------
 
 class Posdtgres
@@ -24,10 +23,10 @@ public:
     Posdtgres() noexcept;
     virtual ~Posdtgres() = default;
 
-    Posdtgres(const Posdtgres& other) = delete;
+    Posdtgres(const Posdtgres& other)            = delete;
     Posdtgres& operator=(const Posdtgres& other) = delete;
 
-    Posdtgres(Posdtgres&& other) noexcept = default;
+    Posdtgres(Posdtgres&& other) noexcept            = default;
     Posdtgres& operator=(Posdtgres&& other) noexcept = default;
 
     //----------------------------------------------------------------------------

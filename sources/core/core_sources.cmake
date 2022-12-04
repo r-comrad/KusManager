@@ -6,4 +6,7 @@ set(
 
    # user_array.cpp
    # user_array.hpp
+
+   command.cpp
+   command.hpp
 )

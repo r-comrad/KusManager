@@ -2,7 +2,8 @@
 
 #include "domain/file_reader.hpp"
 
-void core::UserArray::makeNames(int* n) noexcept
+void
+core::UserArray::makeNames(int* n) noexcept
 {
     std::ofstream output("out.name");
 
@@ -82,7 +83,8 @@ void core::UserArray::makeNames(int* n) noexcept
     }
 }
 
-void eval::Core::printUsers() noexcept
+void
+eval::Core::printUsers() noexcept
 {
     std::map<int, std::string> names;
     bool invert = int(mFlags) & int(CommandFlag::INVERT_MASK);
@@ -120,10 +122,11 @@ void eval::Core::printUsers() noexcept
     }
 }
 
-void eval::Core::renameUsers() noexcept
+void
+eval::Core::renameUsers() noexcept
 {
     std::map<int, std::string> names;
-    bool invert = int(mFlags) & int(CommandFlag::INVERT_MASK);
+    bool invert   = int(mFlags) & int(CommandFlag::INVERT_MASK);
     bool allUsers = int(mFlags) & int(CommandFlag::ALL_USERS);
 
     if (allUsers)
@@ -146,7 +149,8 @@ void eval::Core::renameUsers() noexcept
                 int(mFlags) & int(CommandFlag::TEST));
 }
 
-void eval::Core::generateNames() noexcept
+void
+eval::Core::generateNames() noexcept
 {
     if (mArgs[0].size() < 0)
     {
@@ -189,7 +193,8 @@ void eval::Core::generateNames() noexcept
     }
 }
 
-void eval::Core::generateRoboNames() noexcept
+void
+eval::Core::generateRoboNames() noexcept
 {
     if (mArgs[0].size() < 0)
     {

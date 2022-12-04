@@ -60,10 +60,10 @@ public:
     DatabaseQuery(const std::string& aDatabasePath) noexcept;
     ~DatabaseQuery() = default;
 
-    DatabaseQuery(const DatabaseQuery& other) = delete;
+    DatabaseQuery(const DatabaseQuery& other)            = delete;
     DatabaseQuery& operator=(const DatabaseQuery& other) = delete;
 
-    DatabaseQuery(DatabaseQuery&& other) noexcept = default;
+    DatabaseQuery(DatabaseQuery&& other) noexcept            = default;
     DatabaseQuery& operator=(DatabaseQuery&& other) noexcept = default;
 
     /*
@@ -124,11 +124,11 @@ public:
     bool isUserHasBron(const std::string& aName);
 
     UserNames getUsers(const std::vector<std::string>& aMask = {},
-                       bool aSwitchMask = false);
+                       bool aSwitchMask                      = false);
     UserNames getActiveUsers(const std::vector<std::string>& aMask = {},
-                             bool aSwitchMask = false);
+                             bool aSwitchMask                      = false);
     UserNames getDeletedUsers(const std::vector<std::string>& aMask = {},
-                              bool aSwitchMask = false);
+                              bool aSwitchMask                      = false);
 
     std::map<std::string, std::string> getPasswords(UserNames aUsers);
 

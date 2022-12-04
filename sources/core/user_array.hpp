@@ -17,16 +17,16 @@ public:
     UserArray() noexcept;
     ~UserArray() = default;
 
-    UserArray(const Core& other) noexcept = default;
+    UserArray(const Core& other) noexcept            = default;
     UserArray& operator=(const Core& other) noexcept = default;
 
-    UserArray(Core&& other) noexcept = default;
+    UserArray(Core&& other) noexcept            = default;
     UserArray& operator=(Core&& other) noexcept = default;
 
     void makeNames() noexcept;
 
 private:
-    static const std::string sFirstNameFileName = "firstName.txt";
+    static const std::string sFirstNameFileName  = "firstName.txt";
     static const std::string sSecondNameFileName = "secondName.txt";
 
     void parseCommandLine(int argc, char* argv[]) noexcept;

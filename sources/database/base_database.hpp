@@ -15,12 +15,12 @@ class BaseDatabase
 {
 public:
     BaseDatabase() noexcept = default;
-    ~BaseDatabase() = default;
+    ~BaseDatabase()         = default;
 
-    BaseDatabase(const BaseDatabase& other) = delete;
+    BaseDatabase(const BaseDatabase& other)            = delete;
     BaseDatabase& operator=(const BaseDatabase& other) = delete;
 
-    BaseDatabase(BaseDatabase&& other) noexcept = default;
+    BaseDatabase(BaseDatabase&& other) noexcept            = default;
     BaseDatabase& operator=(BaseDatabase&& other) noexcept = default;
 
     //--------------------------------------------------------------------------------
@@ -41,7 +41,7 @@ public:
     */
     virtual void select(std::string&& aTableName, std::string&& aColum = "",
                         std::string&& aConditon = "",
-                        int aStatementID = 0) noexcept = 0;
+                        int aStatementID        = 0) noexcept = 0;
 
     /*
     \brief Prepare the sqlite UPDATE statement.

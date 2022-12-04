@@ -1,16 +1,20 @@
 #include "core.hpp"
 
+#include <fstream>
 #include <functional>
 #include <map>
+#include <set>
 
 #include "domain/error_message.hpp"
+#include "domain/file_reader.hpp"
 
-#define MASK_FILENAME      "mask.name"
-#define NEW_NAMES_FILENAME "new_name.name"
+#define INPUT_FIR_NAME_FILE "firstName.name"
+#define INPUT_SEC_NAME_FILE "secondName.name"
+#define INPUT_NAMES_FILE    "name.txt"
 
 //--------------------------------------------------------------------------------
 
-eval::Core::Core(const std::string& aDatabasePath) noexcept
+core::Core::Core(const std::string& aDatabasePath) noexcept
     : mDBQ(aDatabasePath)
 {
     WRITE_LOG("Creating_core");
@@ -25,212 +29,34 @@ struct Winner
     std::map<int, std::string> answers;
     bool operator<(const Winner& other) const
     {
-        if (points == other.points)
-            return name > other.name;
-        else
-            return points < other.points;
+        if (points == other.points) return name > other.name;
+        else return points < other.points;
     }
 };
-#include <fstream>
-#include <set>
 
-void eval::Core::run(std::vector<std::string> argv) noexcept
+void
+core::Core::run(const std::vector<std::string>& argv) noexcept
 {
-    parseCommandLine(argv);
+    mCommand.process(argv);
 
-    std::map<Command, std::function<void()>> methodMap{
-        {Command::GET_USERS,           [&]() { printUsers(); }       },
-        {Command::GET_ACTIVE_USERS,    [&]() { printUsers(); }       },
-        {Command::GET_DELETED_USERS,   [&]() { printUsers(); }       },
-        {Command::RENAME_USERS,        [&]() { renameUsers(); }      },
-        {Command::GENERATE_NAMES,      [&]() { generateNames(); }    },
-        {Command::GENERATE_ROBO_NAMES, [&]() { generateRoboNames(); }},
-        {Command::EVALUATE,            [&]() { getResults(); }       }
+    std::map<Command::Type, std::function<void()>> methodMap{
+        {Command::Type::GET_USERS,           [&]() { printUsers(); }       },
+        {Command::Type::GET_ACTIVE_USERS,    [&]() { printUsers(); }       },
+        {Command::Type::GET_DELETED_USERS,   [&]() { printUsers(); }       },
+        {Command::Type::RENAME_USERS,        [&]() { renameUsers(); }      },
+        {Command::Type::GENERATE_NAMES,      [&]() { generateNames(); }    },
+        {Command::Type::GENERATE_ROBO_NAMES, [&]() { generateRoboNames(); }},
+        {Command::Type::EVALUATE,            [&]() { getResults(); }       }
     };
 
     for (auto& i : methodMap)
     {
-        if (mCommand == i.first)
-            i.second;
+        if (mCommand.getCommand() == i.first) i.second;
     }
 }
 
-// void
-// eval::Core::run() noexcept
-// {
-//     std::ifstream namesFile("out.name");
-//     std::vector<std::string> names;
-//     std::string inp;
-//     while(namesFile >> inp) names.push_back(inp);
-
-//     mDBQ.rename(names);
-// }
-
-void eval::Core::makeNames() noexcept
-{
-    std::ofstream output("out.name");
-
-    std::string inp;
-
-    std::ifstream file("firstName.txt");
-    std::vector<std::string> firstNames;
-    while (file >> inp)
-        firstNames.push_back(inp);
-
-    file.close();
-    file.open("secondName.txt");
-    std::vector<std::string> secondName;
-    while (file >> inp)
-        secondName.push_back(inp);
-
-    file.close();
-    file.open("names.txt");
-    while (file >> inp)
-    {
-        std::string add;
-        file >> add;
-        std::vector<int> size(7);
-        for (auto& i : size)
-        {
-            file >> i;
-            if (i)
-            {
-                if (i / 2 > 50)
-                    i += 50;
-                else
-                    i += 25;
-            }
-        }
-
-        if (inp == "-s")
-        {
-            for (int i = 0; i < size.size(); ++i)
-            {
-                std::set<std::string> names;
-                while (names.size() < size[i])
-                {
-                    names.insert(firstNames[rand() % firstNames.size()] + "-" +
-                                 secondName[rand() % secondName.size()]);
-                }
-
-                for (auto& j : names)
-                {
-                    std::string full_name =
-                        add + "-" + std::to_string(i + 5) + "-" + j + "\n";
-                    output << full_name;
-                }
-                output << "\n";
-            }
-        }
-        else if (inp == "-n")
-        {
-            for (int i = 0; i < size.size(); ++i)
-            {
-                for (auto& i : add)
-                    i = std::tolower(i);
-                std::set<std::string> names;
-                while (names.size() < size[i])
-                {
-                    std::string temp;
-                    temp.reserve(12);
-                    while (temp.size() < 12)
-                    {
-                        temp.push_back(rand() % ('z' - 'a') + 'a');
-                    }
-                    names.insert(temp);
-                }
-                for (auto& j : names)
-                {
-                    std::string full_name =
-                        add + std::to_string(i + 5) + j + "\n";
-                    output << full_name;
-                }
-                output << "\n";
-            }
-        }
-
-        output << "\n";
-    }
-}
-
-void eval::Core::parseCommandLine(std::vector<std::string> argv) noexcept
-{
-    mCommand = Command::NUN;
-    mFlags   = CommandFlag::NUN;
-
-    std::map<std::string, Command> commandMap{
-        {"getUsers",          Command::GET_USERS          },
-        {"getActiveUsers",    Command::GET_ACTIVE_USERS   },
-        {"getDeletedUsers",   Command::GET_DELETED_USERS  },
-        {"turnOffUsers",      Command::DELETE_USERS       },
-        {"turnOnUsers",       Command::RESURRECT_USERS    },
-        {"rename",            Command::RENAME_USERS       },
-        {"generateNames",     Command::GENERATE_NAMES     },
-        {"generateRoboNames", Command::GENERATE_ROBO_NAMES},
-        {"getResults",        Command::EVALUATE           }
-    };
-
-    for (auto& i : commandMap)
-    {
-        if (argv[1] == i.first)
-        {
-            mCommand = i.second;
-            break;
-        }
-    }
-
-    std::map<std::string, CommandFlag> flagsMap{
-        {"-test",   CommandFlag::TEST       },
-        {"-t",      CommandFlag::TEST       },
-        {"-print",  CommandFlag::PRINT      },
-        {"-p",      CommandFlag::PRINT      },
-        {"-mask",   CommandFlag::HAS_MASK   },
-        {"-m",      CommandFlag::HAS_MASK   },
-        {"-invert", CommandFlag::INVERT_MASK},
-        {"-i",      CommandFlag::INVERT_MASK},
-        {"-all",    CommandFlag::ALL_USERS  }
-    };
-
-    
-
-    size_t last = 0;
-    for (int i = 2; i < argv.size(); ++i)
-    {
-        bool flag = false;
-        for (auto& j : flagsMap)
-        {
-            if (argv[i] == j.first)
-            {
-                mFlags = CommandFlag(int(mFlags) | int(j.second));
-                flag   = true;
-                last   = int(j.second);
-                break;
-            }
-        }
-
-        if (flag)
-        {
-            mArgs[last].push_back(std::string(argv[i]));
-        }
-    }
-
-    //     mFlags = CommandFlag(int(mFlags) | int(CommandFlag::HAS_MASK));
-    // mFlags = CommandFlag(int(mFlags) | int(CommandFlag::HAS_MASK_FILE));
-    // last = int(CommandFlag::HAS_MASK);
-
-    if (int(mFlags) & int(CommandFlag::HAS_MASK_FILE))
-    {
-        std::ifstream file(MASK_FILENAME);
-        std::string s;
-        while (file >> s)
-        {
-            mArgs[int(CommandFlag::HAS_MASK)].emplace_back(std::move(s));
-        }
-        file.close();
-    }
-}
-
-void eval::Core::printUsers() noexcept
+void
+eval::Core::printUsers() noexcept
 {
     std::map<int, std::string> names;
     bool invert = int(mFlags) & int(CommandFlag::INVERT_MASK);
@@ -268,7 +94,8 @@ void eval::Core::printUsers() noexcept
     }
 }
 
-void eval::Core::renameUsers() noexcept
+void
+eval::Core::renameUsers() noexcept
 {
     std::map<int, std::string> names;
     bool invert   = int(mFlags) & int(CommandFlag::INVERT_MASK);
@@ -294,29 +121,22 @@ void eval::Core::renameUsers() noexcept
                 int(mFlags) & int(CommandFlag::TEST));
 }
 
-void eval::Core::generateNames() noexcept
+void
+core::Core::generateNames() noexcept
 {
-    if (mArgs[0].size() < 0)
+
+    if (!mCommand.getArgCell(0, 0).has_value())
     {
         printf("ERROR: must specify the number of users!\n");
-        exit(0);
+        return;
     }
-    int count = std::stoi(mArgs[0][0]);
+    int count = std::stoi(mCommand.getArgCell(0, 0).value());
     printf("Try to generate %d users.\n", count);
 
-    std::string inp;
+    std::ofstream output(OUTPUT_NAMES_FILE);
 
-    std::ifstream file("firstName.txt");
-    std::vector<std::string> firstNames;
-    while (file >> inp)
-        firstNames.push_back(std::move(inp));
-    file.close();
-
-    file.open("secondName.txt");
-    std::vector<std::string> secondName;
-    while (file >> inp)
-        secondName.push_back(std::move(inp));
-    file.close();
+    auto firstNames = dom::FileReader::getAllStrings(INPUT_FIR_NAME_FILE);
+    auto secondName = dom::FileReader::getAllStrings(INPUT_SEC_NAME_FILE);
 
     std::set<std::string> names;
     while (names.size() < count)
@@ -325,19 +145,26 @@ void eval::Core::generateNames() noexcept
                      secondName[rand() % secondName.size()]);
     }
 
-    std::ofstream output(NEW_NAMES_FILENAME);
-    bool maskFlag = int(mFlags) & int(CommandFlag::HAS_MASK);
+    std::string pref = "";
+    if (mCommand.getFlags() & uint32_t(Command::Flag::HAS_PREFIX))
+    {
+        pref = mCommand.getArgCell();
+    }
     for (auto& i : names)
     {
         if (maskFlag)
         {
-            output << mArgs[int(CommandFlag::HAS_MASK)][0] << "-";
+            output << mCommand.getArgs()
+                          .find(int(Command::Flag::HAS_PREFIX))
+                          ->second[0]
+                   << "-";
         }
-        output << i << "\n";
+        printf("%s%s\n", pref, i.c_str());
     }
 }
 
-void eval::Core::generateRoboNames() noexcept
+void
+eval::Core::generateRoboNames() noexcept
 {
     if (mArgs[0].size() < 0)
     {
@@ -369,7 +196,8 @@ void eval::Core::generateRoboNames() noexcept
 }
 
 #include "domain/cyrillic.hpp"
-void eval::Core::getResults() noexcept
+void
+eval::Core::getResults() noexcept
 {
     if (mArgs.count(0) == 0)
     {
@@ -503,8 +331,7 @@ void eval::Core::getResults() noexcept
                 std::wstring res;
                 for (int j = 0; j < it->second.ans.size(); ++j)
                 {
-                    if (j > 0)
-                        res += L" || ";
+                    if (j > 0) res += L" || ";
                     res += it->second.ans[j];
                 }
 
@@ -623,8 +450,7 @@ void eval::Core::getResults() noexcept
                         }
                         for (int k = 0; k < ans.size(); ++k)
                         {
-                            if (userAns[q.first].size() <= k)
-                                break;
+                            if (userAns[q.first].size() <= k) break;
                             if (ans[k] == userAns[q.first][k] && ans[k] != L' ')
                             {
                                 ++cnt;
@@ -646,30 +472,23 @@ void eval::Core::getResults() noexcept
                     {
                         if (q.first == 463)
                         {
-                            if (correctCount > 3 && correctCount < 6)
-                                s += 0.5;
-                            else if (correctCount >= 6)
-                                s += 1;
+                            if (correctCount > 3 && correctCount < 6) s += 0.5;
+                            else if (correctCount >= 6) s += 1;
                         }
                         if (q.first == 468)
                         {
                             if (correctCount < 6)
                                 ;
-                            else if (correctCount < 7)
-                                s += 1;
-                            else if (correctCount < 13)
-                                s += 2;
-                            else
-                                s += 3;
+                            else if (correctCount < 7) s += 1;
+                            else if (correctCount < 13) s += 2;
+                            else s += 3;
                         }
                         if (q.first == 473)
                         {
                             if (correctCount < 1)
                                 ;
-                            else if (correctCount < 2)
-                                s += 0.5;
-                            else
-                                s += 1;
+                            else if (correctCount < 2) s += 0.5;
+                            else s += 1;
                         }
                     }
                 }
@@ -687,16 +506,12 @@ void eval::Core::getResults() noexcept
                 }
                 else
                 {
-                    if (userAns[q.first].size() == 0)
-                        std::wcout << L"\t-";
-                    else
-                        std::wcout << L"\t" << s - old_s;
+                    if (userAns[q.first].size() == 0) std::wcout << L"\t-";
+                    else std::wcout << L"\t" << s - old_s;
                 }
             }
-            if (int(mFlags) & int(CommandFlag::PRINT_LOG))
-                std::wcout << L"\n";
-            else
-                std::wcout << L"\t=\t";
+            if (int(mFlags) & int(CommandFlag::PRINT_LOG)) std::wcout << L"\n";
+            else std::wcout << L"\t=\t";
             std::wcout << s << L"\n";
             if (int(mFlags) & int(CommandFlag::PRINT_LOG))
             {

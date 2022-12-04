@@ -43,7 +43,8 @@ dom::Message::Message() noexcept
 
 //--------------------------------------------------------------------------------
 
-void dom::Message::writeLogEndl() noexcept
+void
+dom::Message::writeLogEndl() noexcept
 {
     (*mLogStream) << '\n';
 }
@@ -57,7 +58,8 @@ void dom::Message::writeLogEndl() noexcept
 //--------------------------------------------------------------------------------
 
 #ifdef BILL_WINDOWS
-std::string dom::Message::GetLastWinAPIError() noexcept
+std::string
+dom::Message::GetLastWinAPIError() noexcept
 {
     std::string result;
 

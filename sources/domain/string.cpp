@@ -7,7 +7,8 @@
 
 //--------------------------------------------------------------------------------
 
-std::string toLowerCyrillic(const std::string& let)
+std::string
+toLowerCyrillic(const std::string& let)
 {
     return std::string(toLowerCyrillic(let.c_str()), 2);
 }
@@ -55,7 +56,8 @@ dom::CharArray::CharArray(const unsigned char* aStr) noexcept
 
 //--------------------------------------------------------------------------------
 
-dom::CharArray& dom::CharArray::operator=(const void* aStr) noexcept
+dom::CharArray&
+dom::CharArray::operator=(const void* aStr) noexcept
 {
     *this = CharArray(aStr);
     return *this;
@@ -63,7 +65,8 @@ dom::CharArray& dom::CharArray::operator=(const void* aStr) noexcept
 
 //--------------------------------------------------------------------------------
 
-dom::CharArray& dom::CharArray::operator=(const unsigned char* aStr) noexcept
+dom::CharArray&
+dom::CharArray::operator=(const unsigned char* aStr) noexcept
 {
     *this = CharArray(aStr);
     return *this;
@@ -71,7 +74,8 @@ dom::CharArray& dom::CharArray::operator=(const unsigned char* aStr) noexcept
 
 //--------------------------------------------------------------------------------
 
-void dom::CharArray::reserve(size_t aSize) noexcept
+void
+dom::CharArray::reserve(size_t aSize) noexcept
 {
     if (++aSize < 16)
         aSize = 16;
@@ -105,7 +109,8 @@ dom::CharArray::operator const char*() const noexcept
 
 //--------------------------------------------------------------------------------
 
-std::string dom::CharArray::getString() const noexcept
+std::string
+dom::CharArray::getString() const noexcept
 {
     std::string result(mData.get());
     return result;
@@ -113,8 +118,8 @@ std::string dom::CharArray::getString() const noexcept
 
 //--------------------------------------------------------------------------------
 
-std::ostream& dom::operator<<(std::ostream& os,
-                              const dom::CharArray& aStr) noexcept
+std::ostream&
+dom::operator<<(std::ostream& os, const dom::CharArray& aStr) noexcept
 {
     for (size_t i = 0; aStr.mData[i]; ++i)
         os << aStr.mData[i];
@@ -123,22 +128,24 @@ std::ostream& dom::operator<<(std::ostream& os,
 
 //--------------------------------------------------------------------------------
 
-bool dom::CharArray::isEmpty() const noexcept
+bool
+dom::CharArray::isEmpty() const noexcept
 {
     return mSize == 0;
 }
 
 //--------------------------------------------------------------------------------
 
-size_t dom::CharArray::getSize() const noexcept
+size_t
+dom::CharArray::getSize() const noexcept
 {
     return mSize;
 }
 
 //--------------------------------------------------------------------------------
 
-std::optional<std::string> dom::CharArray::backSubStr(
-    char aDelimiter) const noexcept
+std::optional<std::string>
+dom::CharArray::backSubStr(char aDelimiter) const noexcept
 {
     std::optional<std::string> result;
 
@@ -160,7 +167,8 @@ std::optional<std::string> dom::CharArray::backSubStr(
 
 //--------------------------------------------------------------------------------
 
-dom::CharArray dom::CharArray::getCopy() const noexcept
+dom::CharArray
+dom::CharArray::getCopy() const noexcept
 {
     dom::CharArray result;
     result.add(mData.get());
@@ -169,28 +177,32 @@ dom::CharArray dom::CharArray::getCopy() const noexcept
 
 //--------------------------------------------------------------------------------
 
-char& dom::CharArray::operator[](size_t aNum) noexcept
+char&
+dom::CharArray::operator[](size_t aNum) noexcept
 {
     return mData[aNum];
 }
 
 //--------------------------------------------------------------------------------
 
-size_t dom::CharArray::getSize(const char* str) const noexcept
+size_t
+dom::CharArray::getSize(const char* str) const noexcept
 {
     return strlen(str);
 }
 
 //--------------------------------------------------------------------------------
 
-size_t dom::CharArray::getSize(const std::string& str) const noexcept
+size_t
+dom::CharArray::getSize(const std::string& str) const noexcept
 {
     return str.size();
 }
 
 //--------------------------------------------------------------------------------
 
-size_t dom::CharArray::getSize(const dom::CharArray& str) const noexcept
+size_t
+dom::CharArray::getSize(const dom::CharArray& str) const noexcept
 {
     return str.mSize;
 }

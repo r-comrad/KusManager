@@ -27,13 +27,13 @@ public:
     void standardProcedure(std::wstring& aStr) noexcept;
 
 private:
-    Cyrilic() = default;
+    Cyrilic()  = default;
     ~Cyrilic() = default;
 
-    Cyrilic(const Cyrilic& other) = delete;
+    Cyrilic(const Cyrilic& other)            = delete;
     Cyrilic& operator=(const Cyrilic& other) = delete;
 
-    Cyrilic(Cyrilic&& other) noexcept = default;
+    Cyrilic(Cyrilic&& other) noexcept            = default;
     Cyrilic& operator=(Cyrilic&& other) noexcept = default;
 
     char* toLowerCyrillic(const char* aCharacter) noexcept;
