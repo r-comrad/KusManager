@@ -5,30 +5,33 @@
 
 #include <string>
 
-#include "sqlite_database.hpp"
+#include "empty_database.hpp"
 #include "postgresql.hpp"
+#include "sqlite_database.hpp"
 
 //--------------------------------------------------------------------------------
 
 namespace data
 {
-    #if   defined(DB_SQLITE)
-    class Database : public SQLiteDatabase
-    #elif defined(DB_POSTGRESQL)
-    class Database : public Posdtgres
-    #endif
-    {
-    public:
-        Database(std::string aDBName) noexcept;
-        virtual ~Database() = default;
+#if defined(DB_SQLITE)
+class Database : public SQLiteDatabase
+#elif defined(DB_POSTGRESQL)
+class Database : public Posdtgres
+#else
+class Database : public EmptyDatabase
+#endif
+{
+public:
+    Database(std::string aDBName) noexcept;
+    virtual ~Database() = default;
 
-        Database(const Database& other) = delete;
-        Database& operator=(const Database& other) = delete;
+    Database(const Database& other) = delete;
+    Database& operator=(const Database& other) = delete;
 
-        Database(Database&& other) noexcept = default;
-        Database& operator=(Database&& other) noexcept = default;
-    };
-}
+    Database(Database&& other) noexcept = default;
+    Database& operator=(Database&& other) noexcept = default;
+};
+} // namespace data
 
 //--------------------------------------------------------------------------------
 

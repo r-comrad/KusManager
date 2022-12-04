@@ -9,22 +9,22 @@
 
 namespace data
 {
-    struct Limits
-    {
-        uint64_t timeLimit;
-        uint64_t memoryLimit;
-    };
+struct Limits
+{
+    uint64_t timeLimit;
+    uint64_t memoryLimit;
+};
 
-    struct SubmissionInfo
-    {
-        int ID;
-        int problemID;
+struct SubmissionInfo
+{
+    int ID;
+    int problemID;
 
-        Limits timeMemLim;
-        dom::CharArray solutionFileName;
-        dom::CharArray checkerFileName;
-    };
-}
+    Limits timeMemLim;
+    dom::CharArray solutionFileName;
+    dom::CharArray checkerFileName;
+};
+} // namespace data
 
 //--------------------------------------------------------------------------------
 

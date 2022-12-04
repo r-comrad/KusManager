@@ -6,9 +6,10 @@
 
 //--------------------------------------------------------------------------------
 
-dom::FileWrite::FileWrite(const std::string& aFileName) noexcept :
-    mOut    (aFileName)
-{}
+dom::FileWrite::FileWrite(const std::string& aFileName) noexcept
+    : mOut(aFileName)
+{
+}
 
 //--------------------------------------------------------------------------------
 
@@ -19,36 +20,29 @@ dom::FileWrite::~FileWrite()
 
 //--------------------------------------------------------------------------------
 
-void
-dom::FileWrite::setDelimiter(const std::string& aDelimiter) noexcept
+void dom::FileWrite::setDelimiter(const std::string& aDelimiter) noexcept
 {
     mDelimiter = aDelimiter;
 }
 
 //--------------------------------------------------------------------------------
 
-void
-dom::FileWrite::writeEndl() noexcept
+void dom::FileWrite::writeEndl() noexcept
 {
     mOut << '\n';
 }
 
 //--------------------------------------------------------------------------------
 
-void
-dom::FileWrite::close() noexcept
+void dom::FileWrite::close() noexcept
 {
     mOut.close();
 }
 
 //--------------------------------------------------------------------------------
 
-void
-dom::FileWrite::copyFile
-(
-    const std::string& aFromFileName,
-    const std::string& aToFileName
-) noexcept
+void dom::FileWrite::copyFile(const std::string& aFromFileName,
+                              const std::string& aToFileName) noexcept
 {
     START_LOG_BLOCK("Copying_file");
     WRITE_LOG("From : ", aFromFileName);
@@ -57,15 +51,15 @@ dom::FileWrite::copyFile
     std::ifstream fromFile(aFromFileName);
     std::ofstream toFile(aToFileName);
 
-    if (!fromFile.is_open()) 
+    if (!fromFile.is_open())
     {
-        WRITE_ERROR("File", "copyFile","01", 
-            "CANT_OPEN_FILE_FOR_READING", aFromFileName);
+        WRITE_ERROR("File", "copyFile", "01", "CANT_OPEN_FILE_FOR_READING",
+                    aFromFileName);
     }
-    if (!toFile.is_open()) 
+    if (!toFile.is_open())
     {
-        WRITE_ERROR("File", "copyFile", "02", 
-            "CANT_OPEN_FILE_FOR_WRITING", aToFileName);
+        WRITE_ERROR("File", "copyFile", "02", "CANT_OPEN_FILE_FOR_WRITING",
+                    aToFileName);
     }
 
     std::string s;

@@ -10,41 +10,38 @@
 
 namespace dom
 {
-    class FileWrite
+class FileWrite
+{
+public:
+    FileWrite(const std::string& aFileName) noexcept;
+    ~FileWrite();
+
+    FileWrite(const FileWrite& other) = delete;
+    FileWrite& operator=(const FileWrite& other) = delete;
+
+    FileWrite(FileWrite&& other) noexcept = default;
+    FileWrite& operator=(FileWrite&& other) noexcept = default;
+
+    template <typename... Args> void write(Args... args) noexcept
     {
-    public:
-        FileWrite(const std::string& aFileName) noexcept;
-        ~FileWrite();
+        (void)std::initializer_list<bool>{
+            static_cast<bool>(mOut << args << mDelimiter)...};
+        mOut << '\n';
+    }
 
-        FileWrite(const FileWrite& other) = delete;
-        FileWrite& operator=(const FileWrite& other) = delete;
+    void setDelimiter(const std::string& aDelimiter) noexcept;
+    void writeEndl() noexcept;
 
-        FileWrite(FileWrite&& other)  noexcept= default;
-        FileWrite& operator=(FileWrite&& other) noexcept = default;
+    void close() noexcept;
 
-        template<typename... Args>
-        void write(Args... args) noexcept
-        {
-            (void) std::initializer_list<bool>
-            { 
-                static_cast<bool>(mOut << args << mDelimiter)...
-            };
-            mOut << '\n';
-        }
+    static void copyFile(const std::string& aFromFileName,
+                         const std::string& aToFileName) noexcept;
 
-        void setDelimiter(const std::string& aDelimiter) noexcept;
-        void writeEndl() noexcept;
-
-        void close() noexcept;
-
-        static void copyFile(const std::string& aFromFileName, 
-            const std::string& aToFileName) noexcept;
-
-    private:
-        std::ofstream mOut;
-        std::string mDelimiter;
-    };
-}
+private:
+    std::ofstream mOut;
+    std::string mDelimiter;
+};
+} // namespace dom
 
 //--------------------------------------------------------------------------------
 

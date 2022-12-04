@@ -1,67 +1,36 @@
-//#define 
-
+#include <fstream>
 #include <string>
 
 #include "domain/error_message.hpp"
 
-#include "path.hpp"
-
 #include "core/core.hpp"
 
+#include "path.hpp"
+
 //--------------------------------------------------------------------------------
-#include <fstream>
+
 int main(int argc, char* argv[])
 {
-//     wchar_t c = L'Ф';
-//     std::wcout << c << L'\n';
-//     std::wcout << L'ф' << L'\n';
-//     std::wcout << wchar_t(c - L'А' + L'а') << L'\n';
-//     std::wcout << (L'ф' == wchar_t(c - L'А' + L'а'))<< L'\n';
-// return 0;
-// int cnt = 0;
-// for(wchar_t i = L'А'; i < L'Я'; ++i)
-// {
-//     std::wcout << ++cnt << L": " << i  << L" - " << int(i) << L"\n";
-// }
-// cnt = 0;
-// for(wchar_t i = L'а'; i < L'я'; ++i)
-// {
-//     std::wcout << ++cnt << L": " << i << L" - " << int(i) << L"\n";
-// }
-
-//     std::wofstream out;
-//     out.open("aaa.txt");
-//     out << L"аямвав";
-// out.close();
-//  return 0;
-
-//setlocale( LC_ALL,"Russian" ); 
-//freopen("aaa", "w", stdout);
-
-int yy = 0;
-++yy;
-
     WRITE_LOG("Start_main");
+
+    std::vector<std::string> arguments;
+    arguments.reserve(argc);
+    for (size_t i = 0; i < argc; ++i)
+    {
+        arguments.push_back(argv[i]);
+    }
+
     eval::Core core("");
 
-    if (argc < 2)
+    if (arguments.size() < 2)
     {
+        WRITE_ERROR("Insufficient number of arguments");
         freopen("a.out", "w", stdout);
-        //int sz = 5;
-        //char* gg[sz] = {"", "rename", "-p", "-m", "KD-5", "-i"};
-        // int sz = 3;
-        // char* gg[sz] = {"", "generate", "200"};
-        int sz = 5;
-        //char* gg[sz] = {"", "getUsers", "-i"};
-        char* gg[sz] = {"", "getResults", "comp.txt", " ", "robox8"};
-        core.run(sz, gg);
+
+        arguments = {""s, "getResults"s, "comp.txt"s, " "s, "robox8"s};
     }
-    else
-    {
-        core.run(argc, argv);
-    }
-    
-    //core.getResults("Гиды-переводчики 2022 Французский");
+
+    core.run(arguments);
 
     return 0;
 }

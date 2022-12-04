@@ -11,26 +11,26 @@
 
 namespace dom
 {
-    class FileReader
-    {
-    public:
-        FileReader(const std::string& aFileName) noexcept;
-        ~FileReader();
+class FileReader
+{
+public:
+    FileReader(const std::string& aFileName) noexcept;
+    ~FileReader();
 
-        FileReader(const FileReader& other) = delete;
-        FileReader& operator=(const FileReader& other) = delete;
+    FileReader(const FileReader& other) = delete;
+    FileReader& operator=(const FileReader& other) = delete;
 
-        FileReader(FileReader&& other)  noexcept= default;
-        FileReader& operator=(FileReader&& other) noexcept = default;
+    FileReader(FileReader&& other) noexcept = default;
+    FileReader& operator=(FileReader&& other) noexcept = default;
 
-        std::vector<std::string> getAllStrings() noexcept;
+    std::vector<std::string> getAllStrings() noexcept;
 
-        void close() noexcept;
+    void close() noexcept;
 
-    private:
-        std::ifstream mInp;
-    };
-}
+private:
+    std::ifstream mInp;
+};
+} // namespace dom
 
 //--------------------------------------------------------------------------------
 
