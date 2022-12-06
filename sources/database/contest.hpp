@@ -36,6 +36,7 @@ public:
     std::wstring mCompetitionName;
     std::map<IDType, std::wstring> mGroups;
     std::map<IDType, Quaestion> mQuaestions;
+    std::map<std::wstring, IDType> mQuaestionNames;
 };
 
 // namespace data

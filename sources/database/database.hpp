@@ -30,6 +30,8 @@ public:
 
     Database(Database&& other) noexcept            = default;
     Database& operator=(Database&& other) noexcept = default;
+
+    static Database& getDatabase() noexcept;
 };
 } // namespace data
 

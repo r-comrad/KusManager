@@ -6,24 +6,48 @@
 #include <map>
 #include <string>
 #include <unordered_map>
+#include <vector>
 
-#include "user.hpp"
+#include "database.hpp"
 
+#include "contest.hpp"
 //--------------------------------------------------------------------------------
 
 namespace data
 {
-struct User
-{
-public:
-    std::wstring name;
-    std::map<IDType, std::wstring> answers;
-    std::wstring password;
-};
 
 class UserArray
 {
 public:
+    struct User
+    {
+    public:
+        std::wstring name;
+        std::map<IDType, std::wstring> answers;
+        std::wstring password;
+    };
+
+    struct Mask
+    {
+        enum class Function
+        {
+            AND = 1,
+            OR  = 2,
+            NOT = 3
+        };
+        std::wstring value;
+        int funk;
+    };
+
+    UserArray() noexcept;
+    ~UserArray() = default;
+
+    UserArray(const UserArray& other) noexcept            = default;
+    UserArray& operator=(const UserArray& other) noexcept = default;
+
+    UserArray(UserArray&& other) noexcept            = default;
+    UserArray& operator=(UserArray&& other) noexcept = default;
+
     std::map<IDType, User>::iterator begin() noexcept;
     std::map<IDType, User>::iterator end() noexcept;
 
@@ -38,7 +62,23 @@ public:
     const std::map<IDType, std::wstring>& getAnswers(IDType aID) const noexcept;
     // const std::map<int, std::wstring>& getAnswers(std::wstring aName);
 
+    data::UserArray getUsers(const std::vector<Mask>& aMask = {},
+                             bool aSwitchMask               = false) noexcept;
+    data::UserArray getUsers(const std::vector<int>& aUserIDs) noexcept;
+
+    void getPasswords(data::UserArray& aUsers) noexcept;
+
+    void data::DatabaseQuery::getUserAnswers(
+        const std::vector<int>& aUserIDs,
+        const std::vector<int>& aQuestionNumbers) noexcept;
+
+    void rename(const UserArray& aUsers,
+                const std::vector<std::wstring>& aNewNames,
+                bool aOnlyTest = false) noexcept;
+
 private:
+    Database& mDatabase;
+
     std::map<IDType, User> mUsers;
     // std::unordered_map<std::wstring, int> mNameHashs;
 };

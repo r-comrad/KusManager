@@ -4,18 +4,15 @@
 
 void
 data::AbstractDatabase::select(std::wstring aTableName, std::wstring aColum,
-                            std::wstring aConditon, int aStatementID) noexcept
+                               std::wstring aConditon,
+                               int aStatementID) noexcept
 {
 }
 
 void
 data::AbstractDatabase::update(std::wstring aTableName, std::wstring aValue,
-                            std::wstring aConditon, int aStatementID) noexcept
-{
-}
-
-void
-data::AbstractDatabase::closeStatment(int aStatementID) noexcept
+                               std::wstring aConditon,
+                               int aStatementID) noexcept
 {
 }
 
@@ -25,6 +22,11 @@ data::AbstractDatabase::step(int aStatementID) noexcept
     return 0;
 }
 
+void
+data::AbstractDatabase::closeStatment(int aStatementID) noexcept
+{
+}
+
 bool
 data::AbstractDatabase::hasData(int aStatementID) noexcept
 {
@@ -32,27 +34,29 @@ data::AbstractDatabase::hasData(int aStatementID) noexcept
 }
 
 std::optional<dom::CharArray>
-data::EmptyDatabase::getTextFromRow(int aColumNumber, int aStatementID) noexcept
+data::AbstractDatabase::getTextFromRow(int aColumNumber,
+                                       int aStatementID) noexcept
 {
     return {};
 }
 
 std::optional<std::wstring>
-data::EmptyDatabase::getText16FromRow(int aColumNumber,
-                                      int aStatementID) noexcept
+data::AbstractDatabase::getText16FromRow(int aColumNumber,
+                                         int aStatementID) noexcept
 {
     return {};
 }
 
 std::optional<int>
-data::EmptyDatabase::getIntFromRow(int aColumNumber, int aStatementID) noexcept
+data::AbstractDatabase::getIntFromRow(int aColumNumber,
+                                      int aStatementID) noexcept
 {
     return 0;
 }
 
 std::optional<int64_t>
-data::EmptyDatabase::getInt64FromRow(int aColumNumber,
-                                     int aStatementID) noexcept
+data::AbstractDatabase::getInt64FromRow(int aColumNumber,
+                                        int aStatementID) noexcept
 {
     return 0;
 }
@@ -64,7 +68,7 @@ data::EmptyDatabase::getInt64FromRow(int aColumNumber,
 // }
 
 std::optional<bool>
-data::EmptyDatabase::getBool(int aColumNumber, int aStatementID) noexcept
+data::AbstractDatabase::getBool(int aColumNumber, int aStatementID) noexcept
 {
     return false;
 }

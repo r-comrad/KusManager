@@ -4,8 +4,8 @@ set(
     database_query.cpp
     database_query.hpp
 
-    database.cpp
     database.hpp
+    contest.hpp
 
     postgresql.cpp
     postgresql.hpp
@@ -17,4 +17,7 @@ set(
 
     abstract_database.hpp
     abstract_database.cpp
+
+    user.cpp
+    user.hpp
 )

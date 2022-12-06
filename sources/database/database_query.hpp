@@ -31,17 +31,6 @@ private:
     };
 
 public:
-    struct Mask
-    {
-        enum class Function
-        {
-            AND = 1,
-            OR  = 2,
-            NOT = 3
-        };
-        std::wstring value;
-        int funk;
-    };
     /*
     \brief Construct querys handler for base with specifien name
     \param aDatabasePath Path to database.
@@ -85,23 +74,9 @@ public:
 
     //--------------------------------------------------------------------------------
 
-    void rename(const UserArray& aUsers,
-                const std::vector<std::wstring>& aNewNames,
-                bool aOnlyTest = false) noexcept;
-
-    data::UserArray getUsers(const std::vector<Mask>& aMask = {},
-                             bool aSwitchMask               = false) noexcept;
-    data::UserArray getUsers(const std::vector<int>& aUserIDs) noexcept;
-
     Contest getCompetition(const std::wstring& aCompetitionName,
                            const std::wstring& aGroupName = L"") noexcept;
-    // void getQuestionInfo(int aCompetitionID) noexcept;
 
-    std::map<std::wstring, int> getQuestionNames(
-        const std::vector<int>& aIDs) noexcept;
-    std::map<int, std::wstring> getQuestions(
-        const std::vector<int>& aQuestionNumbers) noexcept;
-    std::vector<int> getGroupIDs(int aCompetitionID) noexcept;
     std::vector<int> getUserIDs(const std::vector<int>& aGroups) noexcept;
     std::map<int, std::map<int, std::wstring>> getUserAnswers(
         const std::vector<int>& aUserIDs,
@@ -120,7 +95,7 @@ public:
                         data::UserArray& aUsers) noexcept;
 
 private:
-    Database mDatabase;
+    Database& mDatabase;
     int mReservedStatementNumber;
 
     std::mutex mTestMutex;
@@ -133,9 +108,9 @@ private:
 
     void getParticipantInfo(SubmissionInfo& aSubmissionInfo) noexcept;
     void getCheckerInfo(SubmissionInfo& aSubmissionInfo) noexcept;
-    UserNames getUsersByDeleteFlag(bool aIsDeleted,
-                                   const std::vector<std::string>& aMask = {},
-                                   bool aSwitchMask = false);
+    // UserNames getUsersByDeleteFlag(bool aIsDeleted,
+    //                                const std::vector<std::wstring>& aMask =
+    //                                {}, bool aSwitchMask = false);
 
     //--------------------------------------------------------------------------------
     bool isUserHasBron(const std::wstring& aName);

@@ -1,6 +1,6 @@
 # Database options
 #set(DB DB_SQLITE)
-#set(DB DB_POSTGRESQL)
+set(DB DB_POSTGRESQL)
 
 if (${DB} MATCHES DB_POSTGRESQL)
     set(PQXX /usr/include/pqxx)

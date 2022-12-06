@@ -2,14 +2,22 @@
 
 #include <vector>
 
-//--------------------------------------------------------------------------------
-
 #include "domain/error_message.hpp"
 
 //--------------------------------------------------------------------------------
 
 data::DatabaseQuery::DatabaseQuery() noexcept
-    : mReservedStatementNumber(0), mTestNum(1), mTestAreOver(false)
+    : mReservedStatementNumber(0), mTestNum(1), mTestAreOver(false),
+      mDatabase(Database::getDatabase())
+{
+    WRITE_LOG("Creating_database_quare");
+}
+
+//--------------------------------------------------------------------------------
+
+data::DatabaseQuery::DatabaseQuery() noexcept
+    : mReservedStatementNumber(0), mTestNum(1), mTestAreOver(false),
+      mDatabase(Database::getDatabase())
 {
     WRITE_LOG("Creating_database_quare");
 }
@@ -110,99 +118,62 @@ data::DatabaseQuery::prepareTestsStatement(uint64_t aProblemID) noexcept
 //--------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------
 
-void
-data::DatabaseQuery::rename(const UserArray& aUsers,
-                            const std::vector<std::wstring>& aNewNames,
-                            bool aOnlyTest) noexcept
-{
-    auto itUsers    = aUsers.begin();
-    auto itNewNames = aNewNames.begin();
-    while (itUsers != aUsers.end() && itNewNames != aNewNames.end())
-    {
-        if (aNewNames.size() == 0) break;
-        wprintf_s(L"%s   ----->   %s\n", itUsers->second.name.c_str(),
-                  itNewNames->c_str());
 
-        if (!aOnlyTest)
+//--------------------------------------------------------------------------------
+
+void
+data::DatabaseQuery::getUserAnswers(
+    const std::vector<int>& aUserIDs,
+    const std::vector<int>& aQuestionNumbers) noexcept
+{
+    // CompetitionData result;
+    // START_LOG_BLOCK("Prepare_geting_test_from_database");
+
+    std::map<int, std::map<int, std::wstring>> result;
+
+    for (auto question : aQuestionNumbers)
+    {
+        for (auto user : aUserIDs)
         {
-            mDatabase.update(L"core_users",
-                             L"username = \'" + *itNewNames + L"\'",
-                             L"id = " + std::to_wstring(itUsers->first));
-            mDatabase.step();
+            mDatabase.select("core_questionans", "ans",
+                             "question_id = " + std::to_string(question) +
+                                 " AND user_id = " + std::to_string(user));
+
+            while (true)
+            {
+
+                mDatabase.step();
+                auto ans = mDatabase.getText16FromRow(0);
+
+                if (!ans.has_value())
+                {
+                    mDatabase.closeStatment();
+                    break;
+                }
+                result[user][question] = ans.value();
+                dom::Cyrilic::global.standardProcedure(result[user][question]);
+            }
             mDatabase.closeStatment();
         }
-
-        itUsers++;
-        itNewNames++;
     }
-}
-
-data::UserArray
-data::DatabaseQuery::getUsers(const std::vector<Mask>& aMask,
-                              bool aSwitchMask) noexcept
-{
-    data::UserArray result;
-
-    mDatabase.select(L"core_users", L"id, username, is_superuser, "
-                                    L"is_teacher, is_staff");
-    while (true)
-    {
-        mDatabase.step();
-        if (!mDatabase.hasData()) break;
-
-        if (mDatabase.getBool(2)) continue;
-        if (mDatabase.getBool(3)) continue;
-        if (mDatabase.getBool(4)) continue;
-
-        auto id   = mDatabase.getIntFromRow(0).value();
-        auto name = mDatabase.getText16FromRow(1).value();
-
-        if (isUserHasBron(name)) continue;
-
-        bool flagOr  = false;
-        bool flagAnd = true;
-        for (auto& i : aMask)
-        {
-            bool temp = name.find(i.value);
-            if (i.funk & int(Mask::Function::NOT)) temp ^= true;
-            if (i.funk & int(Mask::Function::AND)) flagAnd &= temp;
-            else flagOr |= temp;
-        }
-
-        if ((flagOr && flagAnd) ^ (!aSwitchMask)) continue;
-
-        result.setName(id, std::move(name));
-    }
-    mDatabase.closeStatment();
+    // std::cout << "core_questionans:" << "\n";
+    // for(auto i : result)
+    // {
+    //     std::cout << i.first << ":" << "\n";
+    //     for(auto j : i.second)
+    //     {
+    //         std::cout << "\t" << j.first  << " - " << j.second << "\n";
+    //     }
+    // }
+    // std::cout << "\n\n";
+    // std::cout << "size: " << result.size() << "\n\n";
 
     return result;
-}
 
-data::UserArray
-data::DatabaseQuery::getUsers(const std::vector<int>& aUserIDs) noexcept
-{
-    data::UserArray result;
+    // core_questionans
 
-    for (auto user : aUserIDs)
-    {
-        mDatabase.select(L"core_users",
-                         L"username, is_superuser, is_teacher, is_staff",
-                         L"id = " + std::to_wstring(user));
-
-        if (mDatabase.getBool(2)) continue;
-        if (mDatabase.getBool(3)) continue;
-        if (mDatabase.getBool(4)) continue;
-
-        mDatabase.step();
-        auto name = mDatabase.getText16FromRow(0);
-        mDatabase.closeStatment();
-        if (!name.has_value()) break;
-
-        if (isUserHasBron(name.value())) continue;
-        result.setName(user, std::move(name.value()));
-    }
-
-    return result;
+    //   END_LOG_BLOCK("I'm_ready");
+    //  return result;
 }
 
 //--------------------------------------------------------------------------------
@@ -212,7 +183,6 @@ data::DatabaseQuery::getCompetition(const std::wstring& aCompetitionName,
                                     const std::wstring& aGroupName) noexcept
 {
     Contest result;
-    // START_LOG_BLOCK("Prepare_geting_test_from_database");
 
     mDatabase.select(L"core_competitions", L"id, start_time, end_time",
                      L"name = \'" + aCompetitionName + L"\'");
@@ -239,20 +209,20 @@ data::DatabaseQuery::getCompetition(const std::wstring& aCompetitionName,
             while (true)
             {
                 mDatabase.step();
-                auto num       = mDatabase.getInt64FromRow(0);
-                auto groupName = ;
+                auto num = mDatabase.getInt64FromRow(0);
 
                 if (!num.has_value()) break;
-                result.mGroups[num.value()] = groupName;
+                result.mGroups[num.value()];
             }
             mDatabase.closeStatment();
         }
     }
+
     //--------------------------------------------------------------------------------
+
     mDatabase.select(L"core_competitions_questions", L"question_id",
                      L"competitions_id = " + L"\'"s +
                          std::to_wstring(result.mCompetitionId) + L"\'");
-
     while (true)
     {
 
@@ -262,6 +232,7 @@ data::DatabaseQuery::getCompetition(const std::wstring& aCompetitionName,
         result.mQuaestions[num.value()];
     }
     mDatabase.closeStatment();
+
     //--------------------------------------------------------------------------------
 
     for (auto question : result.mQuaestions)
@@ -321,73 +292,17 @@ data::DatabaseQuery::getCompetition(const std::wstring& aCompetitionName,
         mDatabase.closeStatment();
     }
 
-    for (auto& id : aIDs)
+    for (auto& quaestion : result.mQuaestions)
     {
+        auto id = quaestion.first;
         mDatabase.select(L"core_question", L"name",
-                         L"id = " + std::to_string(id));
+                         L"id = " + std::to_wstring(id));
         mDatabase.step();
-        result[mDatabase.getText16FromRow(0).value()] = id;
+        result.mQuaestionNames[mDatabase.getText16FromRow(0).value()] = id;
         mDatabase.closeStatment();
     }
 
     return result;
-}
-
-//--------------------------------------------------------------------------------
-
-std::map<int, std::map<int, std::wstring>>
-data::DatabaseQuery::getUserAnswers(
-    const std::vector<int>& aUserIDs,
-    const std::vector<int>& aQuestionNumbers) noexcept
-{
-    // CompetitionData result;
-    // START_LOG_BLOCK("Prepare_geting_test_from_database");
-
-    std::map<int, std::map<int, std::wstring>> result;
-
-    for (auto question : aQuestionNumbers)
-    {
-        for (auto user : aUserIDs)
-        {
-            mDatabase.select("core_questionans", "ans",
-                             "question_id = " + std::to_string(question) +
-                                 " AND user_id = " + std::to_string(user));
-
-            while (true)
-            {
-
-                mDatabase.step();
-                auto ans = mDatabase.getText16FromRow(0);
-
-                if (!ans.has_value())
-                {
-                    mDatabase.closeStatment();
-                    break;
-                }
-                result[user][question] = ans.value();
-                dom::Cyrilic::global.standardProcedure(result[user][question]);
-            }
-            mDatabase.closeStatment();
-        }
-    }
-    // std::cout << "core_questionans:" << "\n";
-    // for(auto i : result)
-    // {
-    //     std::cout << i.first << ":" << "\n";
-    //     for(auto j : i.second)
-    //     {
-    //         std::cout << "\t" << j.first  << " - " << j.second << "\n";
-    //     }
-    // }
-    // std::cout << "\n\n";
-    // std::cout << "size: " << result.size() << "\n\n";
-
-    return result;
-
-    // core_questionans
-
-    //   END_LOG_BLOCK("I'm_ready");
-    //  return result;
 }
 
 // std::map<int, std::wstring>
@@ -429,47 +344,6 @@ data::DatabaseQuery::isUserHasBron(const std::string& aName)
     return aName == "pashs" || aName == "ITMO-Student" ||
            aName == "AlphaPrimus" || aName == "Ivan" ||
            aName == "Ivanus-Primus";
-}
-
-//--------------------------------------------------------------------------------
-
-// data::UserArray
-// data::DatabaseQuery::getUsers(const std::vector<int>& aUserIDs) noexcept
-// {
-//     data::UserArray result;
-
-//     for (auto user : aUserIDs)
-//     {
-//         mDatabase.select("core_users", "username",
-//                          "id = " + std::to_string(user));
-
-//         mDatabase.step();
-//         auto name = mDatabase.getText16FromRow(0);
-
-//         if (!name.has_value())
-//         {
-//             mDatabase.closeStatment();
-//             break;
-//         }
-//         result.setName(user, name.value());
-//         mDatabase.closeStatment();
-//     }
-
-//     return result;
-// }
-
-void
-data::DatabaseQuery::getPasswords(data::UserArray& aUsers) noexcept
-{
-    for (auto& i : aUsers)
-    {
-        mDatabase.select("core_passwords", "password",
-                         "user_id = " + std::to_string(i.first));
-
-        mDatabase.step();
-        i.second.password = mDatabase.getTextFromRow(0).value().getString();
-        mDatabase.closeStatment();
-    }
 }
 
 void
