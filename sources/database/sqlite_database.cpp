@@ -26,10 +26,8 @@ void
 data::SQLiteDatabase::select(std::string&& aTableName, std::string&& aColum,
                              std::string&& aConditon, int aStatementID) noexcept
 {
-    if (aColum == "")
-        aColum = "*";
-    if (aConditon != "")
-        aConditon = " WHERE " + std::move(aConditon);
+    if (aColum == "") aColum = "*";
+    if (aConditon != "") aConditon = " WHERE " + std::move(aConditon);
     std::string statement = "SELECT " + std::move(aColum) + " FROM " +
                             std::move(aTableName) + std::move(aConditon);
 

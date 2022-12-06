@@ -52,8 +52,12 @@ private:
 
     void printUsers() noexcept;
     void renameUsers() noexcept;
+
+    int getUserCount() const noexcept;
+    std::string getPrefix(std::string aDelimiter = "") noexcept;
     void generateNames() noexcept;
     void generateRoboNames() noexcept;
+
     void turn() noexcept;
 };
 } // namespace core

@@ -15,6 +15,6 @@ set(
 
     submission_info.hpp
 
-    empty_database.hpp
-    empty_database.cpp
+    abstract_database.hpp
+    abstract_database.cpp
 )

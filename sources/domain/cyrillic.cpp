@@ -199,8 +199,7 @@ dom::Cyrilic::destroyWhiteSpaces(std::wstring& aStr, bool flag) noexcept
 void
 dom::Cyrilic::cutOffEnding(std::wstring& aStr) noexcept
 {
-    if (aStr.size() < 5)
-        return;
+    if (aStr.size() < 5) return;
 
     if (aStr == L"геометрическая")
     {
@@ -214,8 +213,7 @@ dom::Cyrilic::cutOffEnding(std::wstring& aStr) noexcept
     {
         destroyWord(aStr, i + L" ");
     }
-    if (aStr.back() == L' ')
-        aStr.pop_back();
+    if (aStr.back() == L' ') aStr.pop_back();
 }
 
 //--------------------------------------------------------------------------------

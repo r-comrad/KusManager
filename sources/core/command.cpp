@@ -45,12 +45,12 @@ core::Command::processFlags(const std::vector<std::string>& argv) noexcept
     mFlags = uint32_t(Flag::NUN);
 
     std::map<std::string, Flag> flagsMap{
-        {"-test",     Flag::TEST         },
-        {"-print",    Flag::PRINT        },
-        {"-prefix",   Flag::HAS_PREFIX   },
-        {"-maskFile", Flag::HAS_MASK_FILE},
-        {"-invert",   Flag::INVERT_MASK  },
-        {"-all",      Flag::ALL_USERS    }
+        {"-test",   Flag::TEST       },
+        {"-print",  Flag::PRINT      },
+        {"-prefix", Flag::PREFIX     },
+        {"-mask",   Flag::MASK       },
+        {"-invert", Flag::INVERT_MASK},
+        {"-all",    Flag::ALL_USERS  }
     };
 
     std::map<std::string, Flag> shortcutFlagsMap;
@@ -86,7 +86,7 @@ core::Command::processFlags(const std::vector<std::string>& argv) noexcept
         {
             if (argv[i] == j.first)
             {
-                mFlags |= uint32_t(j.second);
+                mFlags |= NumericFlagType(j.second);
                 flag = true;
                 last = int(j.second);
                 break;
@@ -111,20 +111,32 @@ core::Command::processFlags(const std::vector<std::string>& argv) noexcept
 }
 
 const core::Command::Type&
-core::Command::getCommand() noexcept
+core::Command::getCommand() const noexcept
 {
     return mCommand;
 }
 
-const uint32_t&
-core::Command::getFlags() noexcept
+// const uint32_t&
+// core::Command::getFlags() noexcept
+// {
+//     return mFlags;
+// }
+
+bool
+core::Command::isCommand(Command::Type aType) const noexcept
 {
-    return mFlags;
+    return mCommand == aType;
+}
+
+bool
+core::Command::ifFlagSet(Command::Flag aFlag) const noexcept
+{
+    return mFlags & NumericFlagType(aFlag);
 }
 
 // const std::string&
 std::optional<std::string>
-core::Command::getArgCell(int aNum, size_t aCellNum) noexcept
+core::Command::getArgCell(int aNum, size_t aCellNum) const noexcept
 {
     std::optional<std::string> result;
     auto it = mArgs.find(aNum);
@@ -140,11 +152,11 @@ core::Command::getArgCell(int aNum, size_t aCellNum) noexcept
 
 // std::optional<const std::vector<std::string>&>
 std::optional<std::vector<std::string>>
-core::Command::getArgVector(int aNum) noexcept
+core::Command::getArgVector(Command::Flag aFlag) noexcept
 {
     //    std::optional<const std::vector<std::string>&> result;
     std::optional<std::vector<std::string>> result;
-    auto it = mArgs.find(aNum);
+    auto it = mArgs.find(NumericFlagType(aFlag));
     if (it != mArgs.end())
     {
         result = it->second;

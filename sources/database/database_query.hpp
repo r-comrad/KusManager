@@ -12,7 +12,9 @@
 
 #include "database.hpp"
 
+#include "contest.hpp"
 #include "submission_info.hpp"
+#include "user.hpp"
 
 //--------------------------------------------------------------------------------
 
@@ -27,37 +29,24 @@ private:
         dom::CharArray output;
         uint32_t testNum;
     };
-    struct CompetitionData
-    {
-        uint32_t id;
-        // startTime
-        // endTime
-    };
-    struct QuestionData
-    {
-        uint32_t id;
-        // startTime
-        // endTime
-    };
-    struct UserAnswers
-    {
-        uint32_t id;
-        std::vector<std::string> ans;
-    };
-
-    // struct User
-    // {
-    //     int id;
-    //     std::string name;
-    // };
-    using UserNames = std::map<int, std::string>;
 
 public:
+    struct Mask
+    {
+        enum class Function
+        {
+            AND = 1,
+            OR  = 2,
+            NOT = 3
+        };
+        std::wstring value;
+        int funk;
+    };
     /*
     \brief Construct querys handler for base with specifien name
     \param aDatabasePath Path to database.
     */
-    DatabaseQuery(const std::string& aDatabasePath) noexcept;
+    DatabaseQuery() noexcept;
     ~DatabaseQuery() = default;
 
     DatabaseQuery(const DatabaseQuery& other)            = delete;
@@ -79,7 +68,7 @@ public:
     \param aTime Submission time usage.
     \param aMemory Submission memory usage.
     */
-    void writeResult(int aID, const std::string& aResult, int aTime,
+    void writeResult(int aID, const std::wstring& aResult, int aTime,
                      int aMemory) noexcept;
 
     /*
@@ -94,43 +83,41 @@ public:
 
     void prepareTestsStatement(uint64_t aProblemID) noexcept;
 
-    CompetitionData getCompetitionInfo(
-        const std::string& aCompetitionName) noexcept;
+    //--------------------------------------------------------------------------------
+
+    void rename(const UserArray& aUsers,
+                const std::vector<std::wstring>& aNewNames,
+                bool aOnlyTest = false) noexcept;
+
+    data::UserArray getUsers(const std::vector<Mask>& aMask = {},
+                             bool aSwitchMask               = false) noexcept;
+    data::UserArray getUsers(const std::vector<int>& aUserIDs) noexcept;
+
+    Contest getCompetition(const std::wstring& aCompetitionName,
+                           const std::wstring& aGroupName = L"") noexcept;
     // void getQuestionInfo(int aCompetitionID) noexcept;
-    std::vector<int> getQuestionNumbers(int aCompetitionID) noexcept;
+
     std::map<std::wstring, int> getQuestionNames(
         const std::vector<int>& aIDs) noexcept;
     std::map<int, std::wstring> getQuestions(
         const std::vector<int>& aQuestionNumbers) noexcept;
     std::vector<int> getGroupIDs(int aCompetitionID) noexcept;
     std::vector<int> getUserIDs(const std::vector<int>& aGroups) noexcept;
-    std::map<int, std::wstring> getUserNames(
-        const std::vector<int>& aUserIDs) noexcept;
     std::map<int, std::map<int, std::wstring>> getUserAnswers(
         const std::vector<int>& aUserIDs,
         const std::vector<int>& aQuestionNumbers) noexcept;
 
-    std::map<int, std::wstring> getUserAnswers(
-        const std::vector<int>& aQuaestionIDs, int aUserId) noexcept;
+    // std::map<int, std::wstring> getUserAnswers(
+    //     const std::vector<int>& aQuaestionIDs, int aUserId) noexcept;
 
-    void rename(const std::map<int, std::string>& aOldNames,
-                std::vector<std::string>&& aNewNames,
-                bool aOnlyTest = false) noexcept;
-    void turnOff(std::vector<std::string> nameTemplate) noexcept;
-    void turnOn() noexcept;
+    // void turnOff(std::vector<std::string> nameTemplate) noexcept;
+    // void turnOn() noexcept;
 
     //------------------
 
-    bool isUserHasBron(const std::string& aName);
-
-    UserNames getUsers(const std::vector<std::string>& aMask = {},
-                       bool aSwitchMask                      = false);
-    UserNames getActiveUsers(const std::vector<std::string>& aMask = {},
-                             bool aSwitchMask                      = false);
-    UserNames getDeletedUsers(const std::vector<std::string>& aMask = {},
-                              bool aSwitchMask                      = false);
-
-    std::map<std::string, std::string> getPasswords(UserNames aUsers);
+    void getPasswords(data::UserArray& aUsers) noexcept;
+    void getUserAnswers(const std::vector<int>& aQuaestionIDs,
+                        data::UserArray& aUsers) noexcept;
 
 private:
     Database mDatabase;
@@ -140,11 +127,18 @@ private:
     uint32_t mTestNum;
     bool mTestAreOver;
 
+    bool isUserHasBron(const std::string& aName);
+
+    std::vector<int> getQuestionNumbers(int aCompetitionID) noexcept;
+
     void getParticipantInfo(SubmissionInfo& aSubmissionInfo) noexcept;
     void getCheckerInfo(SubmissionInfo& aSubmissionInfo) noexcept;
     UserNames getUsersByDeleteFlag(bool aIsDeleted,
                                    const std::vector<std::string>& aMask = {},
                                    bool aSwitchMask = false);
+
+    //--------------------------------------------------------------------------------
+    bool isUserHasBron(const std::wstring& aName);
 };
 } // namespace data
 

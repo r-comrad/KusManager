@@ -118,14 +118,12 @@ template <typename T1, typename T2 = T1> union Pair
 
     bool operator<(const Pair& other) const noexcept
     {
-        if (x != other.x)
-            return y < other.y;
+        if (x != other.x) return y < other.y;
         return y < other.y;
     }
     bool operator>(const Pair& other) const noexcept
     {
-        if (x != other.x)
-            return y > other.y;
+        if (x != other.x) return y > other.y;
         return y > other.y;
     }
     bool operator==(const Pair& other) const noexcept
@@ -148,8 +146,7 @@ private:
         operator T1&() noexcept
         {
 #ifdef _DBG_
-            if (mIndex != 0)
-                exit(-1);
+            if (mIndex != 0) exit(-1);
 #endif
 
             return mRes.x;
@@ -158,8 +155,7 @@ private:
         operator T2&() noexcept
         {
 #ifdef _DBG_
-            if (mIndex != 1)
-                exit(-1);
+            if (mIndex != 1) exit(-1);
 #endif
 
             return mRes.y;

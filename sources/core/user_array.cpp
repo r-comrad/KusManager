@@ -25,10 +25,8 @@ core::UserArray::makeNames(int* n) noexcept
             file >> i;
             if (i)
             {
-                if (i / 2 > 50)
-                    i += 50;
-                else
-                    i += 25;
+                if (i / 2 > 50) i += 50;
+                else i += 25;
             }
         }
 

@@ -25,8 +25,7 @@ dom::CharArray::CharArray(const CharArrayTable& aStr, char aDelimiter) noexcept
     : mSize(0), mCapacity(0)
 {
     size_t size = 0;
-    if (aDelimiter != '\0')
-        size += aStr.size() - 1;
+    if (aDelimiter != '\0') size += aStr.size() - 1;
     for (const auto& str : aStr)
         size += str.getSize();
     reserve(size);
@@ -35,8 +34,7 @@ dom::CharArray::CharArray(const CharArrayTable& aStr, char aDelimiter) noexcept
     for (const auto& str : aStr)
     {
         add(str);
-        if (aDelimiter != '\0')
-            add(del);
+        if (aDelimiter != '\0') add(del);
     }
 }
 
@@ -77,18 +75,15 @@ dom::CharArray::operator=(const unsigned char* aStr) noexcept
 void
 dom::CharArray::reserve(size_t aSize) noexcept
 {
-    if (++aSize < 16)
-        aSize = 16;
-    if (mCapacity == 0)
-        mCapacity = 1;
+    if (++aSize < 16) aSize = 16;
+    if (mCapacity == 0) mCapacity = 1;
 
     if (aSize > mCapacity)
     {
         while (aSize > mCapacity)
             mCapacity *= 2;
         auto temp = std::make_unique<char[]>(mCapacity);
-        if (mData != nullptr)
-            mSize = copyArray(temp, mData, 0);
+        if (mData != nullptr) mSize = copyArray(temp, mData, 0);
         mData = std::move(temp);
     }
 }

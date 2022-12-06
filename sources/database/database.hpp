@@ -5,7 +5,7 @@
 
 #include <string>
 
-#include "empty_database.hpp"
+#include "abstract_database.hpp"
 #include "postgresql.hpp"
 #include "sqlite_database.hpp"
 
@@ -18,11 +18,11 @@ class Database : public SQLiteDatabase
 #elif defined(DB_POSTGRESQL)
 class Database : public Posdtgres
 #else
-class Database : public EmptyDatabase
+class Database : public AbstractDatabase
 #endif
 {
 public:
-    Database(std::string aDBName) noexcept;
+    Database() noexcept = default;
     virtual ~Database() = default;
 
     Database(const Database& other)            = delete;

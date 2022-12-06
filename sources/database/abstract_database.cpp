@@ -1,65 +1,69 @@
-#include "empty_database.hpp"
+#include "abstract_database.hpp"
 
 //--------------------------------------------------------------------------------
 
-data::EmptyDatabase::EmptyDatabase() noexcept
-{
-}
 void
-data::EmptyDatabase::select(std::string aTableName, std::string aColum,
-                            std::string aConditon, int aStatementID) noexcept
+data::AbstractDatabase::select(std::wstring aTableName, std::wstring aColum,
+                            std::wstring aConditon, int aStatementID) noexcept
 {
 }
 
 void
-data::EmptyDatabase::update(std::string aTableName, std::string aValue,
-                            std::string aConditon, int aStatementID) noexcept
+data::AbstractDatabase::update(std::wstring aTableName, std::wstring aValue,
+                            std::wstring aConditon, int aStatementID) noexcept
 {
 }
 
 void
-data::EmptyDatabase::closeStatment(int aStatementID) noexcept
+data::AbstractDatabase::closeStatment(int aStatementID) noexcept
 {
 }
+
 int
-data::EmptyDatabase::step(int aStatementID) noexcept
+data::AbstractDatabase::step(int aStatementID) noexcept
 {
     return 0;
 }
+
 bool
-data::EmptyDatabase::hasData(int aStatementID) noexcept
+data::AbstractDatabase::hasData(int aStatementID) noexcept
 {
     return false;
 }
+
 std::optional<dom::CharArray>
 data::EmptyDatabase::getTextFromRow(int aColumNumber, int aStatementID) noexcept
 {
     return {};
 }
+
 std::optional<std::wstring>
 data::EmptyDatabase::getText16FromRow(int aColumNumber,
                                       int aStatementID) noexcept
 {
     return {};
 }
-int
+
+std::optional<int>
 data::EmptyDatabase::getIntFromRow(int aColumNumber, int aStatementID) noexcept
 {
     return 0;
 }
-int64_t
+
+std::optional<int64_t>
 data::EmptyDatabase::getInt64FromRow(int aColumNumber,
                                      int aStatementID) noexcept
 {
     return 0;
 }
 
-char*
-data::EmptyDatabase::toAscii(const unsigned char* input) noexcept
-{
-    return nullptr;
-}
-bool
+// std::optional<char*>
+// data::EmptyDatabase::toAscii(const unsigned char* input) noexcept
+// {
+//     return nullptr;
+// }
+
+std::optional<bool>
 data::EmptyDatabase::getBool(int aColumNumber, int aStatementID) noexcept
 {
     return false;

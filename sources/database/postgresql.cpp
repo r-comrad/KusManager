@@ -57,10 +57,8 @@ void
 Posdtgres::select(std::string aTableName, std::string aColum,
                   std::string aConditon, int aStatementID) noexcept
 {
-    if (aColum == "")
-        aColum = "*";
-    if (aConditon != "")
-        aConditon = " WHERE " + aConditon;
+    if (aColum == "") aColum = "*";
+    if (aConditon != "") aConditon = " WHERE " + aConditon;
     std::string statement =
         "SELECT " + aColum + " FROM " + aTableName + aConditon;
 
@@ -119,8 +117,7 @@ destroy(std::wstring& s)
             {
                 s[i + it] = '[';
             }
-            if (s[it - 1] == ' ')
-                s[it - 1] = '[';
+            if (s[it - 1] == ' ') s[it - 1] = '[';
         }
     }
 }
@@ -162,8 +159,7 @@ Posdtgres::getText16FromRow(int aColumNumber, int aStatementID) noexcept
 int
 Posdtgres::getIntFromRow(int aColumNumber, int aStatementID) noexcept
 {
-    if (mResultIterator[aStatementID][aColumNumber].is_null())
-        return -1;
+    if (mResultIterator[aStatementID][aColumNumber].is_null()) return -1;
     return mResultIterator[aStatementID][aColumNumber].as<int>();
 }
 
@@ -173,8 +169,7 @@ int64_t
 Posdtgres::getInt64FromRow(int aColumNumber, int aStatementID) noexcept
 {
     // TODO: optional
-    if (mResultIterator[aStatementID][aColumNumber].is_null())
-        return -1;
+    if (mResultIterator[aStatementID][aColumNumber].is_null()) return -1;
     return mResultIterator[aStatementID][aColumNumber].as<int64_t>();
 }
 
@@ -191,8 +186,7 @@ Posdtgres::getBool(int aColumNumber, int aStatementID) noexcept
 void
 Posdtgres::closeStatment(int aStatementID) noexcept
 {
-    if (mStatement.size() <= aStatementID)
-        return;
+    if (mStatement.size() <= aStatementID) return;
     mStatement[aStatementID]->commit();
     mStatement[aStatementID] = nullptr;
     while (mStatement.size() >= 1 && mStatement[aStatementID] == nullptr)

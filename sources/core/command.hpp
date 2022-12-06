@@ -14,6 +14,9 @@ namespace core
 {
 class Command
 {
+private:
+    using NumericFlagType = uint32_t;
+
 public:
     enum class Type
     {
@@ -32,13 +35,13 @@ public:
 
     enum class Flag
     {
-        NUN           = 0,
-        TEST          = 1,
-        PRINT         = 2,
-        HAS_PREFIX    = 4,
-        HAS_MASK_FILE = 8,
-        INVERT_MASK   = 16,
-        ALL_USERS     = 32
+        NUN         = 0,
+        TEST        = 1,
+        PRINT       = 2,
+        PREFIX      = 4,
+        MASK        = 8,
+        INVERT_MASK = 16,
+        ALL_USERS   = 32
     };
 
     Command() noexcept = default;
@@ -52,19 +55,23 @@ public:
 
     void process(const std::vector<std::string>& argv) noexcept;
 
-    const Type& getCommand() noexcept;
-    const uint32_t& getFlags() noexcept;
+    const Type& getCommand() const noexcept;
+    // const uint32_t& getFlags() noexcept;
+    bool isCommand(Command::Type aType) const noexcept;
+    bool ifFlagSet(Command::Flag aFlag) const noexcept;
 
-    std::optional<std::string> getArgCell(int aNum, size_t aCellNum) noexcept;
+    std::optional<std::string> getArgCell(int aNum,
+                                          size_t aCellNum) const noexcept;
 
     // TODO: referance
     // std::optional<const std::vector<std::string>&> getArgVector(
-    std::optional<std::vector<std::string>> getArgVector(int aNum) noexcept;
+    std::optional<std::vector<std::string>> getArgVector(
+        Command::Flag aFlag) noexcept;
     const std::map<int, std::vector<std::string>>& getAllArgs() noexcept;
 
 private:
     Type mCommand;
-    uint32_t mFlags;
+    NumericFlagType mFlags;
 
     std::map<int, std::vector<std::string>> mArgs;
 

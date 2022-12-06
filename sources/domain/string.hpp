@@ -84,8 +84,7 @@ public:
         size_t i = 0, j = 0;
         while (mData[i] && aStr[j])
         {
-            if (mData[i++] != aStr[j++])
-                return false;
+            if (mData[i++] != aStr[j++]) return false;
         }
         return true;
     }

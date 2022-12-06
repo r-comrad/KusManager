@@ -64,8 +64,7 @@ dom::Path::getExecutablePathOnce() noexcept
     int i = str.size() - 1;
     for (int j = 0; j < 1; --i)
     {
-        if (str[i] == '/')
-            ++j;
+        if (str[i] == '/') ++j;
     }
     return str.substr(0, i + 2);
     // return str.substr(0, str.rfind('/'));
