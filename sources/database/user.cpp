@@ -1,50 +1,43 @@
 #include "user.hpp"
 
-data::UserArray::UserArray() noexcept : mDatabase(Database::getDatabase())
+#include "domain/cyrillic.hpp"
+
+const std::wstring data::UserArray::DELETE_PREFIX = L"-----";
+
+data::UserArray::UserArray(const std::vector<Mask>& aMask) noexcept
+    : mDatabase(Database::getDatabase())
 {
+    setUsers(aMask);
 }
 
-std::map<IDType, data::User>::iterator
+data::UserArray::UserArray(const Contest& aContest) noexcept
+    : mDatabase(Database::getDatabase())
+{
+    setUsers(aContest.getUserIDs());
+}
+
+std::map<IDType, data::UserArray::User>::iterator
 data::UserArray::begin() noexcept
 {
     return mUsers.begin();
 }
 
-std::map<IDType, data::User>::iterator
+std::map<IDType, data::UserArray::User>::iterator
 data::UserArray::end() noexcept
 {
     return mUsers.end();
 }
 
-const std::map<IDType, data::User>::const_iterator
+const std::map<IDType, data::UserArray::User>::const_iterator
 data::UserArray::begin() const noexcept
 {
     return mUsers.cbegin();
 }
 
-const std::map<IDType, data::User>::const_iterator
+const std::map<IDType, data::UserArray::User>::const_iterator
 data::UserArray::end() const noexcept
 {
     return mUsers.cend();
-}
-
-void
-data::UserArray::setName(IDType aID, std::wstring&& aName) noexcept
-{
-    mUsers[aID].name = std::move(aName);
-}
-
-void
-data::UserArray::setPassword(IDType aID, std::wstring&& aPassword) noexcept
-{
-    mUsers[aID].password = std::move(aPassword);
-}
-
-void
-data::UserArray::addAnswer(IDType aID, IDType aQaestionID,
-                           std::wstring&& aAnswer) noexcept
-{
-    mUsers[aID].answers[aQaestionID] = std::move(aAnswer);
 }
 
 const std::map<IDType, std::wstring>&
@@ -53,12 +46,95 @@ data::UserArray::getAnswers(IDType aID) const noexcept
     return mUsers.find(aID)->second.answers;
 }
 
-data::UserArray
-data::DatabaseQuery::getUsers(const std::vector<UserArray::Mask>& aMask,
-                              bool aSwitchMask) noexcept
-{
-    data::UserArray result;
+//--------------------------------------------------------------------------------
 
+void
+data::UserArray::setPasswords() noexcept
+{
+    for (auto& i : mUsers)
+    {
+        mDatabase.select(L"core_passwords", L"password",
+                         L"user_id = " + std::to_wstring(i.first));
+
+        mDatabase.step();
+        i.second.password = mDatabase.getText16FromRow(0).value();
+        mDatabase.closeStatment();
+    }
+}
+
+void
+data::UserArray::setAnswers(const Contest& aContest) noexcept
+{
+    for (auto& user : mUsers)
+    {
+        auto userId   = user.first;
+        auto& answers = user.second.answers;
+        for (auto question : aContest.mQuaestions)
+        {
+            auto questionId = question.first;
+            mDatabase.select(L"core_questionans", L"ans",
+                             L"question_id = " + std::to_wstring(questionId) +
+                                 L" AND user_id = " + std::to_wstring(userId));
+
+            while (true)
+            {
+
+                mDatabase.step();
+                auto ans = mDatabase.getText16FromRow(0);
+
+                if (!ans.has_value())
+                {
+                    mDatabase.closeStatment();
+                    break;
+                }
+                answers[questionId] = ans.value();
+                dom::Cyrilic::global.standardProcedure(answers[questionId]);
+            }
+            mDatabase.closeStatment();
+        }
+    }
+}
+
+void
+data::UserArray::rename(const std::vector<std::wstring>& aNewNames,
+                        bool aOnlyTest) noexcept
+{
+    auto itUsers    = mUsers.begin();
+    auto itNewNames = aNewNames.begin();
+    while (itUsers != mUsers.end() && itNewNames != aNewNames.end())
+    {
+        if (aNewNames.size() == 0) break;
+        wprintf(L"%s   ----->   %s\n", itUsers->second.name.c_str(),
+                itNewNames->c_str());
+
+        if (!aOnlyTest)
+        {
+            mDatabase.update(L"core_users",
+                             L"username = \'" + *itNewNames + L"\'",
+                             L"id = " + std::to_wstring(itUsers->first));
+            mDatabase.step();
+            mDatabase.closeStatment();
+        }
+
+        itUsers++;
+        itNewNames++;
+    }
+}
+
+void
+data::UserArray::print() const noexcept
+{
+    for (auto& i : mUsers)
+    {
+        wprintf(L"%s\t\t%s\n", i.second.name.c_str(),
+                i.second.password.c_str());
+    }
+}
+
+void
+data::UserArray::setUsers(
+    const std::vector<data::UserArray::Mask>& aMask) noexcept
+{
     mDatabase.select(L"core_users", L"id, username, is_superuser, "
                                     L"is_teacher, is_staff");
     while (true)
@@ -85,20 +161,16 @@ data::DatabaseQuery::getUsers(const std::vector<UserArray::Mask>& aMask,
             else flagOr |= temp;
         }
 
-        if ((flagOr && flagAnd) ^ (!aSwitchMask)) continue;
+        if ((flagOr && flagAnd)) continue;
 
-        result.setName(id, std::move(name));
+        mUsers[id].name = std::move(name);
     }
     mDatabase.closeStatment();
-
-    return result;
 }
 
-data::UserArray
-data::DatabaseQuery::getUsers(const std::vector<int>& aUserIDs) noexcept
+void
+data::UserArray::setUsers(const std::vector<IDType>& aUserIDs) noexcept
 {
-    data::UserArray result;
-
     for (auto user : aUserIDs)
     {
         mDatabase.select(L"core_users",
@@ -115,50 +187,14 @@ data::DatabaseQuery::getUsers(const std::vector<int>& aUserIDs) noexcept
         if (!name.has_value()) break;
 
         if (isUserHasBron(name.value())) continue;
-        result.setName(user, std::move(name.value()));
-    }
-
-    return result;
-}
-//--------------------------------------------------------------------------------
-
-void
-data::DatabaseQuery::getPasswords(data::UserArray& aUsers) noexcept
-{
-    for (auto& i : aUsers)
-    {
-        mDatabase.select(L"core_passwords", L"password",
-                         L"user_id = " + std::to_wstring(i.first));
-
-        mDatabase.step();
-        i.second.password = mDatabase.getText16FromRow(0).value();
-        mDatabase.closeStatment();
+        mUsers[user].name = std::move(name.value());
     }
 }
 
-void
-data::DatabaseQuery::rename(const UserArray& aUsers,
-                            const std::vector<std::wstring>& aNewNames,
-                            bool aOnlyTest) noexcept
+bool
+data::UserArray::isUserHasBron(const std::wstring& aName)
 {
-    auto itUsers    = aUsers.begin();
-    auto itNewNames = aNewNames.begin();
-    while (itUsers != aUsers.end() && itNewNames != aNewNames.end())
-    {
-        if (aNewNames.size() == 0) break;
-        wprintf(L"%s   ----->   %s\n", itUsers->second.name.c_str(),
-                itNewNames->c_str());
-
-        if (!aOnlyTest)
-        {
-            mDatabase.update(L"core_users",
-                             L"username = \'" + *itNewNames + L"\'",
-                             L"id = " + std::to_wstring(itUsers->first));
-            mDatabase.step();
-            mDatabase.closeStatment();
-        }
-
-        itUsers++;
-        itNewNames++;
-    }
+    return aName == L"pashs" || aName == L"ITMO-Student" ||
+           aName == L"AlphaPrimus" || aName == L"Ivan" ||
+           aName == L"Ivanus-Primus";
 }

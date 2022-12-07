@@ -20,17 +20,17 @@ private:
 public:
     enum class Type
     {
-        NUN                 = 0,
-        GET_USERS           = 1,
-        GET_ACTIVE_USERS    = 2,
-        GET_DELETED_USERS   = 3,
-        DELETE_USERS        = 4,
-        RESURRECT_USERS     = 5,
-        RENAME_USERS        = 6,
-        GENERATE_NAMES      = 7,
-        GENERATE_ROBO_NAMES = 8,
-        EVALUATE            = 9,
-        HELP                = 10
+        NUN,
+        GET_USERS,
+        GET_ACTIVE_USERS,
+        GET_DELETED_USERS,
+        DELETE_USERS,
+        RESURRECT_USERS,
+        RENAME_USERS,
+        GENERATE_NAMES,
+        GENERATE_ROBO_NAMES,
+        EVALUATE,
+        HELP
     };
 
     enum class Flag
@@ -40,8 +40,7 @@ public:
         PRINT       = 2,
         PREFIX      = 4,
         MASK        = 8,
-        INVERT_MASK = 16,
-        ALL_USERS   = 32
+        INVERT_MASK = 16
     };
 
     Command() noexcept = default;
@@ -58,7 +57,7 @@ public:
     const Type& getCommand() const noexcept;
     // const uint32_t& getFlags() noexcept;
     bool isCommand(Command::Type aType) const noexcept;
-    bool ifFlagSet(Command::Flag aFlag) const noexcept;
+    bool hasFlag(Command::Flag aFlag) const noexcept;
 
     std::optional<std::string> getArgCell(int aNum,
                                           size_t aCellNum) const noexcept;

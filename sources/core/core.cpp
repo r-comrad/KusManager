@@ -8,6 +8,8 @@
 #include "domain/error_message.hpp"
 #include "domain/file_reader.hpp"
 
+#include "database/user.hpp"
+
 #define INPUT_FIR_NAME_FILE "firstName.name"
 #define INPUT_SEC_NAME_FILE "secondName.name"
 #define INPUT_NAMES_FILE    "name.txt"
@@ -17,7 +19,6 @@
 //--------------------------------------------------------------------------------
 
 core::Core::Core(const std::string& aDatabasePath) noexcept
-    : mDBQ(aDatabasePath)
 {
     WRITE_LOG("Creating_core");
 }
@@ -60,40 +61,36 @@ core::Core::run(const std::vector<std::string>& argv) noexcept
 void
 core::Core::printUsers() noexcept
 {
-    std::map<int, std::string> names;
-    auto mask   = mCommand.getArgVector(Command::Flag::MASK);
-    bool invert = int(mFlags) & int(CommandFlag::INVERT_MASK);
+    std::vector<data::UserArray::Mask> maskArray;
+    auto maskArg = mCommand.getArgVector(Command::Flag::MASK);
+    bool invert  = mCommand.hasFlag(Command::Flag::INVERT_MASK);
+
+    int andFlag    = int(data::UserArray::Mask::Function::AND);
+    int orFlag     = int(data::UserArray::Mask::Function::OR);
+    int notFlag    = int(data::UserArray::Mask::Function::NOT);
+    int invertFlag = invert ? notFlag : 0;
+
+    if (maskArg.has_value())
+    {
+        for (auto& i : maskArg.value())
+        {
+            maskArray.emplace_back(i, andFlag | invertFlag);
+        }
+    }
 
     if (mCommand.isCommand(Command::Type::GET_DELETED_USERS))
     {
+        maskArray.emplace_back(data::UserArray::DELETE_PREFIX, andFlag);
     }
-
-    bool allUsers = int(mFlags) & int(CommandFlag::ALL_USERS);
-
-    if (allUsers)
+    else if (mCommand.isCommand(Command::Type::GET_ACTIVE_USERS))
     {
-        names = mDBQ.getUsers(mask, invert);
+        maskArray.emplace_back(data::UserArray::DELETE_PREFIX,
+                               andFlag | notFlag);
     }
-    else
-    {
-        names = mDBQ.getActiveUsers(mArgs[int()], invert);
-    }
-}
-else if (mCommand == Command::GET_ACTIVE_USERS)
-{
-    names = mDBQ.getUsers(mask, invert);
-}
-else if (mCommand == Command::GET_DELETED_USERS)
-{
-    names = mDBQ.getUsers(mask, invert);
-}
 
-printf("%d\n", names.size());
-auto namesAndPass = mDBQ.getPasswords(names);
-for (auto& i : namesAndPass)
-{
-    printf("%s\t\t%s\n", i.first.c_str(), i.second.c_str());
-}
+    data::UserArray users(maskArray);
+    users.setPasswords();
+    users.print();
 }
 
 void

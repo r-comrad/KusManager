@@ -49,8 +49,7 @@ core::Command::processFlags(const std::vector<std::string>& argv) noexcept
         {"-print",  Flag::PRINT      },
         {"-prefix", Flag::PREFIX     },
         {"-mask",   Flag::MASK       },
-        {"-invert", Flag::INVERT_MASK},
-        {"-all",    Flag::ALL_USERS  }
+        {"-invert", Flag::INVERT_MASK}
     };
 
     std::map<std::string, Flag> shortcutFlagsMap;
@@ -129,7 +128,7 @@ core::Command::isCommand(Command::Type aType) const noexcept
 }
 
 bool
-core::Command::ifFlagSet(Command::Flag aFlag) const noexcept
+core::Command::hasFlag(Command::Flag aFlag) const noexcept
 {
     return mFlags & NumericFlagType(aFlag);
 }

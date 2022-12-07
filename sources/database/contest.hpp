@@ -7,11 +7,14 @@
 #include <string>
 #include <unordered_map>
 
+#include "database.hpp"
+
 //--------------------------------------------------------------------------------
 
 using IDType = uint64_t;
-
-struct Contest
+namespace data
+{
+class Contest
 {
 public:
     struct Quaestion
@@ -25,21 +28,35 @@ public:
         std::wstring answer;
     };
 
-    void setName(IDType aID, std::wstring&& aName) noexcept;
-    void setPassword(IDType aID, std::wstring&& aPassword) noexcept;
-    void addAnswer(IDType aID, IDType aQaestionID,
-                   std::wstring&& aAnswer) noexcept;
-
-    const std::map<IDType, std::wstring>& getAnswers(int aID) const noexcept;
-
     IDType mCompetitionId;
     std::wstring mCompetitionName;
     std::map<IDType, std::wstring> mGroups;
     std::map<IDType, Quaestion> mQuaestions;
     std::map<std::wstring, IDType> mQuaestionNames;
+
+    Contest(const std::wstring& aCompetitionName,
+            const std::wstring& aGroupName) noexcept;
+    ~Contest() = default;
+
+    Contest(const Contest& other) noexcept            = default;
+    Contest& operator=(const Contest& other) noexcept = default;
+
+    Contest(Contest&& other) noexcept            = default;
+    Contest& operator=(Contest&& other) noexcept = default;
+
+    std::vector<IDType> getUserIDs() const noexcept;
+
+private:
+    Database& mDatabase;
+
+    void setCompetitionInfo(const std::wstring& aCompetitionName,
+                            const std::wstring& aGroupName) noexcept;
+    void setQuaestionID() noexcept;
+    void setQuaestionName() noexcept;
+    void setAnswers() noexcept;
 };
 
-// namespace data
+} // namespace data
 
 //--------------------------------------------------------------------------------
 

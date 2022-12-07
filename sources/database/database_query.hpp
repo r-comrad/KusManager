@@ -82,18 +82,6 @@ public:
         const std::vector<int>& aUserIDs,
         const std::vector<int>& aQuestionNumbers) noexcept;
 
-    // std::map<int, std::wstring> getUserAnswers(
-    //     const std::vector<int>& aQuaestionIDs, int aUserId) noexcept;
-
-    // void turnOff(std::vector<std::string> nameTemplate) noexcept;
-    // void turnOn() noexcept;
-
-    //------------------
-
-    void getPasswords(data::UserArray& aUsers) noexcept;
-    void getUserAnswers(const std::vector<int>& aQuaestionIDs,
-                        data::UserArray& aUsers) noexcept;
-
 private:
     Database& mDatabase;
     int mReservedStatementNumber;
@@ -102,18 +90,11 @@ private:
     uint32_t mTestNum;
     bool mTestAreOver;
 
-    bool isUserHasBron(const std::string& aName);
-
     std::vector<int> getQuestionNumbers(int aCompetitionID) noexcept;
 
     void getParticipantInfo(SubmissionInfo& aSubmissionInfo) noexcept;
     void getCheckerInfo(SubmissionInfo& aSubmissionInfo) noexcept;
-    // UserNames getUsersByDeleteFlag(bool aIsDeleted,
-    //                                const std::vector<std::wstring>& aMask =
-    //                                {}, bool aSwitchMask = false);
 
-    //--------------------------------------------------------------------------------
-    bool isUserHasBron(const std::wstring& aName);
 };
 } // namespace data
 

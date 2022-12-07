@@ -5,6 +5,8 @@ set(
     database_query.hpp
 
     database.hpp
+
+    contest.cpp
     contest.hpp
 
     postgresql.cpp
